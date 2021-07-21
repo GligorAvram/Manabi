@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html >
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="invata, limba, japoneza">
+	<meta name="author" content="Gligor Avram">
+	<meta name="description" content="Site dedicat celor care vor sa invete limba japoneza.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style th:insert="fragments :: dropdown-style" ></style>
+<link rel="stylesheet" th:href="@{/css/shared.css}">
+<link rel="stylesheet" th:href="@{/css/all.css}">
+<title>Manabi - Invata Japoneza</title>
+</head>
+<body>
+	<div th:insert="fragments :: nav" class="navbar-desktop"></div>
+	<div th:insert="fragments :: nav-mobile" class="navbar-mobile"></div>
+
+	<div class="content-container">
+
+		<div class="brand-top-div">
+			<h1>Manabi</h1>
+			<div class="logo"></div>
+		</div>
+
+		<div class="all-articles">
+			<h1>Manabi</h1>
+		<div>
+			<h2>Despre Manabi</h2>
+			<p>
+				Buna, calator internaut, daca ai venit aici probabil e fiindca vrei sa inveti japoneza. Un obiectiv admirabil, insa aproape sigur sortit esecului. Exista o problema fundamentala cu modul in care limba este predata. La cum stau lucrurile in industrie (si da, este o adevarata industrie), acesta este rezultatul cel mai probabil pentru marea majoritate a celor care se apuca. Din exact acest motiv am creat Manabi. Vreau sa pun aici cele mai bune resurse, sfaturi si unelte pe care le-am gasit in calatoria mea spre fluenta in aceasta limba. Sunt foarte multe resurse care promit sa te duca la fluenta, insa uneltele de departe cele mai bune sunt disponibile gratuit pe internet.
+			</p>
+			<p>
+				Problema fundamentala cu invatatul japonezei insa este felul cum limba e predata si faptul ca invataceii care se apuca nu au un plan, o metoda bine stabilita. In mod normal, acest plan ar trebui sa fie invatat pe bancile scolii. Ca student al unei scoli de japoneza insa pot spune clar ca aceasta metoda nu numai ca nu e predata, dar nici nu exista. Iar rata de succes a programelor/scolilor de japoneza confirma clar acest lucru. Curriculumul urmat de aceste cursuri se bazeaza pe idei invechite care produc rezultate abismale in pana si in limbi usoare (limbi latine, engleza etc). 
+			</p>
+				<p>
+					Scopul acestui site nu este sa va faca sa reveniti zilnic aici. Mai degraba as prefera sa va petreceti timpul cu uneltele pe care vi le voi prezenta aici, zilnic, si sa reveniti doar din cand in cand pentru a lua putinele resurse pe care le voi posta, sau pentru a reciti pagina de gramatica.
+					<br>
+				Vorbind de gramatica, ceea ce voi posta aici este influentat foarte mult de opera lui Jay Rubin, "Making Sense of Japanese: What the Textbooks Don't Tell You" si de canalul de Youtube Cure Dolly. Nu sunt sigur daca puteti gasi o copie a cartii lui Rubin in romana, insa cu siguranta nu exista o versiune tradusa a videourilor lui Cure Dolly. Asadar, una din prioritatile acestui site va fi de a alcatui un fel de baza de date a gramaticii japoneze IN ROMANA. De asemenea, gramatica nu trebuie invatata ca pe bancile scolii, trecand prin tabele de declinari inutile. Gramatica pe care o veti gasi aici este scurta si la obiect si are scopul de a va ajuta sa intelegeti in mare strategiile de exprimare in limba japoneza.
+				</p>
+				<p>
+				Pentru inceput insa, am sa trec peste motivele care duc la esec, diferentele si problemele care vin cu invatatul unei limbi ne-europene, in special a japonezei, si metode de a depasi aceste probleme. Daca nu e prima ta vizita aici, vei gasi ceva mai jos ordinea cronologica pe care recomand sa o parcurgi, si linkul spre pagina care te va ajuta sa incepi. Iar la sfarsitul paginii vei avea linkul spre urmatorul articol care recomand sa il citesti.
+			</p>
+		</div>
+
+		<div>
+			<h2>Limbile ne-europene</h2>
+				<p>
+					Institutul de Servicii Externe si Institutul de Limbi Pentru Aparare American impart limbile in 4 mari categorii:
+					
+					<ul>
+						<li>
+							Categoria 1 (23-24 saptamani | 575-600 ore de curs): 
+							Afrikaans, Franceza, Germana, Romana, Spaniola, Italiana
+						</li>
+						<li>
+							Categoria 2 & 3 (44 saptamani | 1,100 ore de curs):
+							Maghiara, Bulgara, Burmese, Indoneza, Hindi, Turca							
+						</li>
+						<li>
+							Categoria 4 (88 saptamani | 2200 ore de curs cu al 2-lea an de studii in tara de origine a limbii):
+							Araba (toate varietatile), Cantoneza, Mandarina, Japoneza, Coreeana.		
+						</li>
+					</ul>			
+				</p>
+				<p>
+					Dupa cum vedeti, japoneza este situata in categoria celor mai dificile limbi pentru nativii englezi, in timp ce romana e in prima. Defapt, cu cat ne departam mai mult de meleagurile europene cu atat legaturile cu limbile care se vorbesc in acele locuri sunt mai slabe.
+					<br>
+					In general, pentru a invata o limba din prima categorie nu trebuie decat sa dedicati timp, metoda neavand o importanta atat de mare. Invatatul unei limbi din ultima categorie necesita o serie de unelte, metode si strategii bine stabilite, altfel procesul poate dura chiar si zeci de ani.
+				</p>
+		<p>
+				Pentru a invata o limba ne-europeana trebuie sa invatam un set complet nou de cuvinte care nu va avea punct de legatura cu nici una din limba care le stim. Din start deci timpul dedicat invatarii cuvintelor va creste substantial. Gramatica acestor limbi din nou nu va avea nici un punct de familiaritate asa ca va trebui sa ne obisnuim cu noi moduri de a lega si conjuga cuvinte, si posibil cu noi concepte temporare, de politete, de familiaritate, de incertitudine etc. Ca adulti avem deja cunostinta despre aceste concepte, ceea ce face ca invatatul lor sa fie mai usor comparat cu copii. Pentru a le invata insa, trebuie sa ne indepartam de felul in care limbajul nostru matern exprima aceste concepte.
+		</p>
+		<p>
+				O problema specifica limbii japoneze e faptul ca aceasta limba are un numar scazut de sunete. Pe termen lung, acesta este probabil cel mai mare impediment in invatararea japonezei. Foarte multe cuvinte suna foarte similar, si mai mult de atat numarul de omonime este foarte ridicat. 
+		</p>
+		<p>
+				O alta problema pe care o vom intampina  este ca va trebui sa invatam ceva mai mult decat cuvintele si gramatica acelei limbi. Trebuie sa invatam modul de gandire al oamenilor care folosesc acel limbaj si felul in care folosesc cuvintele pentru a exprima acele ganduri. Pe scurt trebuie sa ne obisnuim ca daca cineva spune "imi stii telefonul?" intreaba daca stii unde e, "devine la sentiment" starneste interes,	"a intoarce calcaiul" a se intoarce cu spatele etc.
+			</p>
+			<p>
+				Dupa cum probabil ati observat, japoneza are unul dintre cele mai complicate sisteme de scriere din lume. Sunt 3 sisteme de scriere, unul logografic importat din China si doua alfabete fonetice, derivate din acesta. Pentru incepatori, Kanji este probabil cel mai intimidant aspect al limbii. Pentru invataceii inalt-intermediari si avansati insa, Kanji sunt aliatii cei mai importanti in drumul spre fluenta. Asa ca unul dintre primele scopuri ale acestui site este sa va puna la punct abilitatea de a citi. Daca nu vreti sa invatati sa cititi este alegerea voastra, insa trebuie sa intelegeti ca abilitatea voastra de a va exprima in limba japoneza va fi similara cu cea a analfabetilor din limba noastra materna. As vrea sa subliniez faptul ca am zis "cititi" si nu si "scrieti". Scrisul in japoneza nu mai este atat de important din cauza tehnologiei. Chiar si japonezii nu mai stiu sa scrie din memorie o mare parte din caracterele. Astazi scriem pe ecranele telefoanelor si calculatoarelor. Asa ca daca va puneti la punct capacitatea de a citi, scrisul nu mai e o problema. Daca stiti cuvantul si stiti sa il cititi, 
+			</p>
+		</div>
+
+			<div>
+				<h2>De ce Manabi?</h2>
+				<p>M-am apucat de japoneza la 31 de ani, cu un curs de japoneza in orasul in care traiam. 3 ani mai tarziu mi-am dat seama ca japoneza pe care o invatam si japoneza adevarata nu au foarte multe lucruri in comun. Defapt mi-am dat seama de acest lucru dinainte, dar atunci a fost momentul cand mi-am spus ca trebuie sa-mi schimb strategia, altfel nu voi ajunge niciodata sa inteleg si vorbesc limba. Asa ca am inceput sa studiez modul in care oamenii care au ajuns fluenti in mai multe limbi invata limbile straine. Strategiile lor sunt complet diferite fata de modul predat in clasa. 
+					</p>
+					<p>Poliglotii dedica zilnic timp studiului (mai bine o ora pe zi decat 7 duminica), pun accentul pe invatatul cuvintelor nu pe exercitii gramaticale (degeaba ai gramatica "perfecta" daca nu stii decat 100 de cuvinte), activitatea principala de invatat a unei limbi e ascultatul si cititul (nu mersul la cursuri). Defapt ultimul punct e partea importanta de retinut, fiindca pentru a invata japoneza va trebui sa ne schimbam mentalitatea din "invat japoneza ca sa ma pot bucura de media din aceasta limba" in "ma uit la media in japoneza pentru a invata limba".
+				</p>
+			</div>
+			<div>
+				<h2>Cronologie</h2>
+				<p>
+					Aici sunt pasii pe care vii recomand si ordinea in care recomand sa ii parcurgeti. V-as sugera sa incorporati ceea ce nu faceti deja in inctivitatile voastre zilnice. Nu sunt foarte multe activitati aici, insa acestea sunt esentiale. De asemenea, chiar daca in articolele de aici recomand sa folositi anumite unelte sau strategii pentru a ajunge la un rezultat, daca aveti alta metoda care va place voua, personal, cautati ceva ca sa o inlocuiti care va place. 
+					<ol>
+						<li>Daca nu aveti deloc experienta cu japoneza, invatati cuvintele cele mai des folosite in limba japoneza (am pregatit un pachet cu cele mai folosite 100 de cuvinte pe pagina de <a th:href="@{/metode/anki}">Anki</a>) si in acelasi timp ↓</li>
+						<li><a th:href="@{/limbajaponeza/fonetica}"> Invatati primele doua alfabete fonetice si uitati-va mai mult la media in japoneza, cu subtitrari.</a></li>
+						<li>Dupa ce terminati cu Kana (ar trebui sa va ia intre 2 zile si o saptamana in total), continuati ascultatul dar scoateti din subtitrari (25% din media ar trebui sa fie fara subtitrari). De asemenea, incepeti sa cititi articolele de gramatica de baza de <a th:href="@{/limbajaponeza/gramatica}">aici</a>.</li>
+						<li>Dupa ce numarul de Kana pe care trebuie sa il repetati zilnic incepe sa scada (sau maxim la saptamana dupa ce terminati ultima kana) incepeti sa <a th:href="@{/limbajaponeza/kanji}">invatati Kanji</a>. De asemenea, in timp, incercati sa cresteti cantitatea de timp dedicata ascultatului fara subtitrari</li>
+						<li>Dupa ce treceti prin ~100-200 de Kanji va recomand sa <strong>luati decizia</strong> sa nu va mai uitati la media in japoneza cu subtitrari. Luatul acestei decizii va fii punctul de cotitura in drumul vostru spre fluenta.</li>
+						<li>OPTIONAL - in paralel cu trecutul prin Kanji puteti incepe sa treceti prin pachetul de Tango N5. Il puteti gasi pe pagina de  Anki</a>. Nu recomand asta decat daca aveti timp amplu la dispozitie (minim 4 ore pe zi).</li>
+						<li>Felicitari. Daca ati trecut de Kanji ati terminat partea grea. De acum trebuie sa incepeti sa invatati cuvinte. As recomanda sa luati cam o saptamana pauza de la adaugat lucruri noi de repetat in Anki, dupa care incepeti cu pachetul de Tango N5. Il puteti gasi pe pagina de <a th:href="@{/metode/anki}">Anki.</a></li>
+						<li>Cand terminati cu pachetul de Tango, incepeti sa <a th:href="@{/metode/anki}">minati propozitii</a>. Gasiti informatii despre minatul de propozitii pe pagina de Anki.</li>
+						<li>Incercati sa introduceti alte activitati pe langa ascultat, ca citit manga/povestiri, jucat jocuri in japoneza, visual novels etc.</li>
+						<li>Cand stiti cam 1500-2000 de cuvinte, treceti de la a folosi dictionare bilingve la dictionare japoneze-japoneze pentru a invata cuvinte.</li>
+						<li>Ultimul pas implica vorbitul. Voi adauga o sectiune mai detaliata in viitor despre vorbit.</li>
+					</ol>
+				</p>
+			</div>	
+		</div>
+	</div>
+
+		<div class="footer">		
+				<h3>Urmatorul articol</h3>
+				<a th:href="@{/metode}">
+					<h1>Metode</h1>
+				</a>
+				<a th:href="@{/metode}">
+					<h3>Citeste acum</h3>
+				</a>	
+					<div th:insert="fragments :: footer-bottom"></div>
+		</div>
+</body>
+</html>

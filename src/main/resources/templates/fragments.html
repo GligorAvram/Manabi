@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html >
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style th:fragment="dropdown-style">
+.dropbtn {
+  background-color: #0f0e0e;
+  color: white;
+  padding: 1;
+  font-size: 1rem;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: #0f0e0e;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 11rem;
+  box-shadow: 0px 0.5rem 1rem 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  z-index: 1;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+
+<title>Insert title here</title>
+</head>
+<body>
+<div th:fragment="nav" style="color:white;background-color:#0f0e0e;height:2rem;display:flex;justify-content:space-between;position:fixed;top:0;left:0;width:100vw;flex-wrap:no-wrap;z-index:10;margin-right: 2rem;">
+
+		<div>
+			<div sec:authorize="isAnonymous()">
+				<a>Manabi</a>
+			</div>
+
+			<div sec:authorize="isAuthenticated()">
+				<a>Hi</a>
+			</div>
+		</div>
+
+		<div style="display:flex;">
+		<div class="dropdown" sec:authorize="isAuthenticated()">
+			<a th:href="@{/admin}"><button class="dropbtn">Admin</button></a>
+		</div>
+
+		<div class="dropdown">
+			<a th:href="@{/}"><button class="dropbtn">Pagina principala</button></a>
+		</div>
+
+		<div class="dropdown">
+		<a th:href="@{/metode}"><button class="dropbtn">Metode</button></a>
+			<div class="dropdown-content">
+				<a th:href="@{/metode}">Metode</a>
+				<a th:href="@{/metode/unelte}">Unelte</a>
+				<a th:href="@{/metode/ascultatul}">Ascultatul</a>	
+				<a th:href="@{/metode/anki}">Anki</a>		  
+			</div>		
+		</div>
+
+		<div class="dropdown">
+		<a th:href="@{/limbajaponeza}"><button class="dropbtn">Limba japoneza</button></a>
+			<div class="dropdown-content">
+				<a th:href="@{/limbajaponeza}">Limba japoneza</a>
+				<a th:href="@{/limbajaponeza/fonetica}">Fonetica si Kana</a>
+				<a th:href="@{/limbajaponeza/kanji}">Kanji</a>	
+				<a th:href="@{/limbajaponeza/gramatica}">Gramatica de baza</a>	
+				<a th:href="@{/limbajaponeza/blog}">Gramatica avansata</a>	
+			</div>
+		</div>
+
+		<div class="dropdown">
+			<a th:href="@{/contact}"><button class="dropbtn">Contact</button></a>
+		</div>
+
+		
+			<div class="dropdown" sec:authorize="isAuthenticated()">
+				<form th:action="@{/logout}" form-method="post">
+					<button type="submit">Logout</button>
+				</form>
+			</div>
+
+			<div style="width:1rem;">
+			
+			</div>
+		</div>
+
+		
+
+</div>
+
+<div th:fragment="nav-mobile"
+	style="color:white;background-color:#0f0e0e;height:2rem;display:flex;justify-content:space-between;position:fixed;top:0;left:0;width:100vw;flex-wrap:no-wrap;z-index:10;margin-right: 2rem;">
+
+		<div style="display:flex;">
+		<div class="dropdown">
+			<button class="dropbtn">Meniu</button>
+			<div class="dropdown-content">
+				<a th:href="@{/}">Pagina principala</a>
+				<a th:href="@{/metode}">Metode</a>
+				<a th:href="@{/metode/unelte}">Unelte</a>
+				<a th:href="@{/metode/ascultatul}">Ascultatul</a>
+				<a th:href="@{/metode/anki}">Anki</a>
+				<a th:href="@{/limbajaponeza}">Limba japoneza</a>
+				<a th:href="@{/limbajaponeza/fonetica}">Fonetica si Kana</a>
+				<a th:href="@{/limbajaponeza/kanji}">Kanji</a>
+				<a th:href="@{/limbajaponeza/gramatica}">Gramatica de baza</a>
+				<a th:href="@{/limbajaponeza/blog}">Gramatica avansata</a>
+				<a th:href="@{/contact}">Contact</a>
+				<form th:action="@{/logout}" form-method="post" sec:authorize="isAuthenticated()">
+				<button type="submit">Logout</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div th:fragment="translation-box" class="sidebar" role="complementary" id="collapsible">
+	<button type="button" class="collapse_button">Expand</button>
+	<div class="collapse_div">
+		<div class="wrapper">
+			<p>
+			</p>
+		</div>
+	</div>
+</div>
+
+<block th:fragment="footer-bottom">
+<div class="bottom-line"><span style="display:none"><i class="fab fa-facebook-square"></i><i
+			class="fab fa-youtube"></span></i><span>© 2021 Manabi. All Rights Reserved</span>
+</div>
+</block>
+
+
+<block th:fragment="translation-box-toggle">
+	<script>
+		document.querySelectorAll('.collapse_button').forEach(button => {
+			button.addEventListener('click', () => {
+				const collapseDiv = button.nextElementSibling;
+
+				button.classList.toggle('collapse_button-active');
+
+				if (button.classList.contains('collapse_button-active')) {
+					collapseDiv.style.maxWidth = collapseDiv.scrollWidth *2+ 'vw';
+				}
+				else {
+					collapseDiv.style.maxWidth = 0;
+				}
+			})
+		});
+	</script>
+</block>
+</body>
+</html>

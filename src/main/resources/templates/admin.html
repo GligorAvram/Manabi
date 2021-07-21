@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <script type="text/javascript" th:src="@{/js/admin.js}"></script> -->
+<style th:insert="fragments :: dropdown-style" ></style>
+<link rel="stylesheet" th:href="@{/css/admin.css}">
+<link rel="stylesheet" href="../static/css/admin.css">
+
+<title>Admin</title>
+</head>
+<body>
+	<div th:insert="fragments :: nav" class="navbar-desktop"></div>
+	<div th:insert="fragments :: nav" class="navbar-mobile"></div>
+	
+	
+	<div class="content-container">
+	
+		<div class="brand-top-div">
+			<h1>Manabi</h1>
+			<div class="logo"></div>
+		</div>
+
+<div>
+	<button id="addPostButton">Add post</button>
+	<button id="changePwButton">Change pw</button>
+	<button id="editPostBtn">Edit post</button>
+</div>
+
+	<div id="add-post">
+		<div>
+		 <form th:action="@{/addBlogPost}" method="post" id="blog-form" name="blog-form">
+		  <label for="articleName">Article Name</label><br>
+		  <input type="text" id="articleName" name="articleName"><br>
+		  <label for="grammarStructure">Grammar Structure</label><br>
+		  <input type="text" id="grammarStructure" name="grammarStructure">
+		 </div>
+		 <div>
+		 	<button type="submit">Submit</button>
+		 </div>
+		</form> 
+		
+		<textarea type="text" rows="20" cols="100" name="text-body" form="blog-form">
+		</textarea>
+		<div>
+			<button id="add-field">Add word</button>
+			<div id='word-space'>
+			</div>
+		</div>
+	</div>
+
+	<div id="change-password">
+  <div id="password-error" style="display: none;">      
+             <span style="color: red;" th:if="${passwordConflict}">
+                                        Passwords don't match
+                </span>
+	</div>
+  <form th:action="@{/changePassword}" method="post">	
+  
+		<label for="newPassword">New Password</label>
+		<input type="password" name="newPassword">
+		<br>
+		<label for="confirmPassword">Confirm Password</label>
+		<input type="password" name="confirmPassword">
+		<br>
+		<label for="currentPassword">Current Password</label>
+		<input type="password" name="currentPassword">
+		<br>
+		<button type="submit">Change password</button>
+	</form>
+	</div>
+
+	<div id="edit-post">
+edit post
+	</div>
+
+	</div>
+
+	<script th:src="@{/js/admin.js}"></script>
+</body>
+</html>

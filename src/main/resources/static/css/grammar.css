@@ -1,0 +1,104 @@
+/* tablet style */
+@media only screen and (min-width: 600px) {
+  .all-articles .grammar-article {
+    margin: 0 1rem 0 12rem;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 10rem;
+    left: 0;
+    max-height: 25%;
+    max-width: 20rem;
+  }
+  .sidebar .wrapper {
+    font: 10px verdana, sans-serif;
+    background: transparent url("../graphics/paper-bg.jpg") top left repeat-y;
+    background-size: cover;
+    padding: 2rem 0;
+    display: inline-block;
+    height: 43vh;
+    overflow: scroll;
+  }
+
+  .collapse_button {
+    display: inline-block;
+    position: absolute;
+    margin-left: 0%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: background 200ms;
+    width: 3vw;
+    height: 55vh;
+    background-image: url("../graphics/button.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .collapse_button-active {
+    background-image: url("../graphics/button.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 100%;
+    transform: scaleX(-1);
+  }
+  .collapse_div {
+    overflow: hidden;
+    max-width: 0;
+    transition: max-width 200ms;
+  }
+}
+
+/* bigger screens */
+@media only screen and (min-width: 1200px) {
+  .all-articles .grammar-article {
+    margin: auto;
+  }
+  .sidebar {
+    position: fixed;
+    top: 10rem;
+    left: 0;
+    max-height: 25%;
+    max-width: 15%;
+  }
+  .sidebar .wrapper {
+    font: 10px verdana, sans-serif;
+    background: transparent url("../graphics/paper-bg.jpg") top left repeat-y;
+    background-size: cover;
+    padding: 2rem 0;
+    display: inline-block;
+    height: 43vh;
+    overflow: scroll;
+  }
+
+  .collapse_button {
+    display: inline-block;
+    position: absolute;
+    margin-left: 0%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: background 200ms;
+    width: 3vw;
+    height: 55vh;
+    background-image: url("../graphics/button.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+  }
+
+  .collapse_button-active {
+    background-image: url("../graphics/button.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 100%;
+    transform: scaleX(-1);
+    margin-left: 100%;
+  }
+  .collapse_div {
+    overflow: hidden;
+    max-width: 0;
+    transition: max-width 200ms;
+  }
+}

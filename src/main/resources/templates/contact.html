@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html >
+<head>
+	<meta charset="UTF-8">
+		<meta name="keywords" content="invata, limba, japoneza, contact">
+		<meta name="author" content="Gligor Avram">
+		<meta name="description" content="Pagina cu informatii de contact pentru Manabi">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style th:insert="fragments :: dropdown-style" ></style>
+<link rel="stylesheet" th:href="@{/css/shared.css}">
+<link rel="stylesheet" th:href="@{/css/grid.css}">
+<title>Informatii de Contact</title>
+</head>
+<body>
+	<div th:insert="fragments :: nav" class="navbar-desktop"></div>
+	<div th:insert="fragments :: nav" class="navbar-mobile"></div>
+	
+	
+	<div class="content-container">
+	
+		<div class="brand-top-div">
+			<h1>Manabi</h1>
+			<div class="logo"></div>
+		</div>
+	
+		<div class="all-articles">
+			<h1>Contact</h1>
+			<div class="grid-container">
+				<div class="title">
+					<h3>Ma puteti contacta folosind:</h3>
+				</div>
+				<div class="left-area">		
+					<ul>
+						<li>Adresa de mail: manabi.romania@gmail.com</li>
+						<li>Facebook: In curand</li>
+					</ul>
+				</div>
+				<div class="right-area">
+					<img th:src="@{/graphics/logo.png}" alt="Logo">
+				</div>
+			</div>
+	</div>
+	
+		<div class="footer">
+			<h3>Manabi</h3>
+			<a th:href="@{/}">
+				<h1>Pagina principala</h1>
+			</a>
+			<a th:href="@{/}">
+				<h3>Incepe aici</h3>
+			</a>
+			<div th:insert="fragments :: footer-bottom"></div>
+		</div>
+
+</body>
+</html>

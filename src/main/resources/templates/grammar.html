@@ -1,0 +1,3484 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="invata, limba, japoneza, gramatica">
+		<meta name="author" content="Gligor Avram">
+		<meta name="description" content="Gramatica de baza a limbii japoneze">
+<style th:insert="fragments :: dropdown-style" ></style>
+<link rel="stylesheet" th:href="@{/css/shared.css}">
+<link rel="stylesheet" th:href="@{/css/grammar.css}">
+<link rel="stylesheet" th:href="@{/css/ruby.css}">
+<link rel="stylesheet" th:href="@{/css/all.css}">
+
+<title>Gramatica de baza</title>
+</head>
+<body onload="selectDiv()">
+	<div th:insert="fragments :: nav" class="navbar-desktop" id="desktopNavbar"></div>
+	<div th:insert="fragments :: nav" class="navbar-mobile" id="mobileNavbar"></div>
+	
+	
+	<div class="content-container">
+	
+		<div class="brand-top-div" id="brandDiv">
+			<h1>Manabi</h1>
+			<div class="logo"></div>
+		</div>
+	<div class="all-articles" >
+
+		<div class="menu" >
+			<button id="left">Inapoi</button>
+			<select id='article-list' onchange="selectDiv()">
+				<option value="1">Predicaul</option>
+				<option value="2">Subiectul</option>
+				<option value="3">は vs が</option>
+				<option value="4">Copula だ</option>
+				<option value="5">Adjective</option>
+				<option value="6">Particule</option>
+				<option value="7">Forma de trecut a verbelor</option>
+				<option value="8">Forma de legatura ~て</option>
+				<option value="9">Transformarea verbelor in adjective</option>
+				<option value="10">Exprimarea dorintei</option>
+				<option value="11">Forma Potentiala a verbelor</option>
+				<option value="12">Forma nu chiar atat de Pasiva</option>
+				<option value="13">Forma Cauzativa a verbelor</option>
+				<option value="14">Alte forme~て ale verbelor</option>
+				<option value="15">Transformarea verbelor in substantive</option>
+				<option value="16">Exprimarea politicoasa folosind ~ます si ~です</option>
+				<option value="17">Tranzitivitate si Intranzitivitate</option>
+			</select>
+			<button id="right">Inainte</button>
+		</div>
+
+		<div id="predicate"　class="grammar-article">
+			<h2>Predicatul</h2>
+			<p>Vazut de la un nivel inalt, limbajul uman are un numar limitat de lucruri pe care trebuie sa le exprime. In esenta acestea sunt:
+				<ul>
+					<li>El este ceva (de exemplu putem zice ca Gica este (un) destept)</li>
+					<li>El face ceva (de exemplu Gica face pe desteptul)</li>
+				</ul>
+				Mai putem spune si ca el "are ceva", dar gramatical nu e asa de diferit in japoneza fata de "face ceva".
+			</p>
+			<p>
+			Asadar, predicatul este partea de "este ceva" sau de "face ceva" intr-o propozitie. In japoneza partea aceasta se pune la sfarsitul propozitiei. Dar haiti sa elaborez de ce este importantacest lucru.
+			</p>
+				<p>
+				O propozitie la timpul ne-trecut (japoneza are doar 2 timpuri, trecut si ne-trecut) se poate termina in trei moduri: 
+		
+				<ul>
+					<li>cu un verb</li>
+					<li>cu un substantiv</li>
+					<li>cu un adjectiv</li>
+				</ul>
+			</p>
+			<p>
+				Daca se termina cu un verb se va termina intotdeauna cu o kana din randul う fiindca toate verbele in japoneza se termina cu un kana din randul う. 
+			</p>
+			<p>
+				Daca se vaa termina cu un substantiv avem nevoie de o constructie care apare in japoneza destul de des: copula (particula) だ, despre care voi vorbi in alt articol.
+		</p>
+		<p>
+				Adjectivele se vor termina intotdeauna cu い.
+			</p>
+			<p>
+				S-ar putea sa fi intalnit si です, care este forma politicoasa a lui だ. Voi vorbi despre politete in japoneza in alt articol.
+		</p>
+		<p>
+				Dar de ce incep cu predicatul? Ei bine, la fel ca in romana, in japoneza putem omite cealalta parte importanta, subiectul (adica cine face/este ceva).
+				Ca regula nescrisa, cand se omite subiectul vorbitorul spune ceva despre el, daca contextul nu este despre altcineva. Adica putem avea propozitii de genul:
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">食</span><ruby class="show-div">食<rp>（</rp>
+							<rt>た</span></rt>
+					<rp>）</rp></ruby></span>べる- (Eu) Mananc</li>
+					<li><span class="hover-div"><span class="hide-div">綺麗</span><ruby class="show-div">綺麗<rp>（</rp>
+							<rt>きれい</span></rt>
+					<rp>）</rp></ruby></span>だ- (E) Frumos</li>
+					<li><span class="hover-div"><span class="hide-div">煩</span><ruby class="show-div">煩<rp>（</rp>
+							<rt>うるさ</span></rt>
+					<rp>）</rp></ruby></span>い- (E) Zgomotos</li>
+				</ul>
+			</p>
+		</div>
+			
+	<div id="subject" class="grammar-article">
+		<h2>Subiectul si particula が</h2>
+		<p>
+			Si acum, pregatiti-va sa va aduceti japoneza la un nivel superior. Vom vorbi despre subiect, cealalta parte importanta pe langa predicat, si cum il gasim in propozitii. In esenta, cum ziceam si in articolul trecut, subiectul ne spune despre ce se vorbeste intr-o propozitie. Adica cine face sau cine este. Din fericire, exista o particula dedicata exclusiv pentru a indica subiectul. Vorbesc aici despre particula が. Din pacate, regulile folosirii acestei particule sunt... multe si... complexe... Pana si japonezii au cateodata probleme cu cele 2 particule faimoase, は si が. 
+			</p>
+			<p>Hai sa incercam sa facem lumina prima data cand vine vorba despre が. Aceasta apare in orice propozitie japoneza gramatical completa. Orice propozitie. Aceasta bucata de informatie este omisa din aproape toate cursurile pe care le-am gasit. Dar, dupa cum suntem obisnuiti din romana, sa vorbim precizand tot timpul subiectul este nenatural. Nu crezeti? Luati un paragraf in romana si umpleti toate propozitiile cu subiectul lor. Va arata oribil. Asa ca primul lucru care trebuie sa-l stii despre subiectul din japoneza este ca trebuie sa ne asteptam sa nu fie vociferat explicit. Chiar dimpotriva, daca este vociferat explicit (adica atunci cand gasim un cuvant marcat cu particula が) trebuie sa va duca cu gandul ca vorbitorul doreste sa scoata in evidenta cuvantul pe care il acompaniaza. O sa dau un exemplu mult peste nivelul la care suntem acum, asa ca voi incerca sa explic mai mult in romana diferentele. 
+		</p>
+			どうして <span class="hover-div"><span class="hide-div">君</span><ruby class="show-div">君<rp>（</rp>
+					<rt>きみ</span></rt>
+			<rp>）</rp></ruby></span> は <span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+					<rt>い</span></rt>
+			<rp>）</rp></ruby></span>かなかった?　ー＞　De ce tu nu ai fost?
+			<br>
+			どうして <span class="hover-div"><span class="hide-div">君</span><ruby class="show-div">君<rp>（</rp>
+					<rt>きみ</span></rt>
+			<rp>）</rp></ruby></span> が <span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+					<rt>い</span></rt>
+			<rp>）</rp></ruby></span>かなかった?　ー＞　De ce tu nu ai fost cel care a fost acolo?		
+			<p>Primul lucru de observat este ca nu voi traduce propozitiile japoneze in romana in asa fel incat gramatica romana sa fie corecta deoarece doresc scot in evidenta ce fac diferitele elemente in propozitie. Spunand asta, observati ca prima propozitie nu are が in ea. In schimb foloseste alta particula, は. In prima propozitie intrebarea este "tu de ce nu te-ai dus?". Propozitia implica ca tu nu ai fost undeva. A 2-a propozitie foloseste in schimb particula が. Din cauza ca particula が scoate in evidenta cuvantul pe care il acompaniaza implica faptul ca altcineva a fost trimis in locul tau, deci o traducere in romana ar fi "de ce nu ai fost TU (insuti) acolo?". De asemenea, in prima propozitie chiar daca particula が nu apare explicit nicaieri nu inseamna ca nu exista. Pur si simplu, din cauza ca e clar din context despre cine se vorbeste, nu este necesara. Daca ar fi sa il adaugam trebuie sa adaugam un fel de structura imaginara de care sa il legam si care se refera la cine face actiunea (similar cu subiectul subinteles din romana). Voi urma conventia folosita de Jay Rubin si voi numi aceasta structura pronumele Ø (zero). Astfel, propozitia completa ar fi:
+				</p>
+			
+			どうして <span class="hover-div"><span class="hide-div">君</span><ruby class="show-div">君<rp>（</rp>
+					<rt>きみ</span></rt>
+			<rp>）</rp></ruby></span> は (Øが) <span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+					<rt>い</span></rt>
+			<rp>）</rp></ruby></span>かなかった? (lipsa particule が e in esenta lipsa stressului pe "tu")
+			<p>
+			Daca vreti sa luati pauza acum, ati ales momentul gresit. Urmatorul articol este despre は si merge mana in mana cu が asa ca recomand sa il cititi chiar acum. 
+			</p>
+		
+	</div>
+
+	<div id="ha-vs-ga" class="grammar-article">
+		<h2>は versus が</h2>
+		<p>
+			Deci, dupa cum spuneam in articolul precedent, が marcheaza subiectul si il gasim in fiecare propozitie gramatical completa, chiar daca doar sub forma lui subinteleasa. Insa, cel mai probabil pana acum ati tot intalnit alta particula in japoneza, particula は. Hai sa vedem ce exprima aceasta particula si cum interactioneaza cu が. 
+	</p>
+	<p>
+			Rolul particulei は este de a aduce un subiect de discutie nou (un subiect negramatical in cazul asta, un topic nou de discutie). Cand acest nou subiect va deveni chiar subiectul gramatical al propozitiei, particula が nu va mai trebui adaugata. Majoritatea propozitiilor pe care le vom intalni vor urma acest model. Cel mai usor mod pe care l-am gasit pentru a face diferenta は si が este sa traduc は tot timpul cu "cat despre...":
+		</p>d
+		<p>
+			<span class="hover-div"><span class="hide-div">僕</span><ruby class="show-div">僕<rp>（</rp>
+					<rt>ぼく</span></rt>
+			<rp>）</rp></ruby></span> は <span class="hover-div"><span class="hide-div">男</span><ruby class="show-div">男<rp>（</rp>
+					<rt>おとこ</span></rt>
+			<rp>）</rp></ruby></span> です。　ー＞　cat despre mine, barbat. 
+
+		</p>
+		<p>
+		わたしはウナギだ - cat despre mine, tipar. Am ales exemplul acesta fiindca e destul de faimos, nu fiindca l-am copiat fara rusine de pe pagina unuia dintre modelele mele (fluierat vinovat). Dar este totusi foarte bun pentru a ilustra diferentele intre は si が si de ce ajuta sa traducem は prin "cat despre". Fraza aceasta o vei intalni/folosi cel mai probabil cand sunteti la restaurant. Si atunci contextul va fi clar. Dar ce se intampla daca am spune わたしがウナギだ? Ei bine, in cazul acesta inseamna ca VOI sunteti tipari. Din nou, が scoate in evidenta cuvantul pe care il acompaniaza, si din cauza asta predicatul afecteaza in mod direct cuvantul.
+			<br>
+			<span class="hover-div"><span class="hide-div">肉</span><ruby class="show-div">肉<rp>（</rp>
+					<rt>にく</span></rt>
+			<rp>）</rp></ruby></span>は<span class="hover-div"><span class="hide-div">食</span><ruby class="show-div">食<rp>（</rp>
+				<rt>た</span></rt>
+				<rp>）</rp>
+			</ruby></span>べる けど、<span class="hover-div"><span class="hide-div">魚</span><ruby class="show-div">魚<rp>（</rp>
+					<rt>さかな</rt>
+					<rp>）</rp>
+				</ruby></span></span>は<span class="hover-div"><span class="hide-div">食</span><ruby class="show-div">食<rp>（</rp>
+				<rt>た</span></rt>
+				<rp>）</rp>
+			</ruby></span>べない。　ー＞　"Cat despre carne, mananc, dar cat despre peste nu mananc."" - veti intalni explicatia ca は arata diferenta intre lucruri. Dar, dupa cam vedem daca traducem は prin "cat despre", e mult mai logic sa intelem de ce se foloseste は in loc de が. Daca am folosit が in a 2-a parte a exemplului ar trebui sa intelegem ca "cat despre carne mananc, dar peste este ceea ce nu mananc.", ceea ce face ascultatorul sa se intrebe de ce a fost evidentiat pestele in felul acesta. Sper ca acum intelegeti de ce e natural sa folosim constructia は~は ca sa comparam lucruri, si de ce nu este natural sa folosim constructia は~が.
+		</p>
+	</div>
+
+	<div id="copula" class="grammar-article">
+		<h2>Substantivele si copula "だ"</h2>
+		<p> Am sa incep partile de vorbire cu substantivele fiindca sunt categoria cea mai mare de cuvinte din japoneza dar si cea mai stabila. Zic "stabila" pentru ca substantivele nu se conjuga propriu zis. Ele raman in mare neschimbate, oricum am formula propozitia. Insa, datorita particulei care le acompaniaza au o oarecare flexibilitate.
+		</p>
+		<p>
+		Cuvintele din alte limbi care ajung sa fie adoptate in japoneza tind sa fie adoptate ca substantive. Asta este important fiindca peste 60% din vocabularul japonez e compus din cuvinte care au provenit din China. Deci, dupa cumspunea, ele sunt substantive si, fiindca provin din chineza, le veti gasi cel mai probabil scrise in Kanji. Alt motiv sa invatatam Kanji cat mai repede. Unele substantive pot fi transformate in verbe adaugand "する" dupa ele, si vom vorbi de "する" mai mult cand ajungem la verbe. Substantivele mai pot fi folosite si ca adjective adaugand copula dupa ele.
+		<br>
+		Dar ce este copula si ce face? Dupa cum spuneam, exista 3 moduri de a incheia o propozitie, iar substantivele acompaniate de だ sunt unul dintre ele. だ este o copula, adica e un fel de egal folosit pentru substantive. Il folosim pentru propozitiile de genul "el este x", unde x poate fi un substantiv sau un adjectiv. Adjectivele propriu-zise descriu ceva prin natura lor deci nu au nevoie de o constructie speciala in limba japoneza. Substantivele nu au aceasta proprietatea insa. Pentru a le marca deci cu acest rol, avem nevoie de copula. Acum ca stim ce este copula si cele 3 moduri de a incheia fraze, putem sa incepem cu exemple ceva mai complexe. Cu cunostintele de pana acum putem face declaratii de genul:
+			<ul>
+				<li>これはペンだ　　ー＞　Cat despre acesta, pix.</li>
+				<li>これはりんごだ　ー＞　Cat despre acesta, mar</li>
+				<li><span class="hover-div"><span class="hide-div">彼女</span><ruby class="show-div">彼女<rp>（</rp>
+						<rt>かのじょ</span></rt>
+				<rp>）</rp></ruby></span>は<span class="hover-div"><span class="hide-div">綺麗</span><ruby class="show-div">綺麗<rp>（</rp>
+						<rt>きれい</rt>
+				<rp>）</rp></ruby></span></span>だ　ー＞　Cat despre prietena, frumoasa.</li>
+			</ul>
+			<br>
+			<h3>Conjugari</h3>
+			<div>
+			<p>Copula だ are forme diferite in functie de timpul propozitiei si  daca trebuie sa afirme/negheze astfel:
+				<table class="table">
+					<tr>
+						<th>だ</th>
+						<th>Prozitiv</th>
+						<th>Negativ</th>
+					</tr>
+					<tr>
+						<th>Prezent</th>
+						<th>だ</th>
+						<th>ではない/じゃない</th>
+					</tr>
+					<tr>
+						<th>Trecut</th>
+						<th>だった</th>
+						<th>ではなかった/じゃなかった</th>
+					</tr>
+				</table>
+</p>
+<p>
+				Vom intalni in salbaticie copula だ in inca cateva forme. Cand o gasim la mijlocul frazei se va transforma in な si va avea rolul de a ne spune ca substantivul pe care il marcam cu だ descrie alt substantiv. In limbajul politicos il vom schimba in です. Fiindca adjectivele nu au forma politicoasa vor fi marcate tot cu です in limbajul politicos. Cand です este precedat de un adjectiv nu este adaugat pentru rolul ei de copula, cu pentru a stresa politetea. Deci putem spune ca, gramatical, nu adauga nimic frazei. Defapt veti vedea gag-uri cu oameni care nu stiu sa foloseasca japoneza corect si care adauga です dupa verbe fiindca au uitat sa foloseasca formula de politete pentru verbe. In mod normal insa, です se foloseste doar dupa substantive si adjective pentru a incheia propozitiile:
+				</p>
+				<ul>					
+					<li><span class="hover-div"><span class="hide-div">大切</span><ruby class="show-div">大切<rp>（</rp>
+							<rt>たいせつ</rt>
+							<rp>）</rp>
+						</ruby></span></span>な<span class="hover-div"><span class="hide-div">人</span><ruby class="show-div">人<rp>（</rp>
+								<rt>ひと</rt>
+								<rp>）</rp>
+							</ruby></span></span>は<span class="hover-div"><span class="hide-div">母</span><ruby class="show-div">母<rp>（</rp>
+									<rt>はは</rt>
+									<rp>）</rp>
+								</ruby></span></span>だ　ー＞　Cat despre persoana impotanta, este mama. Observati copula folosita atat la mijlocul frazei in forma conjugata cat si la sfarsit.</li>
+					<li><span class="hover-div"><span class="hide-div">映画</span><ruby class="show-div">映画<rp>（</rp>
+							<rt>えいが</rt>
+							<rp>）</rp>
+						</ruby></span></span>は<span class="hover-div"><span class="hide-div">面白</span><ruby class="show-div">面白<rp>（</rp>
+							<rt>おもしろ</rt>
+							<rp>）</rp>
+						</ruby></span></span>いです。　ー＞　Cat despre film, interesant.  Deoarece o gasim lipita unui adjectiv, forma politicoasa です nu adauga nimic morfologic frazei, doar indica faptul ca vrem sa fim politicosi fata de interlocutor.</li>
+					<li><span class="hover-div"><span class="hide-div">青</span><ruby class="show-div">青<rp>（</rp>
+							<rt>あお</rt>
+							<rp>）</rp>
+						</ruby></span></span>いりんごは<span class="hover-div"><span class="hide-div">美味</span><ruby class="show-div">美味<rp>（</rp>
+								<rt>おい</rt>
+								<rp>）</rp>
+							</ruby></span></span>しいです。　ー＞　Cat despre mere verzi, delicios</li>
+					<li><span class="hover-div"><span class="hide-div">僕</span><ruby class="show-div">僕<rp>（</rp>
+							<rt>ぼく</rt>
+							<rp>）</rp>
+						</ruby></span></span>は <span class="hover-div"><span class="hide-div">嫌</span><ruby class="show-div">嫌<rp>（</rp>
+								<rt>いや</rt>
+								<rp>）</rp>
+							</ruby></span></span>なシンガーがパリス・ヒルトンだった。> Cat despre mine, neplacutul cantaret Paris Hilton era. Reformuland propozitia, o putem marca si pe Paris Hilton cu が rezultand intr-o usoara schimbare de nuanta a frazei pe care sper sa o intelegeti acum. (<span class="hover-div"><span class="hide-div">僕</span><ruby class="show-div">僕<rp>（</rp>
+									<rt>ぼく</rt>
+									<rp>）</rp>
+								</ruby></span></span>はパリス・ヒルトンが <span class="hover-div"><span class="hide-div">嫌</span><ruby class="show-div">嫌<rp>（</rp>
+									<rt>いや</rt>
+									<rp>）</rp>
+								</ruby></span></span>なシンガーだった。)</li>		
+					<li><span class="hover-div"><span class="hide-div">大</span><ruby class="show-div">大<rp>（</rp>
+								<rt>おお</rt>
+								<rp>）</rp>
+							</ruby></span></span>きいなお<span class="hover-div"><span class="hide-div">祖父</span><ruby class="show-div">祖父<rp>（</rp>
+								<rt>じい</rt>
+								<rp>）</rp>
+							</ruby></span></span>さんは<span class="hover-div"><span class="hide-div">親切</span><ruby class="show-div">親切<rp>（</rp>
+									<rt>しんせつ</rt>
+									<rp>）</rp>
+								</ruby></span></span>じゅない。ー＞ Cat despre marele mos, bland nu este.</li>
+						<li><span class="hover-div"><span class="hide-div">部屋</span><ruby class="show-div">部屋<rp>（</rp>
+								<rt>へや</rt>
+								<rp>）</rp>
+							</ruby></span></span>は<span class="hover-div"><span class="hide-div">綺麗</span><ruby class="show-div">綺麗<rp>（</rp>
+									<rt>きれい</rt>
+									<rp>）</rp>
+								</ruby></span></span>じゃなかった。　ー＞　Cat despre camera, curata nu era</li>
+				</ul>
+			</div>
+			</p>
+			<p>
+			Celelalte forme vor fi prezentate in lectiile unde voi prezenta conceptele aferente.
+			</p>
+
+	</div>
+
+	<div id="adjectives" class="grammar-article">
+		<h2>Adjective</h2>
+		<p>Toate adjectivele in japoneza se termina cu い: <span class="hover-div"><span class="hide-div">面白</span><ruby class="show-div">面白<rp>（</rp>
+				<rt>おもしろ</rt>
+				<rp>）
+		
+				</rp>
+			</ruby></span></span>い, <span class="hover-div"><span class="hide-div">楽</span><ruby class="show-div">楽<rp>（</rp>
+					<rt>たの</rt>
+					<rp>）
+			
+					</rp>
+				</ruby></span></span>しい, <span class="hover-div"><span class="hide-div">新</span><ruby class="show-div">新<rp>（</rp>
+						<rt>あたら</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span>しい. Dupa cum spuneam in articolul precedent, foarte multe manuale spun ca exista si adjective de tip な. Acestea sunt defapt substantive care pot descrie ceva acompaniate de particula な (forma conjugata a lui だ). Adjectivele in japoneza sunt puse in fata lucrurilor pe care le descriu: <span class="hover-div"><span class="hide-div">面白</span><ruby class="show-div">面白<rp>（</rp>
+							<rt>おもしろ</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>い<span class="hover-div"><span class="hide-div">遊</span><ruby class="show-div">遊<rp>（</rp>
+								<rt>あそ</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>び, <span class="hover-div"><span class="hide-div">楽</span><ruby class="show-div">楽<rp>（</rp>
+									<rt>たの</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>しい<span class="hover-div"><span class="hide-div">映画</span><ruby class="show-div">映画<rp>（</rp>
+										<rt>えいが</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>, <span class="hover-div"><span class="hide-div">新</span><ruby class="show-div">新<rp>（</rp>
+									<rt>あたら</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>しい<span class="hover-div"><span class="hide-div">朝</span><ruby class="show-div">朝<rp>（</rp>
+										<rt>あさ</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>, lucru valabil de altfel si pentru substantivele adjectivale な. De asemenea, adjectivele au capacitatea de a incheia propozitii fara ajutorul altei constructii:
+			<ul>
+				<li>この<span class="hover-div"><span class="hide-div">遊</span><ruby class="show-div">遊<rp>（</rp>
+						<rt>あそ</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span>びは<span class="hover-div"><span class="hide-div">面白</span><ruby class="show-div">面白<rp>（</rp>
+							<rt>おもしろ</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>い。　ー＞　Cat despre aceasta distractie, interesant.</li>
+				<li><span class="hover-div"><span class="hide-div">映画</span><ruby class="show-div">映画<rp>（</rp>
+						<rt>えいが</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span>は<span class="hover-div"><span class="hide-div">楽</span><ruby class="show-div">楽<rp>（</rp>
+							<rt>たの</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>しい。　ー＞　Cat despre film, distractiv.</li>
+				<li><span class="hover-div"><span class="hide-div">毎</span><ruby class="show-div">毎<rp>（</rp>
+						<rt>まい</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span><span class="hover-div"><span class="hide-div">朝</span><ruby class="show-div">朝<rp>（</rp>
+						<rt>あさ</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span>はとても<span class="hover-div"><span class="hide-div">忙</span><ruby class="show-div">忙<rp>（</rp>
+							<rt>いそが</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>しい。　ー＞　Cat despre fiecare dimineata, foarte ocupat.</li>
+			</ul>
+			</p>
+			<p>
+			Conjugarile adjectivelor sunt putine la numar, existand variatii intre forma lor de timp (prezent si trecut) si negatie (pozitiv, negativ). Avem astfel 4 conjugari in care taiem mora い de la sfarsit si o inlocuim cu urmatoarele terminatii:
+			<br>
+			<table>
+				<tr>
+					<th>Adjective</th>
+					<th>Prezent</th>
+					<th>Trecut</th>
+				</tr>
+				<tr>
+					<th>Pozitiv</th>
+					<th>~い</th>
+					<th>~かった</th>
+				</tr>
+				<tr>
+					<th>Negativ</th>
+					<th>~くない</th>
+					<th>~くなかった</th>
+				</tr>
+			</table>
+			Spre exemplu:
+			<ul>
+				<li><span class="hover-div"><span class="hide-div">新</span><ruby class="show-div">新<rp>（</rp>
+						<rt>あたら</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span>しい</li>
+				<li><span class="hover-div"><span class="hide-div">新</span><ruby class="show-div">新<rp>（</rp>
+						<rt>あたら</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span>しくない</li>
+				<li><span class="hover-div"><span class="hide-div">新</span><ruby class="show-div">新<rp>（</rp>
+						<rt>あたら</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span>しかった</li>
+				<li><span class="hover-div"><span class="hide-div">新</span><ruby class="show-div">新<rp>（</rp>
+						<rt>あたら</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span>しくなかった</li>
+			</ul>
+			</p>
+			<p>
+			Voi mai prezenta inca o conjugatie cand voi ajunge la prima forma de a lega unitatile de vorbire, unde voi prezenta si schimbarile lui だ
+		</p>
+	</div>
+
+	<div id="particles" class="grammar-article">
+		<h2>Particule logice</h2>
+		<p>
+			Particulele logice sunt probabil partea cea mai importanta a japonezei. Ca sa intelegi cine, ce, cu ce etc. trebuie sa intelegi particulele logice. Aceste particule dau legatura intre substantive si verbe, formand clauzele logice ale propozitiei. Dintre acestea deja am explicat una dintre ele, が asa ca urmeaza sa trecem prin restul. As dori sa mai adaug o bucata de informatie despre が aici, si anume ca が raspunde la intrebarea "cine face actiunea".
+		</p>
+		<h2>Particula に (si へ)</h2>		
+		<p>に poate fi numita particula care marcheaza destinatia. Cand este predata la cursuri e cuplata cu o alta particula cu aceeasi functie, particula へ. Insa, cum particula へ arata directia intr-un mod imprecis, particula ni capata un numar de alte functii mai literare. に raspunde la intrebarea "unde se duce" iar へ, "in ce directie merge".</p>
+			<ul>
+				<li><span class="hover-div"><span class="hide-div">海</span><ruby class="show-div">海<rp>（</rp>
+						<rt>うみ</rt>
+						<rp>）</rp>
+					</ruby></span></span>へ<span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+							<rt>い</rt>
+							<rp>）</rp>
+						</ruby></span></span>く - Merg inspre mare</li>
+				<li><span class="hover-div"><span class="hide-div">海</span><ruby class="show-div">海<rp>（</rp>
+						<rt>うみ</rt>
+						<rp>）</rp>
+					</ruby></span></span>に<span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+							<rt>い</rt>
+							<rp>）</rp>
+						</ruby></span></span>く - Merg la mare.</li>
+			</ul>
+			<p>In situatii de genul acesta unde marcheaza explicit directia, amandoua pot fi folosite interschimbabil, cu mentiunea de mai sus, ca に are nuanta de a fi mai precis.
+		</p>
+			<p>
+			Cam atat despre へ, acum sa trecem exclusiv la に. に mai poate fi folosit si pentru a exprima faptul ca destinatia a fost atinsa (ca sa folosesc exemplul de mai sus, <span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+					<rt>い</rt>
+					<rp>）</rp>
+				</ruby></span></span>にいる - Sunt la mare). Aceeasi regula se aplica si pentru obiecte neinsufletite, <span class="hover-div"><span class="hide-div">箱</span><ruby class="show-div">箱<rp>（</rp>
+						<rt>はこ</rt>
+						<rp>）</rp>
+					</ruby></span></span>の<span class="hover-div"><span class="hide-div">中</span><ruby class="show-div">中<rp>（</rp>
+							<rt>なか</rt>
+							<rp>）</rp>
+						</ruby></span></span>にピザがある - in cutie pizza exista: cumva a ajuns acolo, aceasta este destinatia ei finala pentru moment.
+			</p>
+			<p>
+			De asemenea folosim に pentru a spune ca intram in cladiri, camere, mijloace de transport, inauntrul acelor locatii fiind destinatia noastra: <span class="hover-div"><span class="hide-div">部屋</span><ruby class="show-div">部屋<rp>（</rp>
+					<rt>へや</rt>
+					<rp>）</rp>
+				</ruby></span></span>に<span class="hover-div"><span class="hide-div">入</span><ruby class="show-div">入<rp>（</rp>
+						<rt>はい</rt>
+						<rp>）</rp>
+					</ruby></span></span>る - in camera intru.
+			</p>
+			<p>Sa vedem cum o putem folosi si ca sa marcam destinatii mai abstracte acum. Putem marca actiuni ca si destinatii, spre exemplu プールに<span class="hover-div"><span class="hide-div">泳</span><ruby class="show-div">泳<rp>（</rp>
+					<rt>およ</rt>
+					<rp>）</rp>
+				</ruby></span></span>ぎに<span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+						<rt>い</rt>
+						<rp>）</rp>
+					</ruby></span></span>く - la piscina la inot merg. Dupa cum vedeti, piscina e marca cu に, fiind destinatia fizica, la fel ca in exemplele de mai sus, dar si inotul este marcat tot cu に, fiind intr-un fel destinatia care motiveaza mersul la piscina.</p>
+			
+			<p>In acelasi fel, に marcheaza obiectul indirect al propozitiei: <span class="hover-div"><span class="hide-div">花</span><ruby class="show-div">花<rp>（</rp>
+					<rt>はな</rt>
+					<rp>）</rp>
+				</ruby></span></span>をマリアに<span class="hover-div"><span class="hide-div">上</span><ruby class="show-div">上<rp>（</rp>
+						<rt>あ</rt>
+						<rp>）</rp>
+					</ruby></span></span>げる: Floarea lui Maria dau. 
+					<br>
+					Ca sa folosim si un exemplu care nu se traduce in romana prin la, incercati sa traduceti <span class="hover-div"><span class="hide-div">石</span><ruby class="show-div">石<rp>（</rp>
+							<rt>いし</rt>
+							<rp>）</rp>
+						</ruby></span></span>はテーブルの<span class="hover-div"><span class="hide-div">上</span><ruby class="show-div">上<rp>（</rp>
+								<rt>うえ</rt>
+								<rp>）</rp>
+							</ruby></span></span>に<span class="hover-div"><span class="hide-div">落</span><ruby class="show-div">落<rp>（</rp>
+									<rt>お</rt>
+									<rp>）</rp>
+								</ruby></span></span>ちる. Dupa cum vedeti, masa este directia. </p>
+			
+			<p>Inarmati cu aceste cunostinte cred ca este usor sa intelegeti de ce e folosit cu なる (お<span class="hover-div"><span class="hide-div">金持</span><ruby class="show-div">金持<rp>（</rp>
+					<rt>かねも</rt>
+					<rp>）</rp>
+				</ruby></span></span>ちになる - bogat devin), sau する (<span class="hover-div"><span class="hide-div">静</span><ruby class="show-div">静<rp>（</rp>
+						<rt>しず</rt>
+						<rp>）</rp>
+					</ruby></span></span>かにする). Ultimul exemplu ilustreaza de altfel si modul in care interactioneaza substantivele adjectivale cu verbele: <span class="hover-div"><span class="hide-div">彼</span><ruby class="show-div">彼<rp>（</rp>
+							<rt>かれ</rt>
+							<rp>）</rp>
+						</ruby></span></span>を<span class="hover-div"><span class="hide-div">丁寧</span><ruby class="show-div">丁寧<rp>（</rp>
+								<rt>ていねい</rt>
+								<rp>）</rp>
+							</ruby></span></span>に<span class="hover-div"><span class="hide-div">扱</span><ruby class="show-div">扱<rp>（</rp>
+									<rt>あつか</rt>
+									<rp>）</rp>
+								</ruby></span></span>う. Acest ultim exemplu este destul de dificil de privit din punctul de vedere al limbajelor europene. Insa directia actiunii, aduca modul in care actiunea trebuie sa se duca/schimbe, este spre politete.</p>
+		
+		<h2>Particula で</h2>
+		<p>Daca に ne spune in ce directie se indreapta actiunea, rolul lui で este de a delimita, de a ingradi locul actiunii. Spre exemplu, daca spunem <span class="hover-div"><span class="hide-div">公園</span><ruby class="show-div">公園<rp>（</rp>
+				<rt>こうえん</rt>
+				<rp>）</rp>
+			</ruby></span></span>で<span class="hover-div"><span class="hide-div">遊</span><ruby class="show-div">遊<rp>（</rp>
+					<rt>あそ</rt>
+					<rp>）</rp>
+				</ruby></span></span>ぶ (in parc (ne) distram), dam de inteles ca actiunea este situata in limitele parcului. De asemenea, daca spunem <span class="hover-div"><span class="hide-div">世界</span><ruby class="show-div">世界<rp>（</rp>
+						<rt>せかい</rt>
+						<rp>）</rp>
+					</ruby></span></span>で<span class="hover-div"><span class="hide-div">一番</span><ruby class="show-div">一番<rp>（</rp>
+							<rt>いちあん</rt>
+							<rp>）</rp>
+						</ruby></span></span><span class="hover-div"><span class="hide-div">美</span><ruby class="show-div">美<rp>（</rp>
+								<rt>うつく</rt>
+								<rp>）</rp>
+							</ruby></span></span>しい<span class="hover-div"><span class="hide-div">街</span><ruby class="show-div">街<rp>（</rp>
+									<rt>まち</rt>
+									<rp>）</rp>
+								</ruby></span></span> (din lume cel dintai frumos oras), fiindca folosim o proprietate, deci un adjectiv, prin folosirea lui de delimitam marginile in care acel adjectiv are efect (din lume).
+			<p>
+			</p>
+			O alta intrebuintare a particulei で, nelegata de cea de mai sus, este de a exprima cu ce a fost indeplinita actiunea. Spre exemplu, daca spunem <span class="hover-div"><span class="hide-div">車</span><ruby class="show-div">車<rp>（</rp>
+					<rt>くるま</rt>
+					<rp>）</rp>
+				</ruby></span></span>で<span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+						<rt>い</rt>
+						<rp>）</rp>
+					</ruby></span></span>く - Cu masina merg; dam de inteles ca obiectul cu care indeplinim actiunea este masina. 
+					<br>
+					で raspune la intrebarile "unde a fost facut" si "cu ce a fost facut".
+		</p>
+		<h2>Particula を</h2>
+		<p>Particula を ne spune pe cine afecteaza/cine este afectat de actiune. In exemplul de mai sus, <span class="hover-div"><span class="hide-div">彼</span><ruby class="show-div">彼<rp>（</rp>
+				<rt>かれ</rt>
+				<rp>）</rp>
+			</ruby></span></span>を<span class="hover-div"><span class="hide-div">丁寧</span><ruby class="show-div">丁寧<rp>（</rp>
+				<rt>ていねい</rt>
+				<rp>）</rp>
+			</ruby></span></span>に<span class="hover-div"><span class="hide-div">扱</span><ruby class="show-div">扱<rp>（</rp>
+				<rt>あつか</rt>
+				<rp>）</rp>
+			</ruby></span></span>う, particula を il leaga pe El de verb, si il marcheaza ca fiind cel care e afectat de tratament, iar に fiind directia in care merge tratamentul (spre politete). を raspune la intrebarea "cine este afectat de actiune" sau "cui i-a fost facuta actiunea".</p>
+		<p>
+			De asemenea, daca に se foloseste pentru a exprima intrarea in cladiri, camere, mijloace de transport etc, を se foloseste cand dorim sa exprimam ca iesim din aceste locuri. Acest lucru are de-a face cu un concept despre care veti citi putin mai incolo, si anume asa zisa "tranzitivitate" a verbelor, un termen pe care voi incerca sa il evit.
+			</p>
+			<p>Fiindca suntem la inceput, ce e de amintit deocamdata e ca atat <span class="hover-div"><span class="hide-div">部屋</span><ruby class="show-div">部屋<rp>（</rp>
+					<rt>へや</rt>
+					<rp>）</rp>
+				</ruby></span></span>を<span class="hover-div"><span class="hide-div">出</span><ruby class="show-div">出<rp>（</rp>
+						<rt>で</rt>
+						<rp>）</rp>
+					</ruby></span></span>る (Camera o ies) cat si <span class="hover-div"><span class="hide-div">道</span><ruby class="show-div">道<rp>（</rp>
+					<rt>みち</rt>
+					<rp>）</rp>
+				</ruby></span></span>を<span class="hover-div"><span class="hide-div">歩</span><ruby class="show-div">歩<rp>（</rp>
+						<rt>ある</rt>
+						<rp>）</rp>
+					</ruby></span></span>く (Drumul il merg) sunt exemple prin care actiunea se rasfrange asupra unui "obiect", motiv pentru care folosim を。
+		</p>
+			
+			<h3>*********</h3>
+			<p>
+	Mai exista un set de particule, cele ne-logice care vor fi acoperite in viitor. Le spun nelogice deoarece nu dau logica propozitiei, ci dau informatii extra despre actorii din propozitie. De mentionat ca una dintre ele, si anume も, poate "ascunde" particula cea mai importanta in fraze de genul <span class="hover-div"><span class="hide-div">田中</span><ruby class="show-div">田中<rp>（</rp>
+			<rt>たなか</rt>
+			<rp>）</rp>
+		</ruby></span></span>さんも<span class="hover-div"><span class="hide-div">参加</span><ruby class="show-div">参加<rp>（</rp>
+				<rt>さんか</rt>
+				<rp>）</rp>
+			</ruby></span></span>する - Si Tanaka san participa. も, tradus cu "Si" aici, devine subiectul propozitiei iar folosirea lui in locul particulei が ne va lasa sa exprimam atat subiectul cat sa dam si informatii extra despre actiune.
+	</p>
+		</div>
+
+		<div id="past-tense-verbs" class="grammar-article">
+			<h2>Timpul trecut al verbelor</h2>
+			<p>Verbele in japoneza sunt foarte flexibile, putand fi folosite atat ca verbe cat si ca adjective si substantive. Voi trece prin conjugarile propriu zise dar si prin transformari/uniunile care le pot face. Prima conjugare pe care o voi acoperi va fi forma de trecut a verbelor, si anume forma ~た. Voi acoperi forma た pentru simplul motiv ca tot ce ati putut zice pana acum la timpul prezent il veti putea spune si la trecut dupa ce cititi aceasta parte. Plus ca deja ati observat-o la adjective. Pentru a intelege cum se aplica aceasta forma la verbe insa va trebui sa le impartim in 3 mari categorii:
+				<ul>
+					<li>Verbe <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+							<rt>いちだん</rt>
+							<rp>）</rp>
+						</ruby></span></span>: dupa cum ne spune kanji-ul pentru 1 din nume exista un singur mod de a conjuga aceste verbe.</li>
+						<li>verbe <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+								<rt>ごだん</rt>
+								<rp>）</rp>
+							</ruby></span></span>: numite astfel fiindca se pot imparti in 5 subcategorii</li>
+							<li>cele 2 verbe care sunt exceptii: する　<span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+									<rt>く</rt>
+									<rp>）</rp>
+								</ruby></span></span>る</li>
+				</ul>
+				</p><p> Verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+						<rt>いちだん</rt>
+						<rp>）</rp>
+					</ruby></span></span> sunt cele mai simplu de inteles. Toate verbele din aceasta categorie se termina fie in ~いる/~える (<span class="hover-div"><span class="hide-div">閉</span><ruby class="show-div">閉<rp>（</rp>
+							<rt>し</rt>
+							<rp>）</rp>
+						</ruby></span></span>める, <span class="hover-div"><span class="hide-div">着</span><ruby class="show-div">着<rp>（</rp>
+								<rt>き</rt>
+								<rp>）</rp>
+							</ruby></span></span>る, <span class="hover-div"><span class="hide-div">答</span><ruby class="show-div">答<rp>（</rp>
+									<rt>こた</rt>
+									<rp>）</rp>
+								</ruby></span></span>える). Regula pentru a le conjura la timpul trecut este, dupa cum spuneam, simpla. Taiati mora る de la sfarsit si puneti in locul ei た:
+								<ul>
+									<li><span class="hover-div"><span class="hide-div">閉</span><ruby class="show-div">閉<rp>（</rp>
+											<rt>し</rt>
+											<rp>）</rp>
+										</ruby></span></span>める ー＞ <span class="hover-div"><span class="hide-div">閉</span><ruby class="show-div">閉<rp>（</rp>
+												<rt>し</rt>
+												<rp>）</rp>
+											</ruby></span></span>めた</li>
+									<li><span class="hover-div"><span class="hide-div">答</span><ruby class="show-div">答<rp>（</rp>
+											<rt>こた</rt>
+											<rp>）</rp>
+										</ruby></span></span>える ー＞ <span class="hover-div"><span class="hide-div">答</span><ruby class="show-div">答<rp>（</rp>
+												<rt>こた</rt>
+												<rp>）</rp>
+											</ruby></span></span>えた</li>
+											<li><span class="hover-div"><span class="hide-div">着</span><ruby class="show-div">着<rp>（</rp>
+													<rt>き</rt>
+													<rp>）</rp>
+												</ruby></span></span>る ー＞ <span class="hover-div"><span class="hide-div">着</span><ruby class="show-div">着<rp>（</rp>
+														<rt>き</rt>
+														<rp>）</rp>
+													</ruby></span></span>た</li>
+								</ul>
+					</p>
+					<p>
+						Verbele de tip <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+								<rt>ごだん</rt>
+								<rp>）</rp>
+							</ruby></span></span> sunt mai greu de memorat fiindca sunt defapt 5 tipuri de verbe care se schimba in functie de care e ultima mora (din fericire le putem aduna pe toate in 4 grupuri):
+							<ul>
+								<li>verbele care se termina cu mora ~う, ~つ, ~る - copilul problema pentru ca dupa cum vedeti exista un punct comun cu verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+										<rt>いちだん</rt>
+										<rp>）</rp>
+									</ruby></span></span>. Pentru a conjuga aceste verbe taiem ultima mora si adaugam in locul ei った. Metoda care am folosit-o eu sa imi amintesc ce mora trebuie inlocuite este ca ~う, ~つ arata similar cu っ si la aceste 2 mora trebuie doar sa adaug caracterul problema(る). Nu recomand sa memorati liste de verbe ca sa diferentiati verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+											<rt>いちだん</rt>
+											<rp>）</rp>
+										</ruby></span></span> de <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+												<rt>ごだん</rt>
+												<rp>）</rp>
+											</ruby></span></span> care se termina in る. Imersiunea este cea care ar trebui sa va invete asta. Asa ca lasa caietul cu tabele de conjugari de la cursuri jos, micule padawan, si uita-te mai bine la un serial. Cuvintele suna corect numai intr-un anumit fel si faptul ca le auziti vocalizate corect de mai multe ori va creea aceasta impresie.</li>
+								<li>Verbele care se termina cu mora ~く / ぐ. La aceste verbe se taie ultima mora si se inlocuieste cu ~いた/~いだ. Exista o singura exceptie aici, si anume <span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+										<rt>い</rt>
+										<rp>）</rp>
+									</ruby></span></span>く, care devine <span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+											<rt>い</rt>
+											<rp>）</rp>
+										</ruby></span></span>った, similar cu verbele de mai sus. Din fericire este un verb atat de comun ca nu ar trebui sa cauzeze probleme.</li>
+								<li>Verbele care se termina cu mora ~す. Aici mora す devine し iar acestei mora ii atasam た</li>
+								<li>Pentru verbele care se termina cu orice alta mora taiem ultima mora si o inlocuim cu ~んだ</li>
+								</ul>
+								Exemple:
+								<ul>
+									<li><span class="hover-div"><span class="hide-div">走</span><ruby class="show-div">走<rp>（</rp>
+											<rt>はし</rt>
+											<rp>）</rp>
+										</ruby></span></span>る ー＞ <span class="hover-div"><span class="hide-div">走</span><ruby class="show-div">走<rp>（</rp>
+												<rt>はし</rt>
+												<rp>）</rp>
+											</ruby></span></span>った</li>
+									<li><span class="hover-div"><span class="hide-div">
+										会</span><ruby class="show-div">会<rp>（</rp>
+											<rt>あ</rt>
+												<rp>）</rp>
+											</ruby></span></span>う ー＞ <span class="hover-div"><span class="hide-div">会</span><ruby class="show-div">会<rp>（</rp>
+												<rt>あ</rt>
+												<rp>）</rp>
+											</ruby></span></span>った</li>
+										<li><span class="hover-div"><span class="hide-div">
+											立</span><ruby class="show-div">立<rp>（</rp>
+												<rt>た</rt>
+												<rp>）</rp>
+												</ruby></span></span>つ ー＞ <span class="hover-div"><span class="hide-div">立</span><span><ruby class="show-div">立<rp>（</rp>
+												<rt>た</rt>
+												<rp>）</rp>
+												</ruby></span></span>った</li>
+										<li><span class="hover-div"><span class="hide-div">
+													書</span><ruby class="show-div">書<rp>（</rp>
+													<rt>か</rt>
+													<rp>）</rp>
+												</ruby></span></span>く ー＞ <span class="hover-div"><span class="hide-div">書</span><span><ruby class="show-div">書<rp>（
+														</rp>
+														<rt>か</rt>
+														<rp>）</rp>
+													</ruby></span></span>いた</li>
+										<li><span class="hover-div"><span class="hide-div">
+													話</span><ruby class="show-div">話<rp>（</rp>
+													<rt>か</rt>
+													<rp>）</rp>
+												</ruby></span></span>す ー＞ <span class="hover-div"><span class="hide-div">話</span><span><ruby class="show-div">話<rp>（
+														</rp>
+														<rt>か</rt>
+														<rp>）</rp>
+													</ruby></span></span>した</li>
+										<li><span class="hover-div"><span class="hide-div">
+													運</span><ruby class="show-div">運<rp>（</rp>
+													<rt>はこ</rt>
+													<rp>）</rp>
+												</ruby></span></span>ぶ ー＞ <span class="hover-div"><span class="hide-div">運</span><span><ruby class="show-div">運<rp>（
+														</rp>
+														<rt>はこ</rt>
+														<rp>）</rp>
+													</ruby></span></span>んだ</li>
+										<li><span class="hover-div"><span class="hide-div">
+													読</span><ruby class="show-div">読<rp>（</rp>
+													<rt>よ</rt>
+													<rp>）</rp>
+												</ruby></span></span>む ー＞ <span class="hover-div"><span class="hide-div">読</span><span><ruby class="show-div">読<rp>（
+														</rp>
+														<rt>よ</rt>
+														<rp>）</rp>
+													</ruby></span></span>んだ</li>
+								</ul>
+								</p>
+								<p>
+								Ultima categorie sunt cele 2 verbe care nu se conjuga dupa un tipar prestabilit:
+
+								<ul>
+									<li><span class="hover-div"><span class="hide-div">
+												来</span><ruby class="show-div">来<rp>（</rp>
+												<rt>く</rt>
+												<rp>）</rp>
+											</ruby></span></span>る ー＞ <span class="hover-div"><span class="hide-div">来</span><span><ruby class="show-div">来<rp>（
+													</rp>
+													<rt>き</rt>
+													<rp>）</rp>
+												</ruby></span></span>た</li>
+									<li>する　ー＞　した</li>
+								</ul>
+								</p>
+								<p>
+								Conjugarile acestor doua verbe trebuie invatate separat, asa ca fiti atenti la formele pe care le vor lua cand le veti intalni in imersiunea voastra. Sunt verbe foarte comune asa ca sunt usor de invatat, dar la inceput pot provoca confuzie daca incercati sa le includeti in alta categorie.
+					
+			</p>
+		</div>
+
+		<div id="te-form-verbs" class="grammar-article">
+		<h2>Forma de legatura ~て</h2>
+		<p>Urmatoarea conjugare a verbelor, forma ~て este defapt foarte similara cu forma ~た. Sunt atat de similare incat daca stiti forma ~た stiti si forma ~て. Singura diferenta este ca in loc de ~た folositi ~て / ~で.</p>
+			<p>
+			Verbe <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+					<rt>いちだん</rt>
+					<rp>）</rp>
+				</ruby></span></span>:
+			<ul>
+				<li><span class="hover-div"><span class="hide-div">見</span><ruby class="show-div">見<rp>（</rp>
+						<rt>み</rt>
+						<rp>）</rp>
+					</ruby></span></span>る　ー＞　<span class="hover-div"><span class="hide-div">見</span><ruby class="show-div">見<rp>（</rp>
+							<rt>み</rt>
+							<rp>）</rp>
+						</ruby></span></span>て</li>
+						<li><span class="hover-div"><span class="hide-div">起</span><ruby class="show-div">起<rp>（</rp>
+									<rt>お</rt>
+									<rp>）</rp>
+								</ruby></span></span>きる　ー＞　<span class="hover-div"><span class="hide-div">起</span><ruby class="show-div">起<rp>（</rp>
+									<rt>お</rt>
+									<rp>）</rp>
+								</ruby></span></span>きて</li>
+			</ul>
+			Verbe <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+					<rt>ごだん</rt>
+					<rp>）</rp>
+				</ruby></span></span>:
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">食</span><ruby class="show-div">食<rp>（</rp>
+							<rt>く</rt>
+							<rp>）</rp>
+						</ruby></span></span>らう　ー＞　<span class="hover-div"><span class="hide-div">食</span><ruby class="show-div">食<rp>（</rp>
+								<rt>く</rt>
+								<rp>）</rp>
+							</ruby></span></span>らって</li>
+							<li><span class="hover-div"><span class="hide-div">待</span><ruby class="show-div">待<rp>（</rp>
+									<rt>ま</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>つ　ー＞　<span class="hover-div"><span class="hide-div">待</span><ruby class="show-div">待<rp>（</rp>
+										<rt>ま</rt>
+										<rp>）
+										</rp>
+									</ruby></span></span>って</li>						
+					<li><span class="hover-div"><span class="hide-div">泳</span><ruby class="show-div">泳<rp>（</rp>
+							<rt>およ</rt>
+							<rp>）</rp>
+						</ruby></span></span>ぐ ー＞　<span class="hover-div"><span class="hide-div">泳</span><ruby class="show-div">泳<rp>（</rp>
+								<rt>およ</rt>
+								<rp>）</rp>
+							</ruby></span></span>いで</li>
+					<li><span class="hover-div"><span class="hide-div">話</span><ruby class="show-div">話<rp>（</rp>
+							<rt>はな</rt>
+							<rp>）</rp>
+						</ruby></span></span>す　ー＞　<span class="hover-div"><span class="hide-div">話</span><ruby class="show-div">話<rp>（</rp>
+								<rt>はな</rt>
+								<rp>）</rp>
+							</ruby></span></span>して</li>
+					<li><span class="hover-div"><span class="hide-div">読</span><ruby class="show-div">読<rp>（</rp>
+								<rt>よ</rt>
+								<rp>）</rp>
+							</ruby></span></span>む　ー＞　<span class="hover-div"><span class="hide-div">読</span><ruby class="show-div">読<rp>（</rp>
+									<rt>よ</rt>
+									<rp>）</rp>
+								</ruby></span></span>んで</li>
+					<li><span class="hover-div"><span class="hide-div">飛</span><ruby class="show-div">飛<rp>（</rp>
+							<rt>と</rt>
+							<rp>）</rp>
+						</ruby></span></span>ぶ　ー＞　<span class="hover-div"><span class="hide-div">飛</span><ruby class="show-div">飛<rp>（</rp>
+								<rt>と</rt>
+								<rp>）</rp>
+							</ruby></span></span>んで</li>
+				</ul>
+			Verbele exceptie:
+			<ul>
+				<li><span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+						<rt>く</rt>
+						<rp>）</rp>
+					</ruby></span></span>る　ー＞　<span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+							<rt>く</rt>
+							<rp>）</rp>
+						</ruby></span></span>て</li>
+				<li>する　ー＞　して</li>
+			</ul>
+</p>
+<p>
+			Adjectivele si copula ~だ care vine dupa substantive pot fi si ele conjugate la forma ~て:
+			<br>
+			<table>
+				<tr>
+					<th>Adjective</th>
+				</tr>
+				<tr>
+					<th>Pozitiv</th>
+					<th>~くて</th>
+				</tr>
+				<tr>
+					<th>Negativ</th>
+					<th>~くなくて</th>
+				</tr>
+			</table>
+			</p>
+			<p>
+			Forma de trecut nu exista aici fiindca deja adjectivele sunt deja conjugate la forma lor ~て. 
+		</p>
+		<p>
+			Cat despre copula ~だ, forma ei de legatura este simpla, devenind ~で.
+			Exemple:
+			<ul>
+				<li><span class="hover-div"><span class="hide-div">昨日</span><ruby class="show-div">昨日<rp>（</rp>
+						<rt>きのう</rt>
+						<rp>）</rp>
+					</ruby></span></span>の<span class="hover-div"><span class="hide-div">映画</span><ruby class="show-div">映画<rp>（</rp>
+							<rt>えいが</rt>
+							<rp>）</rp>
+						</ruby></span></span>はつまらなくて<span class="hover-div"><span class="hide-div">長</span><ruby class="show-div">長<rp>（</rp>
+								<rt>なが</rt>
+								<rp>）</rp>
+							</ruby></span></span>くて<span class="hover-div"><span class="hide-div">眠</span><ruby class="show-div">眠<rp>（</rp>
+									<rt>ねむ</rt>
+									<rp>）</rp>
+								</ruby></span></span>くなった。　ー＞　Cat despre filmul de ieri, plicitisitor si lung, devenit somnoros. (am acoperit aproape toata gramatica din aceasta propozitie, in afara de ultima parte. Pentru ca adjectivele sa afecteze in mod direct verbele, cu alte cuvinte sa devina adverbe, folosim forma lor く pe care o formam inlocuind い cu く. Voi vorbi despre aceasta schimbare candva in viitor.)</li>
+				<li><span class="hover-div"><span class="hide-div">田中</span><ruby class="show-div">田中<rp>（</rp>
+						<rt>たなか</rt>
+						<rp>）</rp>
+					</ruby></span></span>さんのお<span class="hover-div"><span class="hide-div">母</span><ruby class="show-div">母<rp>（</rp>
+							<rt>かあ</rt>
+							<rp>）</rp>
+						</ruby></span></span>さんは<span class="hover-div"><span class="hide-div">親切</span><ruby class="show-div">親切<rp>（</rp>
+								<rt>しんせつ</rt>
+								<rp>）</rp>
+							</ruby></span></span>で<span class="hover-div"><span class="hide-div">立派</span><ruby class="show-div">立派<rp>（</rp>
+									<rt>りっぱ</rt>
+									<rp>）</rp>
+								</ruby></span></span>な<span class="hover-div"><span class="hide-div">人</span><ruby class="show-div">人<rp>（</rp>
+										<rt>ひと</rt>
+										<rp>）</rp>
+									</ruby></span></span>だ　ー＞ Cat despre mama lui Tanaka, bland si grozav om. Observati cum copula se schimba in forma ei て pentru a uni substantivele adjectivale si cum le uneste de verb prin forma な.</li>
+			</ul>
+</p>
+
+			<h3>~ている</h3>
+
+			<p>
+			Spuneam mai sus ca forma ~て se foloseste pentru a lega verbele. Prima astfel de unire pe care vreau sa o prezint este intre un verb si verbul いる. いる este verbul de "a fi" folosit pentru vietuitoare. Cand lipim acest verb altui verb o facem ca sa spunem ca actiunea este in curs de desfasurare:
+			<ul>
+				<li><span class="hover-div"><span class="hide-div">映画</span><ruby class="show-div">映画<rp>（</rp>
+							<rt>えいが</rt>
+							<rp>）</rp>
+						</ruby></span></span>を<span class="hover-div"><span class="hide-div">見</span><ruby class="show-div">見<rp>（</rp>
+							<rt>み</rt>
+							<rp>）</rp>
+						</ruby></span></span>ている　ー＞　Film ma uit. </li>
+				<li><span class="hover-div"><span class="hide-div">鳥</span><ruby class="show-div">鳥<rp>（</rp>
+							<rt>とり</rt>
+							<rp>）</rp>
+						</ruby></span></span>は<span class="hover-div"><span class="hide-div">飛</span><ruby class="show-div">飛<rp>（</rp>
+							<rt>と</rt>
+							<rp>）</rp>
+						</ruby></span></span>んでいる<span class="hover-div"><span class="hide-div">時</span><ruby class="show-div">時<rp>（</rp>
+							<rt>とき</rt>
+							<rp>）</rp>
+						</ruby></span></span>、<span class="hover-div"><span class="hide-div">楽</span><ruby class="show-div">楽<rp>（</rp>
+							<rt>たの</rt>
+							<rp>）</rp>
+						</ruby></span></span>しいのだろうか　ー＞　cat despre pasari, in timp ce zboara, distractiv oare?</li>
+				<li>お<span class="hover-div"><span class="hide-div">前</span><ruby class="show-div">前<rp>（</rp>
+							<rt>まえ</rt>
+							<rp>）</rp>
+						</ruby></span></span>はもう<span class="hover-div"><span class="hide-div">死</span><ruby class="show-div">死<rp>（</rp>
+								<rt>し</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>んでいる　ー＞　cat despre tine, mori</li>
+				<li><span class="hover-div"><span class="hide-div">窓</span><ruby class="show-div">窓<rp>（</rp>
+							<rt>まど</rt>
+							<rp>）</rp>
+						</ruby></span></span>が<span class="hover-div"><span class="hide-div">開</span><ruby class="show-div">開<rp>（</rp>
+							<rt>あ</rt>
+							<rp>）</rp>
+						</ruby></span></span>いている　ー＞　Cat despre fereastra, este (cea care e) deschisa</li>
+			</ul>
+			</p>
+			<p>
+			In engleza ~ている seamana cu terminatia ~ing a verbelor. Din pacate romana supraincarca conceptul acesta in timpul prezent,
+			asa ca propozitiile de genul "El mananca" (cu sensul de el "poate face actiunea de" a manca) si "El mananca" (cu sensul
+			de el mananca chiar acum　＜ー  ~ている in japoneza) suna la fel.
+				</p>
+				<p>
+				Exista si varianta ~てある, insa este mai rar intalnita si din pacate nu se foloseste pentru obiecte si plante. ~てある se foloseste pentru a spune ca s-a ajuns la situatia actuala din cauza ca actiunea a fost facuta de cineva.
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">窓</span><ruby class="show-div">窓<rp>（</rp>
+								<rt>まど</rt>
+								<rp>）</rp>
+							</ruby></span></span>が<span class="hover-div"><span class="hide-div">開</span><ruby class="show-div">開<rp>（</rp>
+								<rt>あ</rt>
+								<rp>）</rp>
+							</ruby></span></span>いてあります　ー＞　Cat despre Fereasta, a fost deschisa(de cineva).</li>
+					<li><span class="hover-div"><span class="hide-div">黒板</span><ruby class="show-div">黒板<rp>（</rp>
+								<rt>こくばん</rt>
+								<rp>）</rp>
+							</ruby></span></span>には<span class="hover-div"><span class="hide-div">文字</span><ruby class="show-div">文字<rp>（
+								</rp>
+								<rt>もじ</rt>
+								<rp>）</rp>
+							</ruby></span></span>が<span class="hover-div"><span class="hide-div">書</span><ruby class="show-div">書<rp>（</rp>
+								<rt>か</rt>
+								<rp>）</rp>
+							</ruby></span></span>いてあります　ー＞　Cat despre Pe tabla, kanji au fost scrise (de cineva). </li>
+				</ul>
+				</p>
+				<p>
+				Primul exemplu ne spune ca fereastra a fost deschisa de cineva si punem accentul pe acel cineva, iar in al 2-lea spunem ca literele au fost scrise pe tabla de cineva. Putem chiar spune ca daca folosim ~ている cu obiecte le dam statut onorific de vietuitoare care au putut face acel lucru iar daca le folosim cu ~てある spunem ca sunt lucruri folosite de cineva.
+				</p>
+		
+
+			<h3>~て~て</h3>
+	
+			<p>
+			Forma ~て poate fi folosita pentru a inlantui mai multe verbe. Cand folosim aceasta expresie, conotatia e ca verbele au fost efectuate fie in mod concomitent fie in mod secvential:
+			<ul>
+				<li><span class="hover-div"><span class="hide-div">彼</span><ruby class="show-div">彼<rp>（</rp>
+						<rt>かれ</rt>
+						<rp>）</rp>
+					</ruby></span></span>らは<span class="hover-div"><span class="hide-div">公園</span><ruby class="show-div">公園<rp>（</rp>
+							<rt>こうえん</rt>
+							<rp>）</rp>
+						</ruby></span></span>で<span class="hover-div"><span class="hide-div">歩</span><ruby class="show-div">歩<rp>（</rp>
+								<rt>ある</rt>
+								<rp>）</rp>
+							</ruby></span></span>いて<span class="hover-div"><span class="hide-div">話</span><ruby class="show-div">話<rp>（</rp>
+									<rt>はな</rt>
+									<rp>）</rp>
+								</ruby></span></span>している。　ー＞　cat despre el, prin parc (este acum in mijlocul actiunii de a) merge si converseaza.</li>
+				<li><span class="hover-div"><span class="hide-div">同僚</span><ruby class="show-div">同僚<rp>（</rp>
+						<rt>どうりょう</rt>
+						<rp>）</rp>
+					</ruby></span></span>はタバコを<span class="hover-div"><span class="hide-div">吸</span><ruby class="show-div">吸<rp>（</rp>
+						<rt>す</rt>
+						<rp>）</rp>
+					</ruby></span></span>って<span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+							<rt>き</rt>
+							<rp>）</rp>
+						</ruby></span></span>た。　ー＞　cat despre coleg, a fumat si a venit.  Spre deosebire de romana, doar ultimul verb conteaza pentru a seta timpul propozitiei. Oricat de multe verbe ar fi unite prin て, la sfarsit aflam timpul, dar si alte lucruri ca negatii, politete, daca sunt in curs de desfasurare (prin ~ている dar si prin alte expresii) etc </li>
+			</ul>
+
+			
+			</p>
+
+			<h3>~てください</h3>
+	
+			<p>
+				Unele manuale/resurse de japoneza considera forma て ca pe o forma de comanda din cauza acestei terminatii. Din pacate insa てください este foarte similar cu conceptul de "te rog", iar a considera aceasta constructie ca pe o comanda nu e deloc corect. Hai sa dau un exemplu in engleza si sa il compar cu romana ca sa explic mai bine ce vreau sa spun. 
+	</p>
+	<p>
+				Daca spun "Da-mi si mie sarea", ca romani ar trebui sa stim nuanta de diferenta comparat cu "Da-mi sarea". In engleza insa "Pass me the salt" si "Pass me the salt please" nu au aceeasi nuanta. Acel "te rog" (please) de la sfarsit transforma propozitia intr-una politicoasa, pe cand in romana "Da-mi si mie sarea" implica un grad de politete fara sa fie nevoie de un "te rog" explicit.
+	</p>
+	<p>
+				Dar hai sa ne intoarcem la japoneza. In primul rand <span class="hover-div"><span class="hide-div">下</span><ruby class="show-div">下<rp>（</rp>
+						<rt>くだ</rt>
+						<rp>）</rp>
+					</ruby></span></span>さい este forma politicoasa a altui verb, <span class="hover-div"><span class="hide-div">呉</span><ruby class="show-div">呉<rp>（</rp>
+							<rt>く</rt>
+							<rp>）</rp>
+						</ruby></span></span>れる. <span class="hover-div"><span class="hide-div">呉</span><ruby class="show-div">呉<rp>（</rp>
+							<rt>く</rt>
+							<rp>）</rp>
+						</ruby></span></span>れる inseamna a da ceva, a lasa pe cineva sa aibe ceva. (nota: nu folositi kanji pentru ~てください si nu incepeti sa folositi ~てくれ pana nu cititi articolul despre ~てくれる si ~てあげる, pentru ca vin cu niste implicatii de care ar trebui sa stiti).
+	</p>
+	<p>
+				Versiunea japoneza a propozitiei de mai sus e <span class="hover-div"><span class="hide-div">塩</span><ruby class="show-div">塩<rp>（</rp>
+						<rt>しお</rt>
+						<rp>）</rp>
+					</ruby></span></span>を<span class="hover-div"><span class="hide-div">取</span><ruby class="show-div">取<rp>（</rp>
+							<rt>と</rt>
+							<rp>）</rp>
+						</ruby></span></span>ってください. S-ar putea sa il gasiti insa ca <span class="hover-div"><span class="hide-div">塩</span><ruby class="show-div">塩<rp>（</rp>
+								<rt>しお</rt>
+								<rp>）</rp>
+							</ruby></span></span>をください sau chiar <span class="hover-div"><span class="hide-div">塩</span><ruby class="show-div">塩<rp>（</rp>
+								<rt>しお</rt>
+								<rp>）</rp>
+							</ruby></span></span>ください in imersiune. O traducere completa in romana ar fi similara cu "sarea ia(-mi) te rog". Insa de multe ori nu il vom gasi enuntat explicit:
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">待</span><ruby class="show-div">待<rp>（</rp>
+							<rt>ま</rt>
+							<rp>）</rp>
+						</ruby></span></span>って。<span class="hover-div"><span class="hide-div">待</span><ruby class="show-div">待<rp>（</rp>
+								<rt>ま</rt>
+								<rp>）</rp>
+							</ruby></span></span>って。<span class="hover-div"><span class="hide-div">待</span><ruby class="show-div">待<rp>（</rp>
+									<rt>ま</rt>
+									<rp>）</rp>
+								</ruby></span></span>ってください。　ー＞　Asteapta... Asteapta... Asteapta te rog.</li>
+					<li><span class="hover-div"><span class="hide-div">消</span><ruby class="show-div">消<rp>（</rp>
+							<rt>け</rt>
+							<rp>）</rp>
+						</ruby></span></span>しゴムを<span class="hover-div"><span class="hide-div">貸</span><ruby class="show-div">貸<rp>（</rp>
+								<rt>か</rt>
+								<rp>）</rp>
+							</ruby></span></span>して...。　ー＞　Imprumuta-mi radiera (te rog) (incercati sa puneti agentul acompaniat de particula が si cel acompaniat de particula に in aceasta propozitie)</li>
+				</ul>
+		</p>
+		</div>
+
+		<div id="nai-tai-verbs" class="grammar-article">
+			<h2>Transformarea verbelor in adjective (formele ~ない,~たい)</h2>
+			<h3>Negarea verbelor</h3>
+			<p>Verbele sunt foarte flexibile in sensul ca se pot schimba fie in adjective fie in substantive.
+				Pentru aceasta hai sa descompunem un verb ca sa vedem exact cum se poate schimba. Verbele au o parte neschimbata, deobicei scrisa in Kanji numita stema. Dupa stema urmeaza o mora care se schimba iar la
+				sfarsit urmeaza mora care adaugate. Asta se aplica mai ales la verbele <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+						<rt>ごだん</rt>
+						<rp>）</rp>
+					</ruby></span></span>. Verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+							<rt>いちだん</rt>
+							<rp>）</rp>
+						</ruby></span></span> sunt mai usor de conjugat fiindca ultima mora (る) este pur si simplu taiata. Verbele iregulare isi vor schimba cateodata pronuntia complet, neurmand acest sistem. Mora care se schimba este inlocuita cu o mora de pe acelasi rand cu ea intr-un tabel hiragana (astfel daca e de pe randul す poate fi schimbata cu さ,し,せ sau そ, daca e de pe randul, daca e de pe randul う poate deveni わいえお etc. Daca va intrebati de ce わ si nu あ, e pentru a usura pronuntia).
+			</p>
+			<p>
+				Asadar, ca sa transformam verbele in adjective trebuie sa folosim terminatii specifice care le schimba intelesul. Negatia verbelor se face prin transformarea lor in adjective folosind terminatia ~ない. Din nou observam ca, verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+					<rt>いちだん</rt>
+					<rp>）</rp>
+				</ruby></span></span> si cele <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+						<rt>ごだん</rt>
+						<rp>）</rp>
+					</ruby></span></span> au reguli usor diferite. Pentru verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+							<rt>いちだん</rt>
+							<rp>）</rp>
+						</ruby></span></span> trebuie sa schimbam ultima mora in echivalentul ei cu terminatia あ iar la cele <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+								<rt>ごだん</rt>
+								<rp>）</rp>
+							</ruby></span></span> adaugam doar ~ない in locul ultimei mora:
+						<br>
+							Verbe <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+									<rt>ごだん</rt>
+									<rp>）</rp>
+								</ruby></span></span>:
+								<ul>
+									<li><span class="hover-div"><span class="hide-div">僕</span><ruby class="show-div">僕<rp>（</rp>
+											<rt>ぼく</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>は<span class="hover-div"><span class="hide-div">魚</span><ruby class="show-div">魚<rp>（</rp>
+												<rt>さかな</rt>
+												<rp>）
+										
+												</rp>
+											</ruby></span></span>が<span class="hover-div"><span class="hide-div">食</span><ruby class="show-div">食<rp>（</rp>
+													<rt>た</rt>
+													<rp>）
+											
+													</rp>
+												</ruby></span></span>べない。　ー＞　Cat despre mine, peste este ceea ce e nemancabil.</li>
+									<li>テレビを<span class="hover-div"><span class="hide-div">見</span><ruby class="show-div">見<rp>（</rp>
+											<rt>み</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>なくっていい<span class="hover-div"><span class="hide-div">理由</span><ruby class="show-div">理由<rp>（</rp>
+												<rt>りゆう</rt>
+												<rp>）
+										
+												</rp>
+											</ruby></span></span>は<span class="hover-div"><span class="hide-div">山</span><ruby class="show-div">山<rp>（</rp>
+													<rt>やま</rt>
+													<rp>）											
+													</rp>
+												</ruby></span></span>ほどある　　ー＞　televizor bune sa nu fie uitabil (cat despre) motive, am multe</li>
+									<li>あの<span class="hover-div"><span class="hide-div">日</span><ruby class="show-div">日<rp>（</rp>
+											<rt>ひ</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>に<span class="hover-div"><span class="hide-div">誓</span><ruby class="show-div">誓<rp>（</rp>
+												<rt>ちか</rt>
+												<rp>）
+										
+												</rp>
+											</ruby></span></span>った<span class="hover-div"><span class="hide-div">約束</span><ruby class="show-div">約束<rp>（</rp>
+													<rt>やくそく</rt>
+													<rp>）
+											
+													</rp>
+												</ruby></span></span>だけは<span class="hover-div"><span class="hide-div">忘</span><ruby class="show-div">忘<rp>（</rp>
+														<rt>わす</rt>
+														<rp>）
+												
+														</rp>
+													</ruby></span></span>れなかった。　ー＞　din acea zi promisiunea (cat despre) doar a fost ne-uitabila.</li>
+								</ul>
+						Verbe <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+								<rt>いちだん</rt>
+								<rp>）</rp>
+							</ruby></span></span>:
+							<ul>
+								<li><span class="hover-div"><span class="hide-div">今日</span><ruby class="show-div">今日<rp>（</rp>
+										<rt>きょう</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>は<span class="hover-div"><span class="hide-div">授業</span><ruby class="show-div">授業<rp>（</rp>
+											<rt>じゅぎょう</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>に<span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+												<rt>い</rt>
+												<rp>）
+										
+												</rp>
+											</ruby></span></span>かない。　ー＞　cat despre azi, la cursuri nu merg.</li>
+								<li>お<span class="hover-div"><span class="hide-div">口</span><ruby class="show-div">口<rp>（</rp>
+										<rt>くち</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>に<span class="hover-div"><span class="hide-div">合</span><ruby class="show-div">合<rp>（</rp>
+											<rt>あ</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>わない。　ー＞　gurii nu se potriveste (expresie care se traduce prin nu e pe placul meu, nu imi place)</li>
+								<li><span class="hover-div"><span class="hide-div">今</span><ruby class="show-div">今<rp>（</rp>
+										<rt>いま</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>までお<span class="hover-div"><span class="hide-div">酒</span><ruby class="show-div">酒<rp>（</rp>
+											<rt>さけ</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>を<span class="hover-div"><span class="hide-div">飲</span><ruby class="show-div">飲<rp>（</rp>
+												<rt>の</rt>
+												<rp>）
+										
+												</rp>
+											</ruby></span></span>まなかった。　ー＞　pana acum, cat despre alcool, nu am baut.</li>
+							</ul>
+							</p>
+							Exceptii:
+							<ul>
+							<li><span class="hover-div"><span class="hide-div">君</span><ruby class="show-div">君<rp>（</rp>
+									<rt>きみ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>は<span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+										<rt>く</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>るのか<span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+											<rt>こ</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>ないのか.　ー＞　cat despre tine, oare vii, oare nu vii?</li>
+							<li><span class="hover-div"><span class="hide-div">彼</span><ruby class="show-div">彼<rp>（</rp>
+									<rt>かれ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>はそんなことはしないよ。　ー＞　cat despre el, cat despre asa ceva nu face.</li>
+							</ul>
+						</p>
+							<h3>Forma de exprimare a actiunilor pe care dorim sa le facem</h3>
+							
+							<p>Terminatia ~たい se foloseste pentru a exprima dorinta de a face un anumit lucru. Regulile sunt foarte similare cu cele pentru forma ~ない cu exceptia ca verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+									<rt>いちだん</rt>
+									<rp>）</rp>
+								</ruby></span></span> schimba ultimul mora in echivalentul lor de pe randul い.
+								<br>
+								Verbe <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+										<rt>ごだん</rt>
+										<rp>）</rp>
+									</ruby></span></span>:
+									<ul>
+										<li><span class="hover-div"><span class="hide-div">信</span><ruby class="show-div">信<rp>（</rp>
+												<rt>しん</rt>
+												<rp>）
+										
+												</rp>
+											</ruby></span></span>じたいけど<span class="hover-div"><span class="hide-div">難</span><ruby class="show-div">難<rp>（</rp>
+													<rt>むずか</rt>
+													<rp>）
+											
+													</rp>
+												</ruby></span></span>しくて<span class="hover-div"><span class="hide-div">多分</span><ruby class="show-div">多分<rp>（</rp>
+														<rt>たぶん</rt>
+														<rp>）
+												
+														</rp>
+													</ruby></span></span><span class="hover-div"><span class="hide-div">何</span><ruby class="show-div">何<rp>（</rp>
+															<rt>なに</rt>
+															<rp>）
+													
+															</rp>
+														</ruby></span></span>もできない。　ー＞　credibil (vreau sa fie), dar fiindca-i dicifil poate nimic nu reusesc</li>
+										<li><span class="hover-div"><span class="hide-div">鯛焼</span><ruby class="show-div">鯛焼<rp>（</rp>
+												<rt>たいや</rt>
+												<rp>）
+										
+												</rp>
+											</ruby></span></span>きが<span class="hover-div"><span class="hide-div">焼</span><ruby class="show-div">焼<rp>（</rp>
+													<rt>や</rt>
+													<rp>）
+											
+													</rp>
+												</ruby></span></span>きたいけど<span class="hover-div"><span class="hide-div">材料</span><ruby class="show-div">材料<rp>（</rp>
+														<rt>ざいりょう</rt>
+														<rp>）
+												
+														</rp>
+													</ruby></span></span>がない。　ー＞　Taiyaki este ceea ce vreau sa fie gatibil, dar ingrediente nu am </li>
+									</ul>
+									Verbe <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+											<rt>いちだん</rt>
+											<rp>）</rp>
+										</ruby></span></span>:
+										<ul>
+											<li>コシュニエのバンドメンバーと<span class="hover-div"><span class="hide-div">会</span><ruby class="show-div">会<rp>（</rp>
+													<rt>あ</rt>
+													<rp>）
+											
+													</rp>
+												</ruby></span></span>いたい。　ー＞　Cö shu Nie ai formatiei membrii sunt ceeace vreau sa fie  intalnibili  (pentru mine).</li>
+											<li>お<span class="hover-div"><span class="hide-div">鳥</span><ruby class="show-div">鳥<rp>（</rp>
+													<rt>とり</rt>
+													<rp>）
+											
+													</rp>
+												</ruby></span></span>の<span class="hover-div"><span class="hide-div">歌</span><ruby class="show-div">歌<rp>（</rp>
+														<rt>うた</rt>
+														<rp>）
+												
+														</rp>
+													</ruby></span></span>が<span class="hover-div"><span class="hide-div">聞</span><ruby class="show-div">聞<rp>（</rp>
+															<rt>き</rt>
+															<rp>）
+													
+															</rp>
+														</ruby></span></span>きたい。　ー＞　Al pasarii cantec este ceea ce vreau sau fie auzibil.</li>		
+											<li><span class="hover-div"><span class="hide-div">今晩</span><ruby class="show-div">今晩<rp>（</rp>
+													<rt>こんばん</rt>
+													<rp>）
+											
+													</rp>
+												</ruby></span></span>ワインが<span class="hover-div"><span class="hide-div">飲</span><ruby class="show-div">飲<rp>（</rp>
+														<rt>の</rt>
+														<rp>）
+												
+														</rp>
+													</ruby></span></span>みたい。　ー＞　Seara asta vin este ceea ce vreau sa fie baubil.</li>
+										</ul>
+										Verbele exceptie:
+										<ul>
+											<li>じゃー<span class="hover-div"><span class="hide-div">今日</span><ruby class="show-div">今日<rp>（</rp>
+													<rt>きょう</rt>
+													<rp>）
+											
+													</rp>
+												</ruby></span></span>は<span class="hover-div"><span class="hide-div">何</span><ruby class="show-div">何<rp>（</rp>
+														<rt>なに</rt>
+														<rp>）
+												
+														</rp>
+													</ruby></span></span>がしたい？　ー＞　deci, azi ce este ceea ce (vrei sa fie) facubil?</li>
+											<li><span class="hover-div"><span class="hide-div">来年</span><ruby class="show-div">来年<rp>（</rp>
+													<rt>らいねん</rt>
+													<rp>）
+											
+													</rp>
+												</ruby></span></span>もまたここへ<span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+														<rt>き</rt>
+														<rp>）
+												
+														</rp>
+													</ruby></span></span>たい。　ー＞　Anul viitor si, spre aici venibil (vreau sa fie)</li>
+										</ul>
+										<p>
+									Deja am facut adjectivele si trecerea lor la negativ/trecut. Deoarece ない/たい transforma verbele in adjective, regulile de conjugare ale adjectivelor se aplica si acestor 2 forme. Ca practica puteti trece aceste fraze la alte timpuri, insa din nou, imersiunea trebuie sa le intipareasca forma corecta in memorie nu exercitiile gramaticale.</p>
+									<p>
+									Inainte sa trec la urmatoarul articol as dori sa punctuez ce ar trebui sa va ganditi la verbele adjectivizate ca fiind proprietati si nu actiuni daca vreti sa intelegeti ce se intampla in fraza.
+						</p>
+		</div>
+
+		<div id="hoshii" class="grammar-article">
+			<h2>Exprimarea dorintelor (~たい vs　<span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+					<rt>ほ</rt>
+					<rp>）
+			
+					</rp>
+				</ruby></span></span>しい。)</h2>
+			<p>Acum ca am vazut cum putem folosi ~たい ca sa exprimam ca dorim sa facem lucruri hai sa vedem cum putem spune ca vrem obiecte. Pentru aceasta trebuie sa folosim un adjectiv separat si anume <span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+					<rt>ほ</rt>
+					<rp>）
+			
+					</rp>
+				</ruby></span></span>しい。. Fiind un adjectiv se aplica aceleasi reguli de conjugare ca pentru toate adjectivele:
+				<ul>
+					<li>お<span class="hover-div"><span class="hide-div">金</span><ruby class="show-div">金<rp>（</rp>
+							<rt>かね</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>が<span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+								<rt>ほ</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>しい。　ー＞　bani sunt ceea ce doribil.</li>
+					<li>それだけが<span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+							<rt>ほ</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>しかった.　ー＞　doar atat a fost doribil.</li>
+				</ul>
+				</p>
+				<p> Forma de negativ a lui <span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+						<rt>ほ</rt>
+						<rp>）				
+						</rp>
+					</ruby></span></span>しい nu este intrebuintata foarte des, chiar dimpotriva folositul lor poate fi vazut ca si comportament nepoliticos in multe situatii. Dar fiindca este totusi gramatical corecta si scopul meu e sa explic gramatica, nu comportamentul, le voi include aici. Aveti grija sa nu refuzati ceva ce vi se ofera folosind acest verb (exista alte expresii pentru asta asa ca apelati cu incredere la prietena noastra imersiunea pentru a afla cand este ok sa folosim forma negativa a lui <span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+						<rt>ほ</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span>しい。). 
+				<ul>
+					<li>これが<span class="hover-div"><span class="hide-div">愛</span><ruby class="show-div">愛<rp>（</rp>
+							<rt>あい</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>なら、<span class="hover-div"><span class="hide-div">私</span><ruby class="show-div">私<rp>（</rp>
+								<rt>わたし</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>は<span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+									<rt>ほ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>しくない　ー＞　daca asta e (ceea ce se numeste) iubire, nu este doribil.</li>
+					<li>でも、こんな<span class="hover-div"><span class="hide-div">反応</span><ruby class="show-div">反応<rp>（</rp>
+							<rt>はんおう</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>は<span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+								<rt>ほ</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>しくなかった。　ー＞　insa, cat despre un astfel de raspuns nu a fost doribil.</li>
+				</ul>
+				</p>
+				<p>
+				Sper ca este destul de clar ca verbele, avand propria lor forma de a exprima dorinta, nu au nevoie de <span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+						<rt>ほ</rt>
+						<rp>）
+				
+						</rp>
+					</ruby></span></span>しい。 pentru a putea spune ca vrem ceva. Insa daca il legam de forma ~て a unui verb putem exprima faptul ca vrem ca partenerul nostru de discutie sa faca ceva:
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">私</span><ruby class="show-div">私<rp>（</rp>
+							<rt>わたし</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>はあなたにそれを<span class="hover-div"><span class="hide-div">食</span><ruby class="show-div">食<rp>（</rp>
+								<rt>た</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>べて<span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+									<rt>ほ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>しい。　ー＞　Cat despre mine, tu sa mananci asta este doribil.</li>
+					<li>お<span class="hover-div"><span class="hide-div">願</span><ruby class="show-div">願<rp>（</rp>
+							<rt>ねが</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>いします！<span class="hover-div"><span class="hide-div">信</span><ruby class="show-div">信<rp>（</rp>
+								<rt>しん</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>じて<span class="hover-div"><span class="hide-div">欲</span><ruby class="show-div">欲<rp>（</rp>
+									<rt>ほ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>しい。　ー＞　Fac o dorinta(cu sensul de te rog)! Sa crezi e doribil!</li>
+				</ul>
+</p>
+		</div>
+
+		<div id="potential-form" class="grammar-article">
+			<h2>Forma potentiala</h2>
+			<p>Pana acum am vazut ca verbele pot fi conjugate folosind ~て si ~た si am mai vazut ca pot fi schimbate in adjective adaugand terminatiile ~ない si　~たい. Flexibilitatea lor nu se termina aici, ele putand fi unite cu un set de verbe ajutatoare pentru a le da diverse nuante. Primul astfel de verb este verbul ajutator ~る cu ajutorul caruia putem forma potentialul.Forma potentiala ne lasa sa zicem ca "putem face" verbul in cauza. Este foarte similar cu urmatorul verb ajutator pe care il voi prezenta, si amandoua au aceleasi explicatii in dictionarele japoneze: si anume ca scoate la iveala cine primeste actiunea sau cine poate sa faca actiunea. Hai sa vedem cum se formeaza insa inainte sa continui retorica despre el:
+		</p>
+		<p>
+				Verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+						<rt>いちだん</rt>
+						<rp>）</rp>
+					</ruby></span></span> vor avea nevoie de un punct de legatura cu stema verbului pe care il acompaniaza. Acest punct de legatura va fi oferit de "られ":
+					<ul>
+						<li>この<span class="hover-div"><span class="hide-div">茸</span><ruby class="show-div">茸<rp>（</rp>
+								<rt>きのこ</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>は<span class="hover-div"><span class="hide-div">安全</span><ruby class="show-div">安全<rp>（</rp>
+									<rt>あんぜん</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>に<span class="hover-div"><span class="hide-div">食</span><ruby class="show-div">食<rp>（</rp>
+										<rt>た</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>べられるよね？　ー＞　Cat despre aceasta ciperca sigur sa mancatul ei este posibil?</li>
+						<li>この<span class="hover-div"><span class="hide-div">部屋</span><ruby class="show-div">部屋<rp>（</rp>
+								<rt>へや</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>は 4 <span class="hover-div"><span class="hide-div">人</span><ruby class="show-div">人<rp>（</rp>
+									<rt>にん</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>が<span class="hover-div"><span class="hide-div">寝</span><ruby class="show-div">寝<rp>（</rp>
+										<rt>ね</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>られる.　ー＞　Cat despre aceasta camera, 4 oameni dorm este ceea ce e posibil</li>
+					</ul>
+					Pentru verbele <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+							<rt>ごだん</rt>
+							<rp>）</rp>
+						</ruby></span></span> pur si simplu adaugam る la stema え a verbelor:
+						<ul>
+							<li>また<span class="hover-div"><span class="hide-div">会</span><ruby class="show-div">会<rp>（</rp>
+									<rt>あ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>えるといいですね。ー＞ Din nou putem intalni ar fi bine.</li>
+							<li>あなたは<span class="hover-div"><span class="hide-div">魔法</span><ruby class="show-div">魔法<rp>（</rp>
+									<rt>まほう</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>が<span class="hover-div"><span class="hide-div">使</span><ruby class="show-div">使<rp>（</rp>
+										<rt>つ</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>えるの？　ー＞　Cat despre tine, magia este cea care este posibila?</li>
+						</ul>
+					Verbele exceptie:
+					<ul>
+						<li><span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+								<rt>こ</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>られるだけ<span class="hover-div"><span class="hide-div">早</span><ruby class="show-div">早<rp>（</rp>
+									<rt>はや</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>く<span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+										<rt>こ</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>い　ー＞　Cat este posibil sa vii, repede vin-o (Aceasta fraza se traduce cu vin-o pe cat de repede poti)</li>
+						<li><span class="hover-div"><span class="hide-div">英語</span><ruby class="show-div">英語<rp>（</rp>
+								<rt>えいご</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>ができる　ー＞　Engleza este cea care este posibila</li>
+					</ul>
+					Dupa cum vedeti, aici verbul する capata o forma complet diferita prin できる. 
+				</p>
+				<p>
+					As mai dori sa punctez 2 lucruri despre potential.
+					Verbele aduse la aceasta forma sunt toate verbe <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+							<rt>いちだん</rt>
+							<rp>）</rp>
+						</ruby></span></span>, deci vor urma conjugarile acestor verbe. Al 2-lea lucru care vreau sa il mentionez e ca la verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+								<rt>いちだん</rt>
+								<rp>）</rp>
+							</ruby></span></span> de multe ori se adauga doar "れる" la sfarsit, ceea ce nu e gramatic corect insa este folosit atat de des incat este universal acceptat. Fenomenul acesta se numeste ら<span class="hover-div"><span class="hide-div">抜</span><ruby class="show-div">抜<rp>（</rp>
+									<rt>ぬ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>き, adica scoaterea ら-ului. 
+			</p>
+		</div>
+
+		<div id="passive-form" class="grammar-article">
+			<h2>Forma pasiva - nu atat de pasiva pe cat am crede</h2>
+			<p>Al 2-lea verb ajutator pe care il voi introduce este られる. In gramatica predata traditional in scolile pentru non-japonezi, aceasta "conjugare" da peste cap particulele, motiv care creeaza confuzie. Particulele sunt cele care dau directionalitatea, iar daca intelesul/scopul acestora poate fi schimbat oricand, limba nu pare sa aibe o structura bine definita. Hai sa incepem cu ce inseamna acest ~られる. I se spune forma pasiva fiindca, conform gramaticii engleze, subiectul este cel caruia i s-a facut actiunea. O traducere mai buna insa, una care apare si in dictionarele japoneze pentru られる, este ca subiectul este cel care primeste actiunea. E important sa ne gandim ca "primeste" actiunea fiindca astfel, dupa cum veti vedea, particulele isi pastreaza functia redand perfect directionalitatea in propozitii. 
+				</p>
+				<p>
+				Cat despre formare, pentru verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+						<rt>いちだん</rt>
+						<rp>）</rp>
+					</ruby></span></span> se pastreaza aceeasi regula unde taiem mora る de la sfarsit si adaugam ~られる. La verbele <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+							<rt>ごだん</rt>
+							<rp>）</rp>
+						</ruby></span></span> insa adaugam stemei verbului mora aferenta care se termina in あ a cuvantului si lipim れる.
+						<br>
+						Verbe <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+								<rt>いちだん</rt>
+								<rp>）</rp>
+							</ruby></span></span>:
+							<ul>
+								<li>いきなりあの<span class="hover-div"><span class="hide-div">男</span><ruby class="show-div">男<rp>（</rp>
+										<rt>おとこ</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>に<span class="hover-div"><span class="hide-div">助</span><ruby class="show-div">助<rp>（</rp>
+											<rt>たす</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>けられた。　ー＞　Brusc de acel barbat am primit sa fiu salvat.</li>
+								<li>めったに<span class="hover-div"><span class="hide-div">見</span><ruby class="show-div">見<rp>（</rp>
+										<rt>み</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>られないタイプ　ー＞　Rar primeste sa fie vazut tip (Un lucru vazut rar)</li>
+							</ul>
+						Verbe <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+								<rt>ごだん</rt>
+								<rp>）</rp>
+							</ruby></span></span>:
+							<ul>
+								<li>お<span class="hover-div"><span class="hide-div">母</span><ruby class="show-div">母<rp>（</rp>
+										<rt>かあ</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>さんに<span class="hover-div"><span class="hide-div">変</span><ruby class="show-div">変<rp>（</rp>
+											<rt>へん</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>だと<span class="hover-div"><span class="hide-div">言</span><ruby class="show-div">言<rp>（</rp>
+												<rt>い</rt>
+												<rp>）
+										
+												</rp>
+											</ruby></span></span>われた。　ー＞　De la mama am primit zisul ca sunt ciudat.</li>
+								<li>この<span class="hover-div"><span class="hide-div">本</span><ruby class="show-div">本<rp>（</rp>
+										<rt>ほん</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>は<span class="hover-div"><span class="hide-div">多</span><ruby class="show-div">多<rp>（</rp>
+											<rt>おお</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>くの<span class="hover-div"><span class="hide-div">人</span><ruby class="show-div">人<rp>（</rp>
+												<rt>ひと</rt>
+												<rp>）
+										
+												</rp>
+											</ruby></span></span>に<span class="hover-div"><span class="hide-div">読</span><ruby class="show-div">読<rp>（</rp>
+													<rt>よ</rt>
+													<rp>）
+											
+													</rp>
+												</ruby></span></span>まれている。　ー＞　cat despre cartea aceasta, de multi oameni primeste sa fie citita</li>
+							</ul>
+						Verbele exceptie:
+						<ul>
+							<li>ボールが<span class="hover-div"><span class="hide-div">彼女</span><ruby class="show-div">彼女<rp>（</rp>
+									<rt>かのじょ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>にパスされた。　ー＞　Mingea a fost cea care de prietena a primit sa fie pasata.</li>
+							<li><span class="hover-div"><span class="hide-div">誰</span><ruby class="show-div">誰<rp>（</rp>
+									<rt>だれ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>が<span class="hover-div"><span class="hide-div">土曜日</span><ruby class="show-div">土曜日<rp>（</rp>
+										<rt>どようび</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>に<span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+											<rt>こ</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>られないの？　ー＞　Cine este cel care nu primeste sa vina sambata?</li>
+						</ul>
+						</p>
+						<p>
+						Un punct important de observat aici este ca verbul original si verbul ajutator られる se refera la actori diferiti din propozitie. 	Subiectul (cel care primeste actiunea) este legat de verbul られる de la sfarsit, iar actorul de la care este primita actiunea este legat de verbul propriu-zis. Fraza devine ingradita intre aceste 2 puncte.
+					</p>
+		</div>
+
+		<div id="causative-form" class="grammar-article">
+			<h2>Forma cauzativa</h2>
+			<p>Daca ~られる semnifica ca primim actiunea, pentru a exprima faptul ca noi cauzam actiunea trebuie sa folosim un nou verb ajutator, si anume ~させる. Aceste 2 verbe sunt ca fetele unei monede si din fericire se formeaza la fel, amandoua folosind aceeasi stema + mora aferenta in ~あ.
+				Verbele <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>
+							（</rp>
+						<rt>いちだん</rt>
+						<rp>）</rp>
+					</ruby></span></span> se pastreaza aceeasi regula unde taiem mora る de la sfarsit si adaugam ~させる. La verbele <span
+					class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+						<rt>ごだん</rt>
+						<rp>）</rp>
+					</ruby></span></span> insa adaugam stemei verbului mora aferenta care se termina in あ a cuvantului si lipim せる.
+			</p>
+			<p>
+				Verbe <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+						<rt>いちだん</rt>
+						<rp>）</rp>
+					</ruby></span></span>:
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">赤</span><ruby class="show-div">赤<rp>（</rp>
+							<rt>あか</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>ちゃんを<span class="hover-div"><span class="hide-div">寝</span><ruby class="show-div">寝<rp>（</rp>
+								<rt>ね</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>させる　ー＞　Pe copil sa doarma il cauzez.</li>
+					<li><span class="hover-div"><span class="hide-div">子供</span><ruby class="show-div">子供<rp>（</rp>
+							<rt>こども</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>に<span class="hover-div"><span class="hide-div">服段</span><ruby class="show-div">服<rp>（</rp>
+								<rt>ふく</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>を<span class="hover-div"><span class="hide-div">着</span><ruby class="show-div">着<rp>（</rp>
+									<rt>き</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>させた。　ー＞　Pe copil haine sa poarte il cauzez.</li>
+				</ul>
+				</p>
+				<p>
+				Verbe <span class="hover-div"><span class="hide-div">五段</span><ruby class="show-div">五段<rp>（</rp>
+						<rt>ごだん</rt>
+						<rp>）</rp>
+					</ruby></span></span>:
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">子供</span><ruby class="show-div">子供<rp>（</rp>
+							<rt>こども</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>を<span class="hover-div"><span class="hide-div">外</span><ruby class="show-div">外<rp>（</rp>
+								<rt>そと</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>で<span class="hover-div"><span class="hide-div">遊</span><ruby class="show-div">遊<rp>（</rp>
+									<rt>あそ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>ばせる　ー＞　Pe copil afara sa se joace il cauzez.</li>
+					<li><span class="hover-div"><span class="hide-div">薬</span><ruby class="show-div">薬<rp>（</rp>
+							<rt>くすり</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>を<span class="hover-div"><span class="hide-div">飲</span><ruby class="show-div">飲<rp>（</rp>
+								<rt>の</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>ませられた　ー＞　Medicamente sa ia l-am cauzat.</li>
+				</ul>
+				Verbele exceptie:
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">先生</span><ruby class="show-div">先生<rp>（</rp>
+							<rt>せんすい</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>は<span class="hover-div"><span class="hide-div">宿題</span><ruby class="show-div">宿題<rp>（</rp>
+								<rt>しゅくだい</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>をさせた　ー＞　Cat despre sensei, (Ø　ー＞　eu spre exemplu) teme sa fac m-a cauzat</li>
+					<li>だまして<span class="hover-div"><span class="hide-div">近</span><ruby class="show-div">近<rp>（</rp>
+							<rt>ごだん</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>くまで<span class="hover-div"><span class="hide-div">来</span><ruby class="show-div">来<rp>（</rp>
+								<rt>こ</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>させた　ー＞　Pacalindu-ma pana aproape sa vin m-a cauzat</li>
+				</ul>
+				</p>
+				<p>
+				Am evitat sa folosesc cuvantul "facut" ca sa traduc aceste fraze fiindca o traducere corecta a lui させる ar fi undeva intre "a fi lasat" si "a fi facut sa". Un numar de astfel de fraze de mai sus pot avea o traducere clara cu "m-a lasat" spre exemplu. Va sugerez sa le recititi si sa va dati seama unde trebuie sa trageti din context concluzia.
+				</p>
+				
+				<h3>Exprimarea constrangerii</h3>
+		
+				<p>
+				Putem de asemenea combina られる cu させる, rezultatul fiind cel mai usor tradus prin "am fost fortat sa fac". Gramatica este relativ ciudata tradusa in romana, dar cred ca va puteti imagina ce iese cand spunem ca a fost cauzata primirea a...:
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">私</span><ruby class="show-div">私<rp>（</rp>
+							<rt>わたし</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>たちは<span class="hover-div"><span class="hide-div">監督</span><ruby class="show-div">監督<rp>（</rp>
+								<rt>かんとく</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>によって１<span class="hover-div"><span class="hide-div">日</span><ruby class="show-div">日<rp>（</rp>
+									<rt>にち</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>３<span class="hover-div"><span class="hide-div">時間</span><ruby class="show-div">時間<rp>（</rp>
+										<rt>じかん</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span><span class="hover-div"><span class="hide-div">練習</span><ruby class="show-div">練習<rp>（</rp>
+											<rt>れんしゅう</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>させられた。　ー＞　Cat despre noi, din cauza antrenorului, intr-o zi 3 ore, antrenament sa facem fortati</li>
+					<li><span class="hover-div"><span class="hide-div">私</span><ruby class="show-div">私<rp>（</rp>
+							<rt>わたし</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>は<span class="hover-div"><span class="hide-div">無理矢理</span><ruby class="show-div">無理矢理<rp>（</rp>
+								<rt>むりやり</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span><span class="hover-div"><span class="hide-div">署名</span><ruby class="show-div">署名<rp>（</rp>
+									<rt>しょめい</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>をさせられた　ー＞　Cat despre eu, impotriva vointei mele, semnatura am fost fortat.</li>
+				</ul>
+				</p>
+				<p>
+				O traducere mai mot-a-mot ar fi "am fost cauzat sa primesc", dar fortat in cazul acesta nu ar trebui sa strice intelegerea asupra a ceea ce se intampla in propozitie.
+			</p>
+		</div>
+
+		<div id="te-kureru-ageru" class="grammar-article">
+			<h2>Alte forme ~て si ~た comune</h2>
+			<h3>~てくれる si ~てあげる</h3>
+			<p>In primul rand, 呉れる inseamna a da, iar 上げる inseamna a ridica ceva. Aceste 2 constructii sunt deobicei prezentate ca fiind legate de urmatoarea constructie pe care o voi prezenta, ~てもらう, insa dupa cum vom vedea nu au foarte multe lucruri in comun cu exceptia faptului ca folosesc forma ~て. Astfel, ~てくれる si ~てあげる exprima directia in care curge favoarea, ~てくれる fiind folosit cand cineva iti face tie o favoare iar ~てあげる fiind folosit cand noi facem o favoare. Amandoua sunt verbe <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+					<rt>いちだん</rt>
+					<rp>）</rp>
+				</ruby></span></span>, urmand regulile de conjugare ale acestor verbelor. De asemenea amandoua trebuie evitate in limbajul formal, in special ~てあげる.
+					<ul>
+						<li><span class="hover-div"><span class="hide-div">席</span><ruby class="show-div">席<rp>（</rp>
+								<rt>せき</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>を<span class="hover-div"><span class="hide-div">譲</span><ruby class="show-div">譲<rp>（</rp>
+									<rt>ゆず</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>ってくれてありがとうございます　ー＞　Scaunul ca il cedezi pentru mine multumesc foarte mult.</li>
+						<li><span class="hover-div"><span class="hide-div">何</span><ruby class="show-div">何<rp>（</rp>
+								<rt>なに</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>をしてくれた？　ー＞　Ce ai facut pentru mine? (Aici se traduce cu ce mi-ai facut?)</li>
+						<li>お<span class="hover-div"><span class="hide-div">金</span><ruby class="show-div">金<rp>（</rp>
+								<rt>かね</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>を<span class="hover-div"><span class="hide-div">貸</span><ruby class="show-div">貸<rp>（</rp>
+									<rt>か</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>してあげる、お<span class="hover-div"><span class="hide-div">兄</span><ruby class="show-div">兄<rp>（</rp>
+										<rt>にい</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>ちゃん。　ー＞　Bani iti imprumut pentru tine, fratioare (mai mare).</li>
+					</ul>
+			</p>
+
+			<h3>~てもらう</h3>
+			<p><span class="hover-div"><span class="hide-div">貰</span><ruby class="show-div">貰<rp>（</rp>
+					<rt>もら</rt>
+					<rp>）
+			
+					</rp>
+				</ruby></span></span>う inseamna a primi, deci ar trebui sa fie cumva opusul expresiilor de mai sus. Acesta nu este cazul insa asa ca hai sa vedem insa ce inseamna. 
+				<br>
+				Explicatia care am auzit-o cel mai des despre ~てもらう e ca este un fel de ~てくれる in care noi il rugam/fortam pe interlocutor sa faca ceva pentru noi, si cumva ca particulele isi schimba functiile cu に　marcand subiectul intr-un mod bizar. Iar cand ni se cere sa schimbam functia particulelor cel mai probabil explicatia e gresita. Flexibilitatea in japoneza e data de schimbarile la care sunt supuse verbele in mod special, nu la faptul ca unitatile care nu se schimba niciodata (particulele) iau brusc alte intelesuri. Pe langa aceasta, exista si in engleza si in romana o constructie perfecta pentru a explica ~てもらう si in acelasi timp de a elucida ce fac particulele. Si anume, "L-am rugat pe x sa faca y" Sper ca intelegeti cine e subiectul in aceasta propozitie si de ce in japoneza ar trebui sa fie marca cu が si de asemenea de ce persoana despre care vorbim se marcheaza cu に.
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">君</span><ruby class="show-div">君<rp>（</rp>
+							<rt>きみ</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>は<span class="hover-div"><span class="hide-div">歯</span><ruby class="show-div">歯<rp>（</rp>
+								<rt>は</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span><span class="hover-div"><span class="hide-div">医者</span><ruby class="show-div">医者<rp>（</rp>
+									<rt>いしゃ</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>に<span class="hover-div"><span class="hide-div">診</span><ruby class="show-div">診<rp>（</rp>
+										<rt>み</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>てもらうべきだ。　ー＞　Cat despre tine pe dentist sa te vada sa il rogi ar trebui.</li>
+					<li><span class="hover-div"><span class="hide-div">席</span><ruby class="show-div">席<rp>（</rp>
+							<rt>せき</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>を<span class="hover-div"><span class="hide-div">譲</span><ruby class="show-div">譲<rp>（</rp>
+								<rt>ゆず</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>ってもらう。　ー＞　Scaunul sa il cedezi am sa te rog.</li>
+				</ul>
+				~てもらう seamana cel mai mult cu forma ~られる in care cel care primeste actiunea este cel pe care il rugam noi sa faca ceva. Gramatica defapt e aceeasi pentru amandoua constructiile, diferenta fiind pozitia noastra ca primitor sau cauzator al actiunii.
+			</p>
+
+			<h3>~ておく</h3>
+			<p>O alta constructie care este explicata intr-un mod cel putin bizar. De ce spun bizar? Pentru ca implicatia ar fi ca trebuie sa stim viitorul pentru a o putea folosi. In realitate este o expresie care o folosim si in romana, adica e conceptul de a lasa ceva asa cum este. defapt 置く inseamna a lasa ceva intr-un loc. 
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">窓</span><ruby class="show-div">窓<rp>（</rp>
+							<rt>まど</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>を<span class="hover-div"><span class="hide-div">開</span><ruby class="show-div">開<rp>（</rp>
+								<rt>あ</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>けておく。　ー＞　fereastra deschis si lasat (deschisa)</li>
+					<li><span class="hover-div"><span class="hide-div">火</span><ruby class="show-div">火<rp>（</rp>
+							<rt>ひ</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>を<span class="hover-div"><span class="hide-div">燃</span><ruby class="show-div">燃<rp>（</rp>
+								<rt>も</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>やしておく。　ー＞　Focul pornit si lasat (sa arda)</li>
+				</ul>
+			</p>
+
+			<h3>~てみる</h3>
+			<p>Aceasta expresie este destul de clara si avem un echivalent de 1:1 in romana. みる de aici este chiar <span class="hover-div"><span class="hide-div">見</span><ruby class="show-div">見<rp>（</rp>
+					<rt>み</rt>
+					<rp>）
+			
+					</rp>
+				</ruby></span></span>る clasic, iar expresia cea mai apropiata in romana este "sa vad". 
+				<ul>
+					<li>ぬいぐるみと<span class="hover-div"><span class="hide-div">遊</span><ruby class="show-div">遊<rp>（</rp>
+							<rt>あそ</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>んでみた　ー＞　Cu papusa sa ma joc incercat</li>
+					<li>20<span class="hover-div"><span class="hide-div">歳</span><ruby class="show-div">歳<rp>（</rp>
+							<rt>さい</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>になってお<span class="hover-div"><span class="hide-div">酒</span><ruby class="show-div">酒<rp>（</rp>
+								<rt>さけ</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>を<span class="hover-div"><span class="hide-div">飲</span><ruby class="show-div">飲<rp>（</rp>
+									<rt>の</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>んでみた　ー＞　20 de ani cand am devenit, alcool am incercat</li>
+				</ul>
+			</p>
+	
+
+			<h2>~た</h2>
+			<h3>~たり~たり~する</h3>
+			<p>Daca verbele legate prin ~て~て leaga o serie de actiuni efectuate concomitent sau secvential unul dupa altul, ~たり~たり leaga o insiruire de actiuni care nu sunt facute in mod secvential, deci nu au dependenta unele de altele.
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">昨夜</span><ruby class="show-div">昨夜<rp>（</rp>
+							<rt>ゆうべ</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>は<span class="hover-div"><span class="hide-div">歌</span><ruby class="show-div">歌<rp>（</rp>
+								<rt>う</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>ったり<span class="hover-div"><span class="hide-div">踊</span><ruby class="show-div">踊<rp>（</rp>
+									<rt>おど</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>ったりした。　ー＞　Aseara am facut dans, cantat...</li>
+					<li><span class="hover-div"><span class="hide-div">休日</span><ruby class="show-div">休日<rp>（</rp>
+							<rt>きゅうじつ</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>は、<span class="hover-div"><span class="hide-div">食</span><ruby class="show-div">食<rp>（</rp>
+								<rt>た</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>べたり<span class="hover-div"><span class="hide-div">寝</span><ruby class="show-div">寝<rp>（</rp>
+									<rt>ね</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>たりして<span class="hover-div"><span class="hide-div">過</span><ruby class="show-div">過<rp>（</rp>
+										<rt>す</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>ごしている。　ー＞　Cat despre zile libere, somn, mananc facand petrec timpul.</li>
+				</ul>
+			</p>
+		</div>
+
+		<div id="i-form-verbs" class="grammar-article">
+			<h2>Formele substantantivale a verbelor</h2>
+			<p>Exista doua moduri de a schimba verbele in adjective in japoneza. Unul extrem de important pe care nimeni nu il dezbate si unul relativ direct si simplu care este mentionat des in literatura de specialitate. Asa ca as dori sa ma axez pe forma de <span class="hover-div"><span class="hide-div">連用形</span><ruby class="show-div">連用形<rp>（</rp>
+					<rt>れんようけい</rt>
+					<rp>）</rp>
+				</ruby></span></span>, o forma de conectare foarte des intalnita atat in limbajul vorbit cat si in cel scris, adica de stema い a verbelor.
+			
+				<h3>Stema い a verbelor</h3>
+				<span class="hover-div"><span class="hide-div">連用</span><ruby class="show-div">連用<rp>（</rp>
+						<rt>れんよう</rt>
+						<rp>）</rp>
+					</ruby></span></span> inseamna utilizare continua iar <span class="hover-div"><span class="hide-div">形</span><ruby class="show-div">形<rp>（</rp>
+							<rt>けい</rt>
+							<rp>）</rp>
+						</ruby></span></span> forma. Este o forma care ne lasa sa continuam sa adaugam la verb alte parti de vorbire. Seamana in aceasta privinta cu forma て, insa daca forma て leaga verbele de alte verbe, stema い leaga verbele deobicei de substantive sau adjective:
+				<ul>
+					<li>この<span class="hover-div"><span class="hide-div">漢字</span><ruby class="show-div">漢字<rp>（</rp>
+							<rt>かんじ</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>の<span class="hover-div"><span class="hide-div">読み方</span><ruby class="show-div">読み方<rp>（</rp>
+								<rt>よみた</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>は<span class="hover-div"><span class="hide-div">何</span><ruby class="show-div">何<rp>（</rp>
+									<rt>なん</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>に？　ー＞　Acest kanji citirea care este?</li>
+					<li><span class="hover-div"><span class="hide-div">音楽</span><ruby class="show-div">音楽<rp>（</rp>
+							<rt>おんがく</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>を<span class="hover-div"><span class="hide-div">聴</span><ruby class="show-div">聴<rp>（</rp>
+								<rt>き</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>きながらの<span class="hover-div"><span class="hide-div">勉強</span><ruby class="show-div">勉強<rp>（</rp>
+									<rt>べんきょう</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>は<span class="hover-div"><span class="hide-div">良</span><ruby class="show-div">良<rp>（</rp>
+										<rt>い</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>いのでしょうか？　ー＞　cat despre muzica ascultata  in timpul studiului, oare e buna?</li>
+				</ul>
+					</p>
+					<p>
+				Putem de asemenea sa legam si alte verbe folosit particula に:
+					<ul>
+						<li><span class="hover-div"><span class="hide-div">会</span><ruby class="show-div">会<rp>（</rp>
+								<rt>あ</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>いに<span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+									<rt>い</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>く　ー＞　Sa il intalnesc merg (acolo) </li>
+						<li><span class="hover-div"><span class="hide-div">始</span><ruby class="show-div">初<rp>（</rp>
+								<rt>はじ</rt>
+								<rp>）
+						
+								</rp>
+							</ruby></span></span>めに９<span class="hover-div"><span class="hide-div">番</span><ruby class="show-div">番<rp>（</rp>
+									<rt>ばん</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>におかけ<span class="hover-div"><span class="hide-div">下</span><ruby class="show-div">下<rp>（</rp>
+										<rt>くだ</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>さい。　ー＞　Pentru inceput butonul 9 apasati va rog.</li>
+					</ul>
+					</p>
+					<p>
+					Aceasta modalitate de a uni verbe nu este la fel de comuna ca forma て, insa exista o diferenta subtila in ce inseamna. Forma aceasta se foloseste ca sa exprimam ca facem prima actiune specific pentru a o putea face pe a 2-a. Sper ca ati observat verbul <span class="hover-div"><span class="hide-div">一段</span><ruby class="show-div">一段<rp>（</rp>
+							<rt>いちだん</rt>
+							<rp>）</rp>
+						</ruby></span></span> din al 2-lea exemplu.
+						</p>
+					
+					<h3>のこと si の</h3>
+					
+						<p>
+					Multe resurse spun ca aceste 2 contructii transforma verbele in substantive, ceea ce nu e neaparat gresit, insa problema e ca aceste constructii pot cauza intregi clauze de sa fie considerate ca un singur substantiv:
+						<ul>
+							<li><span class="hover-div"><span class="hide-div">車</span><ruby class="show-div">車<rp>（</rp>
+									<rt>くるま</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>を<span class="hover-div"><span class="hide-div">洗</span><ruby class="show-div">洗<rp>（</rp>
+										<rt>あら</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>うのことは<span class="hover-div"><span class="hide-div">楽</span><ruby class="show-div">楽<rp>（</rp>
+											<rt>たの</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>しい。　ー＞　Spalatul masinii, adica lucrurile despre asta sunt distractive.</li>
+							<li><span class="hover-div"><span class="hide-div">友達</span><ruby class="show-div">友達<rp>（</rp>
+									<rt>ともだち</rt>
+									<rp>）
+							
+									</rp>
+								</ruby></span></span>と<span class="hover-div"><span class="hide-div">遊</span><ruby class="show-div">遊<rp>（</rp>
+										<rt>あそ</rt>
+										<rp>）
+								
+										</rp>
+									</ruby></span></span>ぶのことは<span class="hover-div"><span class="hide-div">面白</span><ruby class="show-div">面白<rp>（</rp>
+											<rt>おもしろ</rt>
+											<rp>）
+									
+											</rp>
+										</ruby></span></span>い　ー＞　Jucatul cu prietenii, adica lucrurile despre asta sunt interesante.</li>
+						</ul>
+							</p>
+							<p>
+					A le prezenta in acest fel deci este destul de limitativ fata de ce putem face cu のこと si cu の. De asemenea, e mult mai probabil sa gasiti exemplele de mai sus folosind doar の in loc de のこと.
+			</p>
+		</div>
+
+		<div id="polite-form" class="grammar-article">
+			<h2>Formele de politete です si ~ます</h2>
+			<p>Am ajuns in sfarsit si la forma de politete arhicunoscuta de toti. As recomanda sa stati departe de ea pentru inceput. Manualele nu explica faptul ca nu este forma naturala a japonezei si dau impresia ca daca folosim aceasta forma suntem politicosi. Daca nu stim limba insa vom ajunge sa spunem echivalentul la "Scuzati-ma ba" in japoneza, ceea ce teoretic e politicos, dar nu prea. In plus, copii japonezi incep sa invete si foloseasca aceasta forma dupa varsta de ~9 ani, cand au deja o fundatie solida in limba.
+			</p>
+			<p>
+				Despre です deja am vorbit, este forma politicoasa a lui だ,cu singura mentionare ca trebuie pus si dupa adjective pentru a incheia propozitii, nu doar dupa substantive. Pentru verbe vom folosi ~ます pentru a denota politetea. Ceea ce trebuie sa intelegem despre ~ます este ca e un verb in sine, unul ajutator dar totusi un verb. El se leaga la stema い a verbelor. Este relativ iregular in conjugari asa ca aveti mai jos modul in care e trecut la negativ/trecut:
+				<table>
+					<tr>
+						<th>~ます</th>
+						<th>Prezent</th>
+						<th>Trecut</th>
+					</tr>
+					<tr>
+						<th>Pozitiv</th>
+						<th>ます</th>
+						<th>ました</th>
+					</tr>
+					<tr>
+						<th>Negativ</th>
+						<th>ません</th>
+						<th>ませんでした</th>
+					</tr>
+				</table>
+					</p>
+					<p>
+				In principiu, in limbajul politicos, fiecare clauza care se incheie intr-un verb este incheiata adaugand verbul ajutator ます. 
+				<ul>
+					<li><span class="hover-div"><span class="hide-div">今日</span><ruby class="show-div">今日<rp>（</rp>
+							<rt>きょう</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>
+は<span class="hover-div"><span class="hide-div">何</span><ruby class="show-div">何<rp>（</rp>
+		<rt>なに</rt>
+		<rp>）
+
+		</rp>
+	</ruby></span></span>
+を<span class="hover-div"><span class="hide-div">食</span><ruby class="show-div">食<rp>（</rp>
+		<rt>た</rt>
+		<rp>）
+
+		</rp>
+	</ruby></span></span>
+べますか？　ー＞　Ce doriti sa mancati azi?</li>
+					<li><span class="hover-div"><span class="hide-div">旅行</span><ruby class="show-div">旅行<rp>（</rp>
+							<rt>りょこう</rt>
+							<rp>）
+					
+							</rp>
+						</ruby></span></span>
+に<span class="hover-div"><span class="hide-div">行</span><ruby class="show-div">行<rp>（</rp>
+		<rt>い</rt>
+		<rp>）
+
+		</rp>
+	</ruby></span></span>
+きました。　ー＞　Am fost in calatorie.</li>
+				</ul>
+			</p>
+		</div>
+
+		<div id="trans-verbs" class="grammar-article">
+			<h2>Forma tranzitiva si intranzitiva</h2>
+			<p>In limba japoneza exista un tip de verbe care pot avea 2 forme, si anume tranzitiva sau intranzitiva, in functie de cine face actiunea. Verbele tranzitive sunt verbe care ne spun ca cineva a facut actiunea iar cele intranzitive sunt folosite cand spunem ca actiunea nu a fost facuta de cineva, ci s-a intamplat doar. Voi folosi alti termeni mai usor de inteles sper pentru a descrie aceste verbe pentru a incerca detasarea de gramatica engleza, de unde si provin termenii de "tranzitiv" si "intranzitiv". Astfel ma voi referi la verbele tranzitive ca verbe actionate de cineva iar la verbele intranzitite ca verbe cu actiune proprie.
+				</p>
+				<p> Ca sa dau un exemplu in romana, cand spun ca am scapat mingea folosesc un verb care denota ca actiunea e facuta de cineva, iar daca spun ca a cazut mingea folosesc un verb ce denota actiune proprie. Nu recomand sa incepeti sa studiati liste intregi de verbe tranzitive si intranzitive, din nou folosirea lor trebuie sa fie un rezultat direct al imersiunii. 
+					</p>
+					<p>In general, in literatura engleza asupra japonezei, este considerat ca nu exista metode de a le diferentia in afara de experienta/memorare. Exista insa un numar de reguli care ne pot ajuta sa le diferentiem, care pornesc de la un concept cu care am avut de-a face pana acum insa nu l-am numit. Si anume exista 2 verbe mama si tata in japoneza, si anume ある　si する (ある　pentru verbele care denota existenta, adica verbe actionate propriu, si する pentru verbe cu actionare de alta persoana). Astfel:
+				<ul>
+					<li>Verbele actionate de cineva tind sa se termine in す, de la する</li>
+					<li>Daca un verb din aceasta categorie se termina in ある este cel actionat propriu (exemplu: <span class="hover-div"><span class="hide-div">上</span><ruby class="show-div">上<rp>（</rp>
+							<rt>あ</rt>
+							<rp>）</rp>
+						</ruby></span></span>げる vs <span class="hover-div"><span class="hide-div">上</span><ruby class="show-div">上<rp>（</rp>
+								<rt>あ</rt>
+								<rp>）</rp>
+							</ruby></span></span>がる, <span class="hover-div"><span class="hide-div">包</span><ruby class="show-div">包<rp>（</rp>
+									<rt>くる</rt>
+									<rp>）</rp>
+								</ruby></span></span>まる vs <span class="hover-div"><span class="hide-div">包</span><ruby class="show-div">包<rp>（</rp>
+										<rt>くる</rt>
+										<rp>）</rp>
+									</ruby></span></span>む)</li>
+					<li>え + る schimba regula. Astfel verbele cu miscare proprie devin verbe actionate de cineva si invers. In practica insa, regula asta se aplica mai ales pentru verbele care se termina in verbele care se termina in む/める fiindca primele 2 reguli acopera cea mai mare parte din verbe. Asadar, verbele care se termina in める tind sa fie verbe actionate de cineva.</li>
+					<li>Similar cu む/める verbele care se termina cu ぶ/べる, つ/てる pot fi considerate ca verbe care urmeaza prima regula, deci varianta care se termina in べる/てる este cea actionata de cineva.</li>
+				</ul>
+				</p>
+				<p>
+				Regulile acestea se aplica pentru majoritatea verbelor insa exista exceptii (ca de exemplu <span class="hover-div"><span class="hide-div">落</span><ruby class="show-div">落<rp>（</rp>
+						<rt>お</rt>
+						<rp>）</rp>
+					</ruby></span></span>ちる/<span class="hover-div"><span class="hide-div">落</span><ruby class="show-div">落<rp>（</rp>
+							<rt>お</rt>
+							<rp>）</rp>
+						</ruby></span></span>とす). De asemenea, ele nu trebuie memorate, insa pot ajuta cand aveti nevoie sa recunoasteti un verb pe care tocmai l-ati intalnit pentru prima data. Insa nu va bazati pe reguli, bazati-va pe recunoscutul lor in urma experientei in a utiliza limba.
+			</p>
+		</div>
+	</div>
+</div>
+
+<div th:fragment="translation-box" class="sidebar" role="complementary" id="collapsible">
+	<button type="button" class="collapse_button" id="collapse_button"></button>
+	<div class="collapse_div">
+		<div class="wrapper">
+
+			<div id="predicate-words">
+			</div>
+
+			<div id="subject-words">
+				<ul>
+					<li>どうして - de ce</li>
+					<li><ruby>君<rp>（</rp>
+							<rt>きみ</rt>
+							<rp>）</rp>
+						</ruby> - tu</li>
+					<li><ruby>行<rp>（</rp>
+							<rt>い</rt>
+							<rp>）</rp>
+						</ruby>かなかった - nu ai fost</li>
+				</ul>
+			</div>		
+
+			<div id="ha-vs-ga-words">
+				<ul>
+				<li>わたし - Eu</li>
+				<li>ウナギ - Tipar</li>
+				<li>けど - insa</li>
+				<li><ruby>僕<rp>（</rp>
+					<rt>ぼく</rt>
+					<rp>）</rp>
+				</ruby> - Eu</li>
+				<li><ruby>肉<rp>（</rp>
+						<rt>にく</rt>
+						<rp>）</rp>
+					</ruby> - Carne</li>
+				<li><ruby>食<rp>（</rp>
+						<rt>た</rt>
+						<rp>）</rp>
+					</ruby>べる - Mananc</li>
+				<li><ruby>食<rp>（</rp>
+						<rt>た</rt>
+						<rp>）</rp>
+					</ruby>べない - Nu mananc</li>
+							<li><ruby>魚<rp>（</rp>
+									<rt>さかな</rt>
+									<rp>）</rp>
+								</ruby> - Peste</li>
+				<li><ruby>男<rp>（</rp>
+						<rt>おとこ</rt>
+						<rp>）</rp>
+					</ruby> - barbat</li>
+					</ul>
+			</div>
+
+			<div id="copula-words">
+				<ul>
+					<li>これ - Acest</li>
+					<li>ペン - Stilou, Pix</li>
+					<li>りんご - Mar</li>
+					<li><ruby>僕<rp>（</rp>
+							<rt>ぼく</rt>
+							<rp>）</rp>
+						</ruby> - Eu</li>
+					<li><ruby>彼女<rp>（</rp>
+							<rt>かのじょ</rt>
+							<rp>）</rp>
+						</ruby> - Prietena</li>
+					<li><ruby>綺麗<rp>（</rp>
+							<rt>きれい</rt>
+							<rp>）</rp>
+						</ruby> - Frumos, curat</li>
+					<li><ruby>大切<rp>（</rp>
+							<rt>たいせつ</rt>
+							<rp>）</rp>
+						</ruby> - Important</li>
+					<li><ruby>人<rp>（</rp>
+							<rt>ひと</rt>
+							<rp>）</rp>
+						</ruby> - Persoana</li>
+					<li><ruby>母<rp>（</rp>
+							<rt>はは</rt>
+							<rp>）</rp>
+						</ruby> - Mama</li>
+					<li><ruby>映画<rp>（</rp>
+							<rt>えいが</rt>
+							<rp>）</rp>
+						</ruby> - Film</li>
+					<li><ruby>面白<rp>（</rp>
+							<rt>おもしろ</rt>
+							<rp>）</rp>
+						</ruby>い - Interesant, comic</li>
+					<li><ruby>青<rp>（</rp>
+							<rt>あお</rt>
+							<rp>）</rp>
+						</ruby>い - Albastru (dar si verde cateodata)</li>
+					<li><ruby>美味<rp>（</rp>
+							<rt>おい</rt>
+							<rp>）</rp>
+						</ruby>しい - Delicios</li>
+					<li>シンガー - Cantaret</li>
+					<li><ruby>大<rp>（</rp>
+							<rt>おお</rt>
+							<rp>）</rp>
+						</ruby>きい - Mare</li>
+					<li>お<ruby>祖父<rp>（</rp>
+							<rt>じい</rt>
+							<rp>）</rp>
+						</ruby>さん - Bunic, Batran</li>
+					<li><ruby>親切<rp>（</rp>
+							<rt>しんせつ</rt>
+							<rp>）</rp>
+						</ruby>さん - Bland</li>
+					<li><ruby>部屋<rp>（</rp>
+							<rt>へや</rt>
+							<rp>）</rp>
+						</ruby>さん - Camera</li>
+				</ul>
+			</div>
+
+			<div id="particles-words">
+				<ul>
+						<li><ruby>海<rp>（</rp>
+								<rt>うみ</rt>
+								<rp>）</rp>
+							</ruby> - Mare, ocean</li>				
+					<li><ruby>行<rp>（</rp>
+							<rt>い</rt>
+							<rp>）</rp>
+						</ruby>く - A merge
+					</li>
+					<li>いる - A fi (pentru vietuitoare)</li>
+					<li>ある - A fi (pentru obiecte)</li>
+					<li>する - A face</li>
+					<li><ruby>箱<rp>（</rp>
+							<rt>はこ</rt>
+							<rp>）</rp>
+						</ruby> - Cutie
+					</li>
+					<li><ruby>中<rp>（</rp>
+							<rt>なか</rt>
+							<rp>）</rp>
+						</ruby> - Interior
+					</li>
+					<li>ピザ - Pizza</li>
+
+					<li><ruby>入<rp>（</rp>
+							<rt>はい</rt>
+							<rp>）</rp>
+						</ruby>る - A intra
+					</li>
+					<li><ruby>部屋<rp>（</rp>
+							<rt>へや</rt>
+							<rp>）</rp>
+						</ruby> - Camera
+					</li>
+					<li>プール - Piscina</li>
+					<li><ruby>泳<rp>（</rp>
+							<rt>およ</rt>
+							<rp>）</rp>
+						</ruby>ぎ - Inot
+					</li>
+					<li><ruby>花<rp>（</rp>
+							<rt>はな</rt>
+							<rp>）</rp>
+						</ruby> - Floare
+					</li>
+					<li><ruby>上<rp>（</rp>
+							<rt>あ</rt>
+							<rp>）</rp>
+						</ruby>げる - A ridica, a da
+					</li>
+					<li><ruby>石<rp>（</rp>
+							<rt>いし</rt>
+							<rp>）</rp>
+						</ruby> - Piatra
+					</li>
+					<li><ruby>上<rp>（</rp>
+							<rt>うえ</rt>
+							<rp>）</rp>
+						</ruby> - Deasupra, pe
+					</li>
+					<li><ruby>落<rp>（</rp>
+							<rt>お</rt>
+							<rp>）</rp>
+						</ruby>ちる - A cadea
+					</li>
+					<li>なる - A deveni</li>
+					<li>お<ruby>金持<rp>（</rp>
+							<rt>かねも</rt>
+							<rp>）</rp>
+						</ruby>ち - Bogat, cu bani
+					</li>
+					<li><ruby>静<rp>（</rp>
+							<rt>しず</rt>
+							<rp>）</rp>
+						</ruby>か - Liniste
+					</li>
+					<li><ruby>彼<rp>（</rp>
+							<rt>かれ</rt>
+							<rp>）</rp>
+						</ruby> - El
+					</li>
+					<li><ruby>丁寧<rp>（</rp>
+							<rt>ていねい</rt>
+							<rp>）</rp>
+						</ruby> - Politete
+					</li>
+					<li><ruby>扱<rp>（</rp>
+							<rt>あつか</rt>
+							<rp>）</rp>
+						</ruby>う - A (se) purta, a trata
+					</li>
+					<li><ruby>公園<rp>（</rp>
+							<rt>こうえん</rt>
+							<rp>）</rp>
+						</ruby> - Parc
+					</li>
+					<li><ruby>遊<rp>（</rp>
+							<rt>あそ</rt>
+							<rp>）</rp>
+						</ruby>ぶ - A (se) distra
+					</li>
+					<li><ruby>世界<rp>（</rp>
+							<rt>せかい</rt>
+							<rp>）</rp>
+						</ruby> - Lume
+					</li>
+					<li><ruby>一番<rp>（</rp>
+							<rt>いちばん</rt>
+							<rp>）</rp>
+						</ruby> - Cel mai, primul
+					</li>
+					<li><ruby>美<rp>（</rp>
+							<rt>うつく</rt>
+							<rp>）</rp>
+						</ruby>しい - Magnific
+					</li>
+					<li><ruby>街<rp>（</rp>
+							<rt>まち</rt>
+							<rp>）</rp>
+						</ruby> - Oras
+					</li>
+					<li><ruby>車<rp>（</rp>
+							<rt>くるま</rt>
+							<rp>）</rp>
+						</ruby> - Masina
+					</li>
+					<li><ruby>出<rp>（</rp>
+							<rt>で</rt>
+							<rp>）</rp>
+						</ruby>る - A iesi
+					</li>
+					<li><ruby>道<rp>（</rp>
+							<rt>みち</rt>
+							<rp>）</rp>
+						</ruby> - Drum, strada
+					</li>
+					<li><ruby>歩<rp>（</rp>
+							<rt>ある</rt>
+							<rp>）</rp>
+						</ruby>く - A merge
+					</li>
+				</ul>
+			</div>
+
+			<div id="adjectives-words">
+				<ul>
+				<li><ruby>面白<rp>（</rp>
+						<rt>おもしろ</rt>
+						<rp>）</rp>
+					</ruby>い - Interesant, comic</li>
+				<li><ruby>楽<rp>（</rp>
+						<rt>たの</rt>
+						<rp>）</rp>
+					</ruby>しい - Distractiv</li>
+				<li><ruby>新<rp>（</rp>
+						<rt>あたら</rt>
+						<rp>）</rp>
+					</ruby>しい - Nou</li>
+				<li><ruby>遊<rp>（</rp>
+						<rt>あそ</rt>
+						<rp>）</rp>
+					</ruby>び- Distractie</li>
+				<li><ruby>映画<rp>（</rp>
+						<rt>えいが</rt>
+						<rp>）</rp>
+					</ruby>- Film</li>
+				<li><ruby>朝<rp>（</rp>
+						<rt>あさ</rt>
+						<rp>）</rp>
+					</ruby>- Dimineata</li>
+					<li><ruby>毎<rp>（</rp>
+							<rt>まい</rt>
+							<rp>）</rp>
+						</ruby>- Fiecare</li>
+					<li><ruby>忙<rp>（</rp>
+							<rt>いそが</rt>
+							<rp>）</rp>
+						</ruby>しい　- Ocupat</li>
+						<li>とても - Foarte</li>
+						</ul>
+			</div>
+
+			<div id="nai-tai-verbs-words">
+				<ul>
+					<li><ruby>一段<rp>（</rp>
+							<rt>いちだん</rt>
+							<rp>）</rp>
+						</ruby>　- Grad 1</li>
+					<li><ruby>五段<rp>（</rp>
+							<rt>ごだん</rt>
+							<rp>）</rp>
+						</ruby>　- Grad 5</li>
+					<li><ruby>僕<rp>（</rp>
+							<rt>ぼく</rt>
+							<rp>）</rp>
+						</ruby>　- Eu</li>
+					<li><ruby>魚<rp>（</rp>
+							<rt>さかな</rt>
+							<rp>）</rp>
+						</ruby>　- Peste</li>
+					<li><ruby>食<rp>（</rp>
+							<rt>た</rt>
+							<rp>）</rp>
+						</ruby>べる - A manca</li>
+						<li>テレビ - Televizor</li>
+					<li><ruby>見<rp>（</rp>
+							<rt>み</rt>
+							<rp>）</rp>
+						</ruby>る - A vedea</li>
+						<li>いい - bine</li>
+					<li><ruby>理由<rp>（</rp>
+							<rt>りゅう</rt>
+							<rp>）</rp>
+						</ruby> - Motiv</li>
+					<li><ruby>山<rp>（</rp>
+							<rt>やま</rt>
+							<rp>）</rp>
+						</ruby>ほど - Multe</li>
+					<li>ある - A fi</li>
+						<li>あの - Acea</li>
+					<li><ruby>日<rp>（</rp>
+							<rt>ひ</rt>
+							<rp>）</rp>
+						</ruby>　- Zi</li>
+						<li><ruby>誓<rp>（</rp>
+								<rt>ちか</rt>
+								<rp>）</rp>
+							</ruby>う　- A jura</li>
+						<li><ruby>約束<rp>（</rp>
+								<rt>やくそく</rt>
+								<rp>）</rp>
+							</ruby>　- Promisiune</li>
+							<li>だけ - Doar</li>
+						<li><ruby>忘<rp>（</rp>
+								<rt>わすれ</rt>
+								<rp>）</rp>
+							</ruby>る　- A uita</li>
+							<li><ruby>今日<rp>（</rp>
+									<rt>きょう</rt>
+									<rp>）</rp>
+								</ruby>　- Azi</li>
+						<li><ruby>授業<rp>（</rp>
+								<rt>じゅぎょう</rt>
+								<rp>）</rp>
+							</ruby>　- Curs</li>
+						<li><ruby>行<rp>（</rp>
+								<rt>い</rt>
+								<rp>）</rp>
+							</ruby>く　- A merge</li>
+							<li><ruby>口<rp>（</rp>
+									<rt>くち</rt>
+									<rp>）</rp>
+								</ruby>　- Gura</li>
+						<li><ruby>合<rp>（</rp>
+								<rt>あ</rt>
+								<rp>）</rp>
+							</ruby>う　- A intalni</li>
+						<li><ruby>今<rp>（</rp>
+								<rt>いま</rt>
+								<rp>）</rp>
+							</ruby>　- Acum</li>
+							<li>まで - Pana</li>
+						<li><ruby>酒<rp>（</rp>
+								<rt>さけ</rt>
+								<rp>）</rp>
+							</ruby> - Alcool</li>
+						<li><ruby>飲<rp>（</rp>
+								<rt>の</rt>
+								<rp>）</rp>
+							</ruby>む - A bea</li>
+						<li><ruby>彼<rp>（</rp>
+								<rt>かれ</rt>
+								<rp>）</rp>
+							</ruby> - El</li>
+							<li><ruby>来<rp>（</rp>
+									<rt>く</rt>
+									<rp>）</rp>
+								</ruby>る - A veni</li>
+							<li>する - A face</li>						
+						<li>そんな - Asa ceva, astfel</li>
+						<li>こと - acest</li>
+								<li><ruby>信<rp>（</rp>
+										<rt>しん</rt>
+										<rp>）</rp>
+									</ruby>じる - A crede</li>
+							<li><ruby>難<rp>（</rp>
+									<rt>むずか</rt>
+									<rp>）</rp>
+								</ruby>しい -Dificil</li>
+							<li><ruby>多分<rp>（</rp>
+									<rt>たぶん</rt>
+									<rp>）</rp>
+								</ruby> - Poate</li>
+							<li><ruby>何も<rp>（</rp>
+									<rt>く</rt>
+									<rp>）</rp>
+								</ruby> - Nimic</li>
+							<li>できる - A putea</li>
+						<li><ruby>鯛焼<rp>（</rp>
+								<rt>たいや</rt>
+								<rp>）</rp>
+							</ruby>き - Prajituri in forma de peste</li>
+						<li><ruby>焼<rp>（</rp>
+								<rt>や</rt>
+								<rp>）</rp>
+							</ruby>く - A coace, a gati</li>
+							<li>けど - Insa</li>
+						<li><ruby>材料<rp>（</rp>
+								<rt>ざいりょう</rt>
+								<rp>）</rp>
+							</ruby> - Ingrediente</li>
+							<li>バンドメンバー - Membrii de formatie</li>
+						<li><ruby>会<rp>（</rp>
+								<rt>あ</rt>
+								<rp>）</rp>
+							</ruby>う - A intalni</li>
+						<li><ruby>鳥<rp>（</rp>
+								<rt>とり</rt>
+								<rp>）</rp>
+							</ruby> - Pasare</li>
+						<li><ruby>歌<rp>（</rp>
+								<rt>うた</rt>
+								<rp>）</rp>
+							</ruby> - Cantec</li>
+						<li><ruby>聞<rp>（</rp>
+								<rt>き</rt>
+								<rp>）</rp>
+							</ruby>く - A auzi</li>
+						<li><ruby>今晩<rp>（</rp>
+								<rt>こんばん</rt>
+								<rp>）</rp>
+							</ruby> - Diseara</li>
+							<li>ワイン - Vin</li>
+						<li><ruby>飲<rp>（</rp>
+								<rt>の</rt>
+								<rp>）</rp>
+							</ruby>む - A bea</li>
+						<li><ruby>来年<rp>（</rp>
+								<rt>らいねん</rt>
+								<rp>）</rp>
+							</ruby> - Anul viitor</li>
+						<li><ruby>何<rp>（</rp>
+								<rt>なに</rt>
+								<rp>）</rp>
+							</ruby> - Ce</li>
+							<li>また - Inca</li>
+							<li>ここ - Aici</li>
+				</ul>
+			</div>
+
+			<div id="past-tense-verbs-words">
+				<ul>
+					<li><ruby>一段<rp>（</rp>
+							<rt>いちだん</rt>
+							<rp>）</rp>
+						</ruby>　- Grad 1</li>
+						<li><ruby>五段<rp>（</rp>
+								<rt>ごだん</rt>
+								<rp>）</rp>
+							</ruby>　- Grad 5</li>
+						<li><ruby>来る<rp>（</rp>
+								<rt>く</rt>
+								<rp>）</rp>
+							</ruby> - A veni</li>
+						<li>する - A face</li>
+						<li><ruby>閉<rp>（</rp>
+								<rt>し</rt>
+								<rp>）</rp>
+							</ruby>める　- A inchide</li>
+						<li><ruby>着<rp>（</rp>
+								<rt>き</rt>
+								<rp>）</rp>
+							</ruby>る - A purta</li>
+						<li><ruby>答<rp>（</rp>
+							<rt>こた</rt>
+							<rp>）</rp>
+						</ruby>える - A raspunde</li>
+						<li><ruby>走<rp>（</rp>
+								<rt>はし</rt>
+								<rp>）</rp>
+							</ruby>る - A fugi</li>
+							<li><ruby>会<rp>（</rp>
+									<rt>あ</rt>
+									<rp>）</rp>
+								</ruby>る - A intalni</li>
+						<li><ruby>立<rp>（</rp>
+								<rt>た</rt>
+								<rp>）</rp>
+							</ruby>つ - A se ridica</li>
+						<li><ruby>書<rp>（</rp>
+								<rt>か</rt>
+								<rp>）</rp>
+							</ruby>く - A scrie</li>
+						<li><ruby>話<rp>（</rp>
+								<rt>はな</rt>
+								<rp>）</rp>
+							</ruby>す - A vorbi</li>
+						<li><ruby>運<rp>（</rp>
+								<rt>はこ</rt>
+								<rp>）</rp>
+							</ruby>ぶ - A cara</li>
+						<li><ruby>読<rp>（</rp>
+								<rt>よ</rt>
+								<rp>）</rp>
+							</ruby>む - A citi</li>					
+				</ul>
+			</div>
+
+			<div id="te-form-verbs-words">
+				<ul>
+					<li><ruby>一段<rp>（</rp>
+							<rt>いちだん</rt>
+							<rp>）</rp>
+						</ruby>　- Grad 1</li>
+						<li><ruby>五段<rp>（</rp>
+								<rt>ごだん</rt>
+								<rp>）</rp>
+							</ruby>　- Grad 5</li>						
+						<li><ruby>起<rp>（</rp>
+								<rt>お</rt>
+								<rp>）</rp>
+							</ruby>きる　- A se trezi</li>
+						<li><ruby>見<rp>（</rp>
+								<rt>み</rt>
+								<rp>）</rp>
+							</ruby>る　- A vedea</li>
+							<li><ruby>食<rp>（</rp>
+									<rt>く</rt>
+									<rp>）</rp>
+								</ruby>らう　- A manca</li>
+							<li><ruby>待<rp>（</rp>
+									<rt>ま</rt>
+									<rp>）</rp>
+								</ruby>つ　- A astepta</li>
+							<li><ruby>泳<rp>（</rp>
+									<rt>およ</rt>
+									<rp>）</rp>
+								</ruby>ぐ　- A inota</li>
+							<li><ruby>話<rp>（</rp>
+									<rt>はな</rt>
+									<rp>）</rp>
+								</ruby>す　- A vorbi</li>
+							<li><ruby>読<rp>（</rp>
+									<rt>よ</rt>
+									<rp>）</rp>
+								</ruby>む　- A citi</li>
+							<li><ruby>飛<rp>（</rp>
+									<rt>と</rt>
+									<rp>）</rp>
+								</ruby>ぶ　- A zbura, a sari</li>
+							<li><ruby>来<rp>（</rp>
+									<rt>く</rt>
+									<rp>）</rp>
+								</ruby>る - A veni</li>
+							<li>する - A face</li>
+							<li><ruby>昨日<rp>（</rp>
+									<rt>きのう</rt>
+									<rp>）</rp>
+								</ruby> - Ieri</li>
+								<li><ruby>映画<rp>（</rp>
+										<rt>えいが</rt>
+										<rp>）</rp>
+									</ruby> - Film</li>
+								<li>つまらない - plictisitor</li>
+						<li><ruby>長<rp>（</rp>
+								<rt>なが</rt>
+								<rp>）</rp>
+							</ruby>い - Lung</li>
+							<li><ruby>眠<rp>（</rp>
+									<rt>ねむ</rt>
+									<rp>）</rp>
+								</ruby>い - Somnoros</li>
+							<li>なる - A deveni</li>
+							<li>お<ruby>母<rp>（</rp>
+									<rt>かあ</rt>
+									<rp>）</rp>
+								</ruby>さん - Mama</li>
+							<li><ruby>親切<rp>（</rp>
+									<rt>しんせつ</rt>
+									<rp>）</rp>
+								</ruby> - Bland</li>
+							<li><ruby>立派<rp>（</rp>
+									<rt>りっぱ</rt>
+									<rp>）</rp>
+								</ruby> - Grozav</li>
+							<li><ruby>人<rp>（</rp>
+									<rt>ひと</rt>
+									<rp>）</rp>
+								</ruby> - Om, persoana</li>
+							<li><ruby>鳥<rp>（</rp>
+									<rt>とり</rt>
+									<rp>）</rp>
+								</ruby> - Pasare</li>
+							<li><ruby>時<rp>（</rp>
+									<rt>とき</rt>
+									<rp>）</rp>
+								</ruby> - Timp</li>
+							<li><ruby>楽<rp>（</rp>
+									<rt>たの</rt>
+									<rp>）</rp>
+								</ruby>しい - distractiv</li>
+								<li>だろう - oare</li>
+							<li>お<ruby>前<rp>（</rp>
+									<rt>まえ</rt>
+									<rp>）</rp>
+								</ruby> - Tu</li>
+								<li>もう - deja</li>
+							<li><ruby>死<rp>（</rp>
+									<rt>し</rt>
+									<rp>）</rp>
+								</ruby>ぬ - A muri</li>
+							<li><ruby>窓<rp>（</rp>
+									<rt>まど</rt>
+									<rp>）</rp>
+								</ruby> - Fereastra</li>
+							<li><ruby>開<rp>（</rp>
+									<rt>あ</rt>
+									<rp>）</rp>
+								</ruby>く - A deschide</li>
+							<li><ruby>黒板<rp>（</rp>
+									<rt>こくばん</rt>
+									<rp>）</rp>
+								</ruby> - Tabla neagra</li>
+							<li><ruby>文字<rp>（</rp>
+									<rt>もじ</rt>
+									<rp>）</rp>
+								</ruby> - Litere, caractere</li>
+							<li><ruby>彼<rp>（</rp>
+									<rt>かれ</rt>
+									<rp>）</rp>
+								</ruby> - El</li>
+							<li><ruby>公園<rp>（</rp>
+									<rt>こうえん</rt>
+									<rp>）</rp>
+								</ruby> - Parc</li>
+							<li><ruby>歩<rp>（</rp>
+									<rt>ある</rt>
+									<rp>）</rp>
+								</ruby>く - A se plimba</li>
+							<li><ruby>同僚<rp>（</rp>
+									<rt>どうりょう</rt>
+									<rp>）</rp>
+								</ruby> - Coleg</li>
+								<li>タバコ - tutun</li>
+							<li><ruby>吸<rp>（</rp>
+									<rt>す</rt>
+									<rp>）</rp>
+								</ruby>う - A suge, a fuma</li>
+							<li><ruby>消<rp>（</rp>
+									<rt>け</rt>
+									<rp>）</rp>
+								</ruby>しゴム - Radiera</li>
+							<li><ruby>貸<rp>（</rp>
+									<rt>か</rt>
+									<rp>）</rp>
+								</ruby>す - A imprumuta de la cineva</li>
+				</ul>
+			</div>
+
+			<div id="hoshii-words">
+				<ul>
+					<li><ruby>金<rp>（</rp>
+							<rt>かね</rt>
+							<rp>）</rp>
+						</ruby>　- Bani</li>
+					<li><ruby>欲<rp>（</rp>
+							<rt>ほ</rt>
+							<rp>）</rp>
+						</ruby>しい　- A voi</li>
+						<li>これ - acest</li>
+						<li><ruby>愛<rp>（</rp>
+								<rt>あい</rt>
+								<rp>）</rp>
+							</ruby>　- Iubire</li>
+					<li><ruby>私<rp>（</rp>
+							<rt>わたし</rt>
+							<rp>）</rp>
+						</ruby>　- Eu</li>
+						<li><ruby>反応<rp>（</rp>
+								<rt>はんおう</rt>
+								<rp>）</rp>
+							</ruby>　- Reactie</li>
+							<li>あなた - Tu</li>
+							<li>それ - Acea</li>
+						<li><ruby>食<rp>（</rp>
+								<rt>た</rt>
+								<rp>）</rp>
+							</ruby>べる - A manca</li>
+						<li>お<ruby>願<rp>（</rp>
+								<rt>ねが</rt>
+								<rp>）</rp>
+							</ruby>い　- Rugaminte</li>
+						<li>する - A face</li>
+					<li><ruby>信<rp>（</rp>
+							<rt>しん</rt>
+							<rp>）</rp>
+						</ruby>じる　- A crede</li>
+				</ul>
+			</div>
+
+			<div id="potential-form-words">
+				<ul>					
+					<li><ruby>茸<rp>（</rp>
+							<rt>きのこ</rt>
+							<rp>）</rp>
+						</ruby> - Ciuperca</li>
+						<li><ruby>安全<rp>（</rp>
+								<rt>あんぜん</rt>
+								<rp>）</rp>
+							</ruby> - Siguranta</li>
+							<li><ruby>食<rp>（</rp>
+									<rt>た</rt>
+									<rp>）</rp>
+								</ruby>べる - A manca</li>
+								<li>この - Acest</li>
+								<li><ruby>部屋<rp>（</rp>
+										<rt>へや</rt>
+										<rp>）</rp>
+									</ruby> - Camera</li>
+									<li><ruby>人<rp>（</rp>
+											<rt>ひと</rt>
+											<rp>）</rp>
+										</ruby> - Om</li>
+										<li><ruby>寝<rp>（</rp>
+												<rt>ね</rt>
+												<rp>）</rp>
+											</ruby>る - A dormi</li>
+									<li>また - Din nou</li>
+									<li><ruby>会<rp>（</rp>
+										<rt>あ</rt>
+											<rp>）</rp>
+									</ruby>う - A intalni</li>
+								<li>いい - Bun</li>
+								<li>あなた - Tu</li>
+								<li><ruby>魔法<rp>（</rp>
+									<rt>まほう</rt>
+									<rp>）</rp>
+									</ruby> - Magie</li>
+								<li><ruby>使<rp>（</rp>
+									<rt>つか</rt>
+									<rp>）</rp>
+									</ruby>う - A folosi</li>
+								<li><ruby>来る<rp>（</rp>
+										<rt>く</rt>
+										<rp>）</rp>
+									</ruby> - A veni</li>
+								<li>だけ - Doar</li>
+								<li><ruby>早<rp>（</rp>
+									<rt>はや</rt>
+									<rp>）</rp>
+									</ruby>い - Repede</li>
+								<li><ruby>英語<rp>（</rp>
+									<rt>えいが</rt>
+									<rp>）</rp>
+									</ruby> - Engleza</li>
+								<li>できる - A putea</li>
+								<li><ruby>抜<rp>（</rp>
+										<rt>ぬ</rt>
+										<rp>）</rp>
+									</ruby>く - A scoate</li>
+				</ul>
+			</div>
+
+			<div id="passive-form-words">
+				<ul>
+					<li>いきなり - Brusc</li>
+					<li>あの - Acel</li>					
+					<li><ruby>男<rp>（</rp>
+							<rt>おとこ</rt>
+							<rp>）</rp>
+						</ruby> - Barbat</li>
+					<li><ruby>助<rp>（</rp>
+							<rt>たす</rt>
+							<rp>）</rp>
+						</ruby>ける - A salva</li>
+					<li>めった - Rar</li>
+					<li><ruby>見<rp>（</rp>
+							<rt>み</rt>
+							<rp>）</rp>
+						</ruby>る - A vedea</li>
+					<li>タイプ - Tip, fel</li>
+					<li>お<ruby>母<rp>（</rp>
+							<rt>かあ</rt>
+							<rp>）</rp>
+						</ruby>さん - Mama</li>
+					<li><ruby>変<rp>（</rp>
+							<rt>へん</rt>
+							<rp>）</rp>
+						</ruby> - Ciudat</li>
+					<li><ruby>言<rp>（</rp>
+							<rt>い</rt>
+							<rp>）</rp>
+						</ruby>う - A zice</li>
+					<li>この - Acest</li>
+					<li><ruby>本<rp>（</rp>
+							<rt>ほん</rt>
+							<rp>）</rp>
+						</ruby> - Carte</li>
+					<li><ruby>多<rp>（</rp>
+							<rt>おお</rt>
+							<rp>）</rp>
+						</ruby>い - Multi</li>
+					<li><ruby>人<rp>（</rp>
+							<rt>ひと</rt>
+							<rp>）</rp>
+						</ruby> - Om</li>
+					<li><ruby>読<rp>（</rp>
+							<rt>よ</rt>
+							<rp>）</rp>
+						</ruby>む - A citi</li>
+						<li>ボール - Minge</li>
+					<li><ruby>彼女<rp>（</rp>
+							<rt>かのじょ</rt>
+							<rp>）</rp>
+						</ruby> - Prietena</li>
+					<li>パス - Pasa</li>
+					<li><ruby>来<rp>（</rp>
+							<rt>く</rt>
+							<rp>）</rp>
+						</ruby>る - A veni</li>
+					<li>する - A face</li>
+					<li><ruby>誰<rp>（</rp>
+							<rt>だれ</rt>
+							<rp>）</rp>
+						</ruby> - Cine</li>
+					<li><ruby>土曜日<rp>（</rp>
+							<rt>どようび</rt>
+							<rp>）</rp>
+						</ruby> - Sambata</li>
+				</ul>
+			</div>
+
+			<div id="causative-form-words">
+				<ul>
+					<li><ruby>赤<rp>（</rp>
+							<rt>あか</rt>
+							<rp>）</rp>
+						</ruby>ちゃん - Bebelus</li>
+						<li><ruby>寝<rp>（</rp>
+								<rt>ね</rt>
+								<rp>）</rp>
+							</ruby>る - A dormi</li>
+					<li><ruby>子供<rp>（</rp>
+							<rt>こども</rt>
+							<rp>）</rp>
+						</ruby> - Copil</li>
+					<li><ruby>服<rp>（</rp>
+							<rt>ふく</rt>
+							<rp>）</rp>
+						</ruby> - Haine</li>
+						<li><ruby>着<rp>（</rp>
+								<rt>き</rt>
+								<rp>）</rp>
+							</ruby>る - A purta</li>
+					<li><ruby>外<rp>（</rp>
+							<rt>そと</rt>
+							<rp>）</rp>
+						</ruby> - Afara</li>
+					<li><ruby>遊<rp>（</rp>
+							<rt>あそ</rt>
+							<rp>）</rp>
+						</ruby>ぶ - A se juca</li>
+					<li><ruby>薬<rp>（</rp>
+							<rt>くすり</rt>
+							<rp>）</rp>
+						</ruby> - Medicamente</li>
+					<li><ruby>飲<rp>（</rp>
+							<rt>の</rt>
+							<rp>）</rp>
+						</ruby>む - A inghiti, a bea</li>
+					<li><ruby>先生<rp>（</rp>
+							<rt>せんせい</rt>
+							<rp>）</rp>
+						</ruby> - Profesor</li>
+					<li><ruby>宿題<rp>（</rp>
+							<rt>しゅくだい</rt>
+							<rp>）</rp>
+						</ruby> - Tema</li>					
+					<li><ruby>来<rp>（</rp>
+							<rt>く</rt>
+							<rp>）</rp>
+						</ruby>る - A veni</li>
+					<li>する - A face</li>
+					<li>だます - A pacali</li>
+					<li><ruby>近<rp>（</rp>
+							<rt>ちか</rt>
+							<rp>）</rp>
+						</ruby>い - Aproape</li>
+					<li><ruby>私<rp>（</rp>
+							<rt>わたし</rt>
+							<rp>）</rp>
+						</ruby> - Eu</li>
+						<li>たち - Terminati pentru a pluraliza pronume</li>
+						<li><ruby>監督<rp>（</rp>
+								<rt>かんとく</rt>
+								<rp>）</rp>
+							</ruby> - Antrenor, director</li>
+					<li>によって - Din cauza</li>
+					<li><ruby>日<rp>（</rp>
+							<rt>にち</rt>
+							<rp>）</rp>
+						</ruby> - Zi</li>
+					<li><ruby>時間<rp>（</rp>
+							<rt>じかん</rt>
+							<rp>）</rp>
+						</ruby> - Ora, timp</li>
+					<li><ruby>練習<rp>（</rp>
+							<rt>れんしゅう</rt>
+							<rp>）</rp>
+						</ruby> - Antrenament</li>
+					<li><ruby>無理矢理<rp>（</rp>
+							<rt>むりやり</rt>
+							<rp>）</rp>
+						</ruby> - Fortat</li>
+					<li><ruby>署名<rp>（</rp>
+							<rt>しょめい</rt>
+							<rp>）</rp>
+						</ruby> - Semnatura</li>
+				</ul>
+			</div>
+
+				<div id="te-kureru-ageru-words">
+					<ul>
+						<li><ruby>席<rp>（</rp>
+							<rt>せき</rt>
+							<rp>）</rp>
+						</ruby> - Scaun</li>
+						<li><ruby>譲<rp>（</rp>
+								<rt>ゆず</rt>
+								<rp>）</rp>
+							</ruby>る - A ceda</li>
+						<li>ありがとうございます - Multumesc foarte mult</li>
+						<li><ruby>何<rp>（</rp>
+								<rt>なに</rt>
+								<rp>）</rp>
+							</ruby> - Ce</li>
+						<li><ruby>金<rp>（</rp>
+								<rt>かね</rt>
+								<rp>）</rp>
+							</ruby> - Bani</li>
+						<li><ruby>貸<rp>（</rp>
+								<rt>か</rt>
+								<rp>）</rp>
+							</ruby>す - A imprumuta</li>
+						<li><ruby>兄<rp>（</rp>
+								<rt>あに</rt>
+								<rp>）</rp>
+							</ruby> - Frate mai mare</li>
+						<li><ruby>君<rp>（</rp>
+								<rt>きみ</rt>
+								<rp>）</rp>
+							</ruby> - Tu</li>
+						<li><ruby>歯<rp>（</rp>
+								<rt>は</rt>
+								<rp>）</rp>
+							</ruby> - Dinte</li>
+						<li><ruby>医者<rp>（</rp>
+								<rt>いしゃ</rt>
+								<rp>）</rp>
+							</ruby> - Doctor</li>
+						<li><ruby>診<rp>（</rp>
+								<rt>み</rt>
+								<rp>）</rp>
+							</ruby>る - A vedea (scris cu acest kanji inseamna deobicei a consulta)</li>
+							<li>べき</li>
+						<li><ruby>窓<rp>（</rp>
+								<rt>まど</rt>
+								<rp>）</rp>
+							</ruby> - Fereastra</li>
+						<li><ruby>開<rp>（</rp>
+								<rt>あ</rt>
+								<rp>）</rp>
+							</ruby>ける - A deschide</li>
+						<li><ruby>火<rp>（</rp>
+								<rt>ひ</rt>
+								<rp>）</rp>
+							</ruby> - Foc</li>
+						<li><ruby>燃 <rp>（</rp>
+								<rt>も</rt>
+								<rp>）</rp>
+							</ruby>やす - A arde</li>
+							<li>ぬいぐるみ - Papusa</li>
+						<li><ruby>遊<rp>（</rp>
+								<rt>あそ</rt>
+								<rp>）</rp>
+							</ruby>ぶ - A se juca</li>
+						<li><ruby>歳<rp>（</rp>
+								<rt>さい</rt>
+								<rp>）</rp>
+							</ruby> - Varsta</li>
+						<li>なる - A deveni</li>
+						<li><ruby>酒<rp>（</rp>
+								<rt>さけ</rt>
+								<rp>）</rp>
+							</ruby> - Alcool</li>						
+					<li><ruby>昨夜<rp>（</rp>
+							<rt>ゆうべ</rt>
+							<rp>）</rp>
+						</ruby> - Seara trecuta</li>
+					<li><ruby>歌<rp>（</rp>
+							<rt>うた</rt>
+							<rp>）</rp>
+						</ruby>う - A canta</li>					
+					<li><ruby>踊<rp>（</rp>
+							<rt>おど</rt>
+							<rp>）</rp>
+						</ruby>る - A dansa</li>					
+					<li><ruby>休日<rp>（</rp>
+							<rt>きゅうじつ</rt>
+							<rp>）</rp>
+						</ruby> - Zile libere</li>					
+					<li><ruby>食<rp>（</rp>
+							<rt>た</rt>
+							<rp>）</rp>
+						</ruby>べる - A manca</li>
+					<li><ruby>寝<rp>（</rp>
+								<rt>ね</rt>
+								<rp>）</rp>
+							</ruby>る - A dormi</li>
+					<li><ruby>過<rp>（</rp>
+							<rt>す</rt>
+							<rp>）</rp>
+						</ruby>ごす - A petrece</li>					
+					</ul>
+				</div>
+
+					<div id="i-form-verbs-words">
+						<ul>
+							<li>この - Acest</li>
+							<li><ruby>漢字<rp>（</rp>
+									<rt>かんじ</rt>
+									<rp>）</rp>
+								</ruby> - Kanji</li>
+							<li><ruby>読み方<rp>（</rp>
+									<rt>よみかた</rt>
+									<rp>）</rp>
+								</ruby> - Mod de citire</li>
+								<li><ruby>何<rp>（</rp>
+										<rt>な</rt>
+										<rp>）</rp>
+									</ruby>に - Ce</li>
+							<li><ruby>音楽<rp>（</rp>
+									<rt>おんがく</rt>
+									<rp>）</rp>
+								</ruby> - Muzica</li>
+							<li><ruby>聴<rp>（</rp>
+									<rt>き</rt>
+									<rp>）</rp>
+								</ruby>く - A asculta (cu scop de distractie scris cu acest kanji.)</li>
+							<li>ながら - In timp ce</li>
+							<li><ruby>勉強<rp>（</rp>
+									<rt>べんきょう</rt>
+									<rp>）</rp>
+								</ruby> - Studiu</li>
+							<li><ruby>良<rp>（</rp>
+									<rt>い</rt>
+									<rp>）</rp>
+								</ruby>い - Bun</li>
+							<li>でしょう - Oare</li>
+							<li><ruby>会<rp>（</rp>
+									<rt>あ</rt>
+									<rp>）</rp>
+								</ruby>う - A intalni</li>
+							<li><ruby>行<rp>（</rp>
+									<rt>い</rt>
+									<rp>）</rp>
+								</ruby>く - A merge</li>
+							<li><ruby>始<rp>（</rp>
+									<rt>はじ</rt>
+									<rp>）</rp>
+								</ruby>める - A incepe</li>
+							<li><ruby>番<rp>（</rp>
+									<rt>ばん</rt>
+									<rp>）</rp>
+								</ruby>い - Numar</li>
+							<li>かける - A atarna (a telefona aici)</li>
+							<li><ruby>下<rp>（</rp>
+									<rt>くだ</rt>
+									<rp>）</rp>
+								</ruby>さい - Te rog</li>
+							<li><ruby>車<rp>（</rp>
+									<rt>くるま</rt>
+									<rp>）</rp>
+								</ruby> - Masina</li>
+							<li><ruby>洗<rp>（</rp>
+									<rt>あら</rt>
+									<rp>）</rp>
+								</ruby>う - A spala</li>
+								<li>こと - Lucru</li>
+							<li><ruby>楽<rp>（</rp>
+									<rt>たの</rt>
+									<rp>）</rp>
+								</ruby>しい - Placut</li>
+							<li><ruby>友達<rp>（</rp>
+									<rt>ともだち</rt>
+									<rp>）</rp>
+								</ruby> - Prieten</li>
+							<li><ruby>遊<rp>（</rp>
+									<rt>あそ</rt>
+									<rp>）</rp>
+								</ruby>ぶ - A se distra</li>
+							<li><ruby>面白<rp>（</rp>
+									<rt>おもしろ</rt>
+									<rp>）</rp>
+								</ruby>い - Interesant</li>
+						</ul>
+					</div>
+
+						<div id="polite-form-words">
+							<ul>
+								<li><ruby>今日<rp>（</rp>
+										<rt>きょう</rt>
+										<rp>）</rp>
+									</ruby> - Azi</li>
+								<li><ruby>何<rp>（</rp>
+										<rt>なに</rt>
+										<rp>）</rp>
+									</ruby> - Ce</li>
+								<li><ruby>食<rp>（</rp>
+										<rt>た</rt>
+										<rp>）</rp>
+									</ruby>べる - A manca</li>
+								<li><ruby>旅行<rp>（</rp>
+										<rt>りょこう</rt>
+										<rp>）</rp>
+									</ruby> - Calatorie</li>
+								<li><ruby>行<rp>（</rp>
+										<rt>い</rt>
+										<rp>）</rp>
+									</ruby>く - A merge</li>
+							</ul>
+						</div>
+
+							<div id="trans-verbs-words">
+								<ul>
+									<li>する - A face</li>
+									<li><ruby>上<rp>（</rp>
+											<rt>あ</rt>
+											<rp>）</rp>
+										</ruby>げる - A ridica</li>
+									<li><ruby>上<rp>（</rp>
+											<rt>あ</rt>
+											<rp>）</rp>
+										</ruby>がる - A fi ridicat</li>
+											<li><ruby>包<rp>（</rp>
+													<rt>くる</rt>
+													<rp>）</rp>
+												</ruby>む - A impacheta</li>
+									<li><ruby>包む<rp>（</rp>
+											<rt>くる</rt>
+											<rp>）</rp>
+										</ruby>まる - A fi impachetat</li>	
+										<li><ruby>落<rp>（</rp>
+												<rt>お</rt>
+												<rp>）</rp>
+											</ruby>とす - A scapa</li>
+									<li><ruby>落<rp>（</rp>
+											<rt>お</rt>
+											<rp>）</rp>
+										</ruby>ちる - A cadea</li>
+								</ul>
+							</div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+	<div class="footer">
+		<div class="next-article">
+			<h3>Urmatorul articol</h3>
+			<a th:href="@{/limbajaponeza/blog}"><h1>Constructii gramaticale</h1></a>
+			<a th:href="@{/limbajaponeza/blog}"><h3>Citeste acum</h3></a>
+		</div>
+			<div th:insert="fragments :: footer-bottom"></div>
+	</div>
+	
+	<block th:insert="fragments :: translation-box-toggle" />
+
+
+
+
+<script th:src="@{/js/grammar.js}"></script>
+</body>
+</html>

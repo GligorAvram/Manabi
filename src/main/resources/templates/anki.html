@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+		<meta name="keywords" content="invata, limba, japoneza, anki">
+		<meta name="author" content="Gligor Avram">
+		<meta name="description" content="Anki si cum poate fi folosit pentru a invata limbi straine si mai ales limba japoneza">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style th:insert="fragments :: dropdown-style"></style>
+<link rel="stylesheet" th:href="@{/css/shared.css}">
+<link rel="stylesheet" th:href="@{/css/all.css}">
+<link rel="stylesheet" th:href="@{/css/ruby.css}">
+<title>Anki</title>
+</head>
+
+<body>
+	<div th:insert="fragments :: nav" class="navbar-desktop"></div>
+	<div th:insert="fragments :: nav" class="navbar-mobile"></div>	
+	
+	<div class="content-container">
+	
+		<div class="brand-top-div">
+			<h1>Manabi</h1>
+			<div class="logo"></div>
+		</div>
+
+		<div class="all-articles">
+			<h1>Anki</h1>
+		<div>
+	
+		<div>
+		<h2>Ce este Anki?</h2>
+		<p>Am tot vorbit in articolele anterioare despre Anki. Dar totusi, ce este acest Anki si ce e repetitia spatiata? Stiti cum atunci cand invatati ceva trebuie sa il repetati prima zi de cateva ori, dupa aia a 2-a zi poate inca o data si dupa aia la 3-4 zile si tot asa la intervale tot mai lungi? Exista o ramura de studiu numita mnemonica care se preocupa cu studiul felului cum memoram lucruri. Din aceste studii s-au creeat algoritmi ca sa incearce sa prezica cand trebuie repetate lucrurile eficient. Asta e repetitia spatiata. Adica pui spatiu intre repetitii, spatiu care creste permanent (pana la o anumita limita), sau scade temporar daca nu ne amintim cuvantul. Si folosind algoritmii acestia au fost inventate sistemele de repetitie spatiata (SRS), cel mai utilizat fiind Anki. Defapt majoritatea aplicatiilor de memorare aplica tehnica aceasta cu diverse modificari, dar deocamdata Anki este regele SRS. Nu e considerat ca fiind app-ul cu cea mai buna rata de memorare, dar e suficient. Plus ca e gratis. Nimic nu e mai bun ca lucrurile gratis, nu? Asa ca, folosit corect, e o unealta foarte puternica pentru orice limba ai invata (si nu numai pentru asta. Foarte multi studenti americani il folosesc in special in medicina).
+		</p>
+		</div>
+	
+		<div>
+		<h2>Instalare si Configurare</h2>
+		<p>Anki este grozav, insa exista cateva Addonuri care il fac si mai bun pentru japoneza. Asa ca inainte sa il instalati, va prezint primul addon, <a href="https://ankiweb.net/shared/info/278530045">Migaku Japanese</a>
+ . Primul lucru care trebuie sa il faceti e sa dati click pe link si sa vedeti ce versiune de Anki suporta. Din fericire baietii de la Migaku sunt destul de de treaba ca sa puna un link spre versiunea pentru care e facut addonul, asa ca puteti downloada Anki direct de pe linkul de mai sus. Alt addon necesar va fi cel de <a href="https://ankiweb.net/shared/info/3918629684">Japanese support</a> pentru a putea folosi furigana si alte efecte vizuale. Pentru a vedea cum se instaleaza Anki si aceste 2 add-onuri urmati pasii de mai jos:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u1zLY9u8Uic" title="YouTube video player"
+	frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	allowfullscreen></iframe></p>
+ 		<p>Acum ca ati instalat Anki, daca nu stiti nici un cuvant pe japoneza, am pregatit un pachet de 100 de cuvinte foarte comune scrise cu litere latine. Il puteti downloada <a th:href="@{/files/inceput}">de aici</a>. Nu adaugati alte cuvinte folosind alfabetul Romaji fiindca va faceti o defavoare. Urmeaza sa invatati Kana. Veti gasi pachetele de Kana pe pagina de <a th:href="@{/limbajaponeza/fonetica}">fonetica</a>.
+		 </p>
+		</div>
+	
+		<div>
+		<h2>Invatatul de cuvinte Minatul de propozitii</h2>
+		<p>Aceasta sectiune porneste de la premisa ca deja ati invatat Kana si Kanji.  Insa, dupa ce ati terminat cu Kanji e timpul sa trecem la cuvintele. Pentru inceput v-as recomanda sa luati acest pachet pre-fabricat de vreo 1000 de cuvinte, Tango N5. Tango e perfect pentru asta si il puteti importa de <a href="https://ankiweb.net/shared/info/1679429599">aici</a>. Problema cu el e ca este in engleza, lucru care pentru unii il va face inaccesibil. Acum lucrez sa il traduc insa si voi updata site-ul cand va fi gata. 
+		</p>
+		<p>Dupa ce terminati cuvintele din Tango N5, as recomanda sa alegeti un anime care va place. Folosind Subs2SRS puteti creea un pachet de Anki. In acest pachet vom cauta propozitii cu un singur cuvant necunoscut si le vom pune in pachetul de repetitie. Procesul acesta se numeste minat de cuvinte. 10 cuvinte pe zi e suficient. Ar trebui sa ajungeti sa puteti citi light-noveluri usoare dupa un an si puteti sa va apucati sa vorbiti despre lucrurile care va intereseaza dupa cam 2 ani. Limita superioara de cuvinte de adaugat pe zi as spune ca e pe undeva pe la 25, insa depinde de timpul vostru. La 25 de cuvinte noi zilnice va uitati la aproximativ 4 ore in total de gasit cuvinte si repetat, poate chiar mai mult. 
+			</p>
+			<p>
+			Eu personal folosesc formatul de cartonase pentru Migaku japanese pentru ca imi place sa vad citirea (adica Kana) doar cand apas pe cuvant. Experienta imi spune ca daca un cuvant are Furigana vizibil (Kana deasupra cuvintelor) creierul meu va ignora Kanji si va citi direct Kana. Toate pachetele de cuvinte (in afara de cel pentru incepatori cu Romaji) pe care le voi posta vor folosi acest tip de cartonase.</p>
+
+		<p>
+		Cand va veti apuca de citit, puteti pune propozitii din ceea ce cititi in pachet. Daca folositi un Kindle puteti marca propozitii cu un cuvant necunoscut in timpul lecturii. Dupa aceea, folosind <a href="https://www.clippings.io/.io">clippings.io</a> ele pot fi adaugate ulterior in Anki.
+		</p>
+		<p>
+		Nu sunt reguli foarte bine stabilite cu ce sa puneti in pachet si cand, ideea de baza este nu fie mai mult de un cuvant necunoscut in propozitie. Am incercat sa adaug si cate 2 din cand in cand dar rata de memorare a fost intotdeauna slaba.
+		</p>
+		<h2>Evitarea burnoutului, lipitorile, managementul timpului</h2>
+		<p>
+			 Anki e grozav, dar, oricat de grozav e, daca nu il folositi pentru o perioada destul de lunga nu e foarte eficient. Cat timp folositi Anki veti invata zilnic cuvinte noi. Daca va opriti va trebui sa repetati o mare parte din cuvinte dintr-o data. Iar cand aveti de recuperat mai mult de 3-400 de cartonase nu e deloc placut. Plus ca dupa mai mult timp nu mai aveti aceeasi atasare mnemonica pentru cartonasele prin care ati trecut ceea ce poate fi frustrant. Multi care il folosesc prefera sa faca pachete noi decat sa inceapa procesul de recuperare.
+			 Deci, primul lucru pe care il recomand sa il faci cand simti ca Anki incepe sa ia prea mult timp zilnic, nu mai adauga cuvinte noi o perioada. Astfel nu mai trebuie sa dedici nici timp zilnic pentru a adauga cartonase noi, si numarul de repetitii zilnice ar trebui sa scada in cateva zile.
+			</p>
+			<p>
+			A 2-a strategie: sterge. O decizie destul de grea pentru unii, insa nu uita ca daca va lasiti este ca si cum ai sterge tot pachetul. Asa ca incepe sa stergi tot ce te enerveaza. Tot ce apare in timpul repetitiei tale zilnice si nu mai vrei sa il vezi. Incearca sa iti aduci repetitiile la sub 30 de minute, cu propozitii pe care vrei sa le revezi. Defapt ar trebui sa faci asta oricum pe tot parcursul folosirii Anki, dar la scara mai mica. Nu va faceti griji, veti gasiti cuvantul acela din nou, in alt context. Si va fi mult mai usor atunci de invatat. De asemenea, stergeti si cuvintele care le-ati invatat atat de bine ca nu trebuie sa le repetati in Anki. Daca Anki a fost bun pentru a vi le aduce in sfera atentiei, acum sunt munca in plus.
+			</p>
+			<p>
+			Strategia a 3-a: Renunta la Anki. Anki e o unealta si, pentru mine, scopul final e invatatul japonezei, nu consecventa in Anki. Asa ca, cu toate ca e probabil cea mai de incredere metoda de memorat cuvinte noi, nu e singura. Aveti mai jos un articol despre lucruri cu care puteti inlocui Anki, unele testate de mine, unele folosite de alti poligloti si enumerate aici.
+		</p>
+		</div>
+
+		<div>
+			<h2>Alternative</h2>
+			<p>In afara de Anki, alte SRS-uri de succes sunt Supermemo, Memrise, dar ce as vrea sa prezint in aceasta sectiune sunt alternative care nu sunt bazate pe calculator. Ei bine, va prezint metoda Goldlist, prezentata mai jos de Lydia Machová:</p>
+			<div class="video">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/2__3bGfSjuE" title="YouTube video player"
+				frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen></iframe>
+				</div>
+				<p>
+					Metoda Goldlist este legata de SRS, dupa cum vedeti, si cu toate ca are timpi de repetitie initiali mai mari, pe termen lung sunt mai mici ca cei obtinuti deobicei cu Anki. Deci, unele cuvinte s-ar putea sa fie mai usor de memorat folosind aceasta metoda. Totusi, per ansamblu Anki pare sa fie mai eficient.
+				</p>
+				<p>
+					O alta alternativa este cititul neasistat de calculator. Pentru aceasta va trebui sa gasiti carti cu glosare de cuvinte. Pentru incepatori exista si graded readers, dar deobicei aceste carti nu au o dificultate foarte mare, ceea ce inseamna ca nu veti invata decat cuvintele cele mai folosite ale limbii (similar cu pachetul de inceput).
+				</p>
+		</div>
+
+	</div>
+		</div>		
+</div>
+
+	<div class="footer">
+		<h3>Urmatorul articol</h3>
+		<a th:href="@{/limbajaponeza}">
+			<h1>Limba japoneza</h1>
+		</a>
+		<a th:href="@{/limbajaponeza}">
+			<h3>Citeste acum</h3>
+		</a>
+		<div th:insert="fragments :: footer-bottom"></div>
+	</div>
+
+</body>
+</html>

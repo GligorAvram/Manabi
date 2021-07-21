@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+				<meta name="keywords" content="invata, limba, japoneza, gramatica, blog">
+				<meta name="author" content="Gligor Avram">
+				<meta name="description"
+					content="Blogul Manabi cu lista diverselor contructii gramaticale care nu sunt acoperite in gramatica de baza a site-ului.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style th:insert="fragments :: dropdown-style"></style>
+<link rel="stylesheet" th:href="@{/css/shared.css}">
+<link rel="stylesheet" th:href="@{/css/grammar.css}">
+<link rel="stylesheet" th:href="@{/css/ruby.css}">
+<link rel="stylesheet" th:href="@{/css/all.css}">
+<title>Article</title>
+</head>
+
+<body>
+	<div th:insert="fragments :: nav" class="navbar-desktop"></div>
+	<div th:insert="fragments :: nav" class="navbar-mobile"></div>
+	
+	
+	<div class="content-container">
+	
+		<div class="brand-top-div">
+			<h1>Manabi</h1>
+			<div class="logo"></div>
+		</div>
+
+      <a th:href="@{/language/blog}"><button>Back</button></a>
+      
+  
+
+      <div th:fragment="translation-box" class="sidebar" role="complementary" id="collapsible">
+  		<button type="button" class="collapse_button">Expand</button>
+  		<div class="collapse_div">
+  			<div class="wrapper">
+  				<div>
+	  				<ul>
+	  					<li th:each="word : ${rubyWords}" th:utext="${word}"></li>
+	  				</ul>
+	  			</div>
+	  		</div>
+	  	</div>
+	  </div>
+	  <div class="all-articles" style="min-height: 48.6vh;">
+			<div>
+			  <h1 th:text="${blogEntry.articleName}"></h1>
+			  <div th:utext="${blogEntry.textBody}"></div>
+			</div>
+	      
+	      
+	      <form>
+	      <label for="search_input">Search article:</label>
+		      <input id="search_input" type="text" placeholder="Search..">
+		      <div id="livesearch"></div>
+	      </form>
+	      
+	      <block th:insert="fragments :: translation-box-toggle" />
+      
+      </div>
+		</div>
+      
+	<div class="footer">
+		<h3>Urmatorul articol</h3>
+		<a th:href="@{/limbajaponeza/blog}">
+			<h1>Constructii gramaticale</h1>
+		</a>
+		<a th:href="@{/limbajaponeza/blog}">
+			<h3>Citeste acum</h3>
+		</a>
+			<div th:insert="fragments :: footer-bottom"></div>
+	</div>
+
+
+      
+      <script>
+				let searchBar = document.getElementById("search_input");
+				let searchDiv = document.getElementById("livesearch");			
+				
+				
+      	searchBar.addEventListener('keyup', () => {
+      		//remove previous entries
+      		while(searchDiv.firstChild) {
+				searchDiv.firstChild.remove();
+			}
+      		
+      		let url = "/search/" + searchBar.value;
+			let xhr = new XMLHttpRequest();
+			
+			xhr.open('GET', url, true);
+
+			xhr.onload = function(){
+			if(this.status =200){				
+				let entries = JSON.parse(this.responseText);
+				entries.forEach(element => {
+					let articleUrl = document.createElement("a");
+					let text = document.createTextNode(element.grammarStructure);
+					articleUrl.appendChild(text);
+					articleUrl.title = element.grammarStructure;
+					articleUrl.href ="/limbajaponeza/blog/" + element.id;
+					searchDiv.appendChild(articleUrl);
+				});
+			}	
+			else if(this.status =404){
+				let result = document.createTextNode("Not found"); 				
+				searchDiv.appendChild(result);		
+				}
+			}					
+				xhr.send();
+				
+				res = document.createTextNode(xhr.responseText);  
+				searchDiv.appendChild(res);
+			})		
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8">
+			<meta name="keywords" content="invata, limba, japoneza, gramatica, blog">
+			<meta name="author" content="Gligor Avram">
+			<meta name="description" content="Blogul Manabi cu lista diverselor contructii gramaticale care nu sunt acoperite in gramatica de baza a site-ului.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style th:insert="fragments :: dropdown-style"></style>
+<link rel="stylesheet" th:href="@{/css/shared.css}">
+<link rel="stylesheet" th:href="@{/css/all.css}">
+<title>Advanced grammar</title>
+</head>
+
+<body>
+		<div th:insert="fragments :: nav" class="navbar-desktop"></div>
+		<div th:insert="fragments :: nav" class="navbar-mobile"></div>
+		
+		
+		<div class="content-container">
+		
+			<div class="brand-top-div">
+				<h1>Manabi</h1>
+				<div class="logo"></div>
+			</div>
+
+
+      <div class="all-articles" style="min-height: 55.5vh;">
+      	    <div>
+	          <ul >
+	            <li th:each="blog : ${blogEntries}"><a th:href="@{'/language/blog/' + ${blog.id}}" th:text="${blog.grammarStructure}"></a></li>
+	          </ul>
+	        </div>
+        </div>
+
+
+	<div class="footer">
+		<h3>Urmatorul articol</h3>
+		<a th:href="@{/limbajaponeza}">
+			<h1>Limba japoneza</h1>
+		</a>
+		<a th:href="@{/limbajaponeza}">
+			<h3>Citeste acum</h3>
+		</a>
+			<div th:insert="fragments :: footer-bottom"></div>
+	</div>
+</body>
+</html>

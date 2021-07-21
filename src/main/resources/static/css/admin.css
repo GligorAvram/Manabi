@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+}
+
+body {
+  padding: 5rem;
+}
+
+#add-post {
+  display: block;
+}
+#change-password {
+  display: none;
+}
+#edit-post {
+  display: none;
+}

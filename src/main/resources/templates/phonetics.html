@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="invata, limba, japoneza, fonetica, hiragana, katakana">
+  <meta name="author" content="Gligor Avram">
+  <meta name="description" content="Fonetica limbii japoneze si alfabetele Hiragana si Katakana">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style th:insert="fragments :: dropdown-style"></style>
+<link rel="stylesheet" th:href="@{/css/shared.css}">
+<link rel="stylesheet" th:href="@{/css/all.css}">
+<link rel="stylesheet" th:href="@{/css/ruby.css}">
+<title>Fonetica</title>
+</head>
+
+<body>
+  <div th:insert="fragments :: nav" class="navbar-desktop"></div>
+  <div th:insert="fragments :: nav" class="navbar-mobile"></div>
+  
+  
+  <div class="content-container">
+  
+    <div class="brand-top-div">
+      <h1>Manabi</h1>
+      <div class="logo"></div>
+    </div>
+
+      <div class="all-articles">
+        <h1>Fonetica</h1>
+        <div>
+  <h2>Fonetica si Kana</h2>
+  <p>Voi lega partea de fonetica cu 2 dintre alfabetele care vor trebui invatate. Primele doua alfabete, Hiragana ( <span class="hover-div"><span class="hide-div">平仮名</span><ruby class="show-div">平仮名<rp>（</rp>
+      <rt>ひらがな</span></rt>
+  <rp>）</rp></ruby></span>) si Katakana (<span class="hover-div"><span class="hide-div">片仮名</span><ruby class="show-div">片仮名<rp>（</rp>
+      <rt>カタカナ</span></rt>
+  <rp>）</rp></ruby></span>). De ce? Pentru ca, la fel ca in romana, alfabetele astea sunt legate de sunetele limbii. Defapt, amandoua alfabelete sunt caractere diferite pentru aceleasi sunete. In teorie sunt legate, amandoua s-au nascut prin simplificarea Kanji, si amadoua sunt folosite pentru aceleasi sunete. Haideti sa vedem care este logica din spatele acestor 2 alfabete. Si aici ajungem la prima minciuna care ne este spusa cand invatam japoneza. Si anume ca Hiragana este pentru cuvinte japoneze si Katakana pentru cele importate, pentru numele straine si pentru interjectii. Din pacate nu este chiar asa de simpla situatia. E mult mai simpla de atat. Hiragana e pentru toate cuvintele. Punct. Cand trebuie sa scrieti un cuvant il veti scrie folosind Hiragana. Katakana e folosit cand trebuie sa scriem ceva despre care vrem sa spunem ca nu e pronuntat corect (cititi si partea despre accent de la sfarsitul acestei pagini pentru o idee mai completa). Adica, sa zicem ca vreti sa scrieti pe hartie cum fac picaturile de ploaie sau latratul unui caine. In romana avem interjectii de gen "pic pic" sau "ham ham" care nu reproduc exact sunetele. Deci, ele ar fii scrise in Katakana. Numele strainilor/cuvintele importate sunt de asemenea scrise in Katakana fiindca japonezii stiu ca nu le pronunta corect. Exista cateva exceptii la regula aceasta, de exemplu sunt cuvinte stiintifice scrise cu Katakana deoarece Kanji folosite pentru a fi scrise sunt foarte grele; nume scrise in Katakana fiindca e mai interesant, dar acestea sunt mai degraba alegeri functionale sau literare.</p>
+  </div>
+  
+    <div class="pic-div">
+      <h3>Aveti aici un tabel de hiragana cu toate caracterele:</h3>
+      <img th:src="@{/graphics/hiragana.png}" alt="Hiragana" />
+    </div>
+    <div class="pic-div">
+      <h3>Si aveti aici unul pentru Katakana:</h3>
+      <img th:src="@{/graphics/katakana.png}" alt="Katakana" />
+    </div>
+    
+  <div>
+  <h2>Invatatul Kana</h2>
+  <p>Pentru a invata Kana recomand sa treceti cat mai repede prin aceste <a th:href="@{/files/kana}">2 pachete</a> cu Anki. Dupa ce treceti prin ele trebuie neaparat sa va apucati de citit in Hiragana/Katakana. Pentru hiragana se gasesc povesti de copii scrise doar in acest alfabet. Pagini scrise doar in Katakana sunt inexistente, insa puteti folosi al 2-lea link pentru a transforma textul din Hiragana in Katakana.
+    </p>
+    <ul>
+      <li><a href="http://life.ou.edu/stories/">Povesti pentru copii</a></li>
+      <li><a href="https://nihongodera.com/tools/kana-converter">Convertor Kana</a></li>
+    </ul>
+    <p>
+    Inainte sa va apucati sa cititi aveti grija sa aveti langa voi tabelul de Hiragana. Stiu ca tocmai ati trecut prin Kana folosing Anki, dar caracterele nu sunt inca foarte bine ancorate inca in memorie. Cititul/folositul le va ancora. Anki e bun ca o introducere, o familiarizare cu ele, dar nu pot stresa cat de important e faptul ca chiar trebuie sa le folositi ca sa le invatati.
+    </p>
+    <p>
+    Dictarea este o alta metoda buna pentru invatat Kana. Puteti lua un text scris in romaji (litere romane) si sa il transferati in Hiragana/Katakana. Nu trebuie sa va grabiti, dar dati-i vreo 5-10 minute pe zi pentru Hiragana si 5-10 pentru Katakana.
+  </p>
+  </div>
+
+<div>
+  <h2>Accent tonal</h2>
+  <p>Am sa intru aici intr-o bucata a japonezei care, din cunostintele mele, nu a fost explicata in limba romana pana acum. Accentul tonal al japonezei. 
+  </p>
+  <p>
+  In primul rand, ce e accentul tonal, si cat de mult conteaza?
+Ei bine, stiti cum in romana avem cuvinte ca vésela si veséla, cópii si copíi? Luati acest concept si intindeti-l la absolut toate cuvintele japoneze. Dupa cum vedeti este foarte mult de munca pentru a invata aceste accente. Partea buna? Suntem romani si avem nativ un accent relativ bun, asa ca nu trebuie sa il invatam neaparat. Il voi prezenta aici, fiindca daca veti folosi japoneza veti ajunge in situatii cand veti avea probleme din cauza accentului tonal. Faptul ca stiti ce s-a intamplat va va da ocazia sa va auto-corectati. Dar nu recomand sa invatati activ accentul.
+</p>
+<p>
+Japoneza este o limba saraca in sunete. Defapt, singurele sunete sunt cele 46 de sunete reprezentate de kana lor (in calitatea lor de sunete se numesc mora, asa ca voi folosi mora pentru sunete si Kana pentru litere). Asa ca foarte multe cuvinte vor suna la fel. Defapt, pe termen lung faptul ca atat de multe cuvinte suna la fel va fi cel mai mare impediment in invatatul japonezei.
+</p>
+<p>
+Haideti sa vedem tipurile de accente (4 la numar, in functie de unde cade accentul si cum se leaga particulele de cuvant):
+<ul>
+  <li>Heiban(平凡) - scris cu caracterele pentru egal, plat si normal, mediu. Cuvintele din aceasta categorie sunt cele considerate "fara accent". Defapt, au un accent, prima mora e jos (usor pierduta de multe ori), restul de mora sunt sus si nu exista cadere de ton intre ultima mora si particula de dupa cuvant. Aici intra cuvinte ca: <span class="hover-div"><span class="hide-div">飴</span><ruby class="show-div">飴<rp>（</rp>
+      <rt>あめ</span></rt>
+  <rp>）</rp></ruby></span>-dulciuri, <span class="hover-div"><span class="hide-div">勉強</span><ruby class="show-div">勉強<rp>（</rp>
+      <rt>べんきょう</span></rt>
+  <rp>）</rp></ruby></span>-studiu, <span class="hover-div"><span class="hide-div">私</span><ruby class="show-div">私<rp>（</rp>
+      <rt>わたし</span></rt>
+  <rp>）</rp></ruby></span>-eu </li>
+  <li>Atamadaka(頭高) - scris cu caracterele pentru cap si inalt. Aici prima mora e inalta, urmatoarele sunt jos si particula din nou la aceeasi inaltime ca ultima mora. Exemple:
+    <span class="hover-div"><span class="hide-div">雨</span><ruby class="show-div">雨<rp>（</rp>
+        <rt>あめ</span></rt>
+    <rp>）</rp></ruby></span>-ploaie, <span class="hover-div"><span class="hide-div">彼</span><ruby class="show-div">彼<rp>（</rp>
+        <rt>かれ</span></rt>
+    <rp>）</rp></ruby></span>-el, <span class="hover-div"><span class="hide-div">猫</span><ruby class="show-div">猫<rp>（</rp>
+        <rt>ねこ</span></rt>
+    <rp>）</rp></ruby></span>-pisica.
+  </li>
+  <li>Nakadaka(中高) - scris cu Kanji pentru mijloc si inalt. Categoria aceasta poate fi impartita fin in alte categorii, in functie de locul unde cade accentul (poate cadea dupa a 2-a, a 3-a, a 4-a mora), dar regula e ca prima mora e jos, a 2-a e sus, undeva mai incolo va cadea accentul, ultima mora e jos iar particula de dupa cuvant e tot jos. Ex: <span class="hover-div"><span class="hide-div">貴方</span><ruby class="show-div">貴方<rp>（</rp>
+      <rt>あなた</span></rt>
+  <rp>）</rp></ruby></span>-tu, <span class="hover-div"><span class="hide-div">昨日</span><ruby class="show-div">昨日<rp>（</rp>
+      <rt>きのう</span></rt>
+  <rp>）</rp></ruby></span>-ieri, <span class="hover-div"><span class="hide-div">先生</span><ruby class="show-div">先生<rp>（</rp>
+      <rt>せんせい</span></rt>
+  <rp>）</rp></ruby></span>-profesor</li>
+  <li>Oodaka(尾高) - scris cu kanji pentru coada si inalta. E un accent foarte similar cu <span class="hover-div"><span class="hide-div">平凡</span><ruby class="show-div">平凡<rp>（</rp>
+      <rt>へいばん</span></rt>
+  <rp>）</rp></ruby></span> insa particula de dupa cuvant e jos. Exemple:<span class="hover-div"><span class="hide-div">木</span><ruby class="show-div">木<rp>（</rp>
+      <rt>き</span></rt>
+  <rp>）</rp></ruby></span>-copac, <span class="hover-div"><span class="hide-div">時</span><ruby class="show-div">時<rp>（</rp>
+      <rt>とき</span></rt>
+  <rp>）</rp></ruby></span>-toki, <span class="hover-div"><span class="hide-div">妹</span><ruby class="show-div">妹<rp>（</rp>
+      <rt>いもうと</span></rt>
+  <rp>）</rp></ruby></span> - sora mai mica </li>
+</ul>
+</p>
+
+<p>
+In esenta, numele ne spune unde e caderea de accent. La <span class="hover-div"><span class="hide-div">頭高</span><ruby class="show-div">頭高<rp>（</rp><rt>あたまだか</span></rt><rp>）</rp></ruby></span> este fix la inceput, dupa prima mora, la <span class="hover-div"><span class="hide-div">中高</span><ruby class="show-div">中高<rp>（</rp><rt>なかだか</rt><rp>）</rp></ruby></span> e undeva la mijloc, la <span class="hover-div"><span class="hide-div">尾高</span><ruby class="show-div">尾高<rp>（</rp>
+    <rt>おおだか</span></rt>
+<rp>）</rp></ruby></span> este dupa ultima mora, fix la coada iar <span class="hover-div"><span class="hide-div">平凡</span><ruby class="show-div">平凡<rp>（</rp>
+    <rt>へいばん</rt>
+<rp>）</rp></ruby></span></span> nu are cadere. De asemenea, accentul si volumul sunt 2 concepte diferite, strigatul cuvintelor nu duce la schimbatul accentului, dar poate sa il sa il pronunte. Adica, daca tipi "vesela" nu inseamna ca i s-a schimbat accentul corect, chiar daca din cauza emotiilor momentului il veti gasi pronuntat usor gresit.
+</p>
+<p>
+Folosind tehnicile actuale, invatatul accentului tonal corect dupa la dublarea muncii care trebuie efectuata, motiv pentru care in general nu il recomand. In plus, oamenii din diverse regiuni au accente diferite. In comunitatea de invatat japoneza cel mai comun accent invatat este cel din japoneza standard, adica din zona Tokyo. Insa exista sute de accente japoneze, si cu toate acestea japonezii pot comunica eficient in ciuda accentelor diferite (la fel cum oltenii, moldovenii si ardelenii comunica in romana de altfel).
+</p>
+<p>
+  Dar, daca tot vreti sa studiati accentul, aveti jos toate regulile pentru cuvinte individuale. Mai sunt un set de reguli, despre cum se schimba accentele cuvintelor in propozitii, dar va las sa va distrati singuri cu acelea. Nu sunt multe, nici grele <strong>daca stiti cuvintele cu accentul corect</strong>, asa ca bafta in studii.
+  <ul>
+    <li>Intotdeauna prima si a 2-a mora sunt la accente diferite. Astfel daca primul mora e jos al 2-lea e sus, iar daca primul e sus al 2-lea e jos.</li>
+    <li>Dupa ce accentul coboara nu se mai ridica.</li>
+  </ul>
+  </p>
+  </div>
+</div>
+</div>
+
+<div class="footer">
+  <h3>Urmatorul articol</h3>
+  <a th:href="@{/limbajaponeza/kanji}">
+    <h1>Kanji</h1>
+  </a>
+  <a th:href="@{/limbajaponeza/kanji}">
+    <h3>Citeste acum</h3>
+  </a>
+    <div th:insert="fragments :: footer-bottom"></div>
+</div>
+
+</body>
+</html>
